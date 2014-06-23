@@ -1,4 +1,4 @@
-Android 开源项目实现原理解析Demo
+Android 开源项目 Demo
 =========================
 
 本工程主要用于 [Android 优秀开源项目实现原理解析](https://github.com/android-cn/android-open-project-analysis) 的 Demo 代码托管
