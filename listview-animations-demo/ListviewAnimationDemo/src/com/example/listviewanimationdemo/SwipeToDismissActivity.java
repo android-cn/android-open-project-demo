@@ -75,9 +75,6 @@ public class SwipeToDismissActivity extends BaseListActivity implements  OnDismi
 	}
 
 
-
-
-
     private void setSwipeDismissAdapter() {
         SwipeDismissAdapter adapter = new SwipeDismissAdapter(mAdapter, this);
         adapter.setAbsListView(getListView());

@@ -1,9 +1,12 @@
 package com.example.listviewanimationdemo;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.Toast;
 
 public class HomeActivity extends FragmentActivity implements OnClickListener {
 	@Override
@@ -20,6 +23,8 @@ public class HomeActivity extends FragmentActivity implements OnClickListener {
 		findViewById(R.id.home_multiple_item_dismiss_btn).setOnClickListener(
 				this);
 		findViewById(R.id.home_item_expend_btn).setOnClickListener(this);
+		findViewById(R.id.home_item_go_github).setOnClickListener(this);
+		findViewById(R.id.home_item_go_la_github).setOnClickListener(this);
 	}
 
 	@Override
@@ -33,15 +38,31 @@ public class HomeActivity extends FragmentActivity implements OnClickListener {
 			SwipeToDismissActivity.actionToSwipeDismiss(this);
 			break;
 		case R.id.home_item_drag_btn:
+			DragAndDropActivity.actionToDragAndDrop(this);
 			break;
 		case R.id.home_multiple_item_dismiss_btn:
+			AnimateDismissActivity.actionToAnimateDismiss(this);
 			break;
 		case R.id.home_item_expend_btn:
-
+			ExpandableListItemActivity.actionToExpandableList(this);
 			break;
-
+		case R.id.home_item_go_github:
+			Toast.makeText(this, "正在转向demo项目主页...", Toast.LENGTH_SHORT).show();
+			openBrower("https://github.com/android-cn/android-open-project-demo");
+			break;
+		case R.id.home_item_go_la_github:
+			Toast.makeText(this, "正在转向ListviewAnimation项目主页...", Toast.LENGTH_SHORT).show();
+			openBrower("https://github.com/nhaarman/ListViewAnimations");
+			break;
 		default:
 			break;
 		}
+	}
+	
+	public void openBrower(String url){
+		Uri uri=Uri.parse(url);
+		Intent intent=new Intent(Intent.ACTION_VIEW,uri);
+		intent.setPackage("com.android.browser");
+		startActivity(intent);
 	}
 }

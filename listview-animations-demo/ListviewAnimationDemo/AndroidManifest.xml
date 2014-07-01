@@ -21,8 +21,20 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-         <activity
+        <activity
             android:name=".SwipeToDismissActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".DragAndDropActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".ExpandableListItemActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".AnimateDismissActivity"
             android:screenOrientation="portrait" >
         </activity>
     </application>
