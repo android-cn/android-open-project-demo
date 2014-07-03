@@ -3,5 +3,10 @@
 
     <string name="app_name">butterknife-demo</string>
     <string name="hello_world">Hello world!</string>
+    <string name="title">标题</string>
+    <string name="say_hello">sayHello</string>
+    <string name="simple_demo">Simple Demo</string>
+    <string name="listview_demo">ListView Demo</string>
+    <string name="viewpager_demo">ViewPager Demo</string>
 
 </resources>
