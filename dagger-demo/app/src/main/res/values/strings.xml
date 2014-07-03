@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">DaggerDemo</string>
+    <string name="words_when_coding">程序员：呼，搬了%s块砖！</string>
+    <string name="story">故事背景：公司有若干个程序员，每个程序员要写10行代码才能下班，老板会在各个工位巡视</string>
+    <string name="code">程序员搬砖</string>
+    <string name="next_coder">老板去下一个工位</string>
+</resources>
