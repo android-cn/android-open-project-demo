@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/menu_item_animation_alpha"
+        android:title="渐现">
+    </item>
+    <item
+        android:id="@+id/menu_item_animation_left"
+        android:title="左边飞进">
+    </item>
+    <item
+        android:id="@+id/menu_item_animation_right"
+        android:title="右边飞进">
+    </item>
+    <item
+        android:id="@+id/menu_item_animation_bottom"
+        android:title="底部飞进">
+    </item>
+    <item
+        android:id="@+id/menu_item_animation_bottom_right"
+        android:title="底部右边飞进">
+    </item>
+    <item
+        android:id="@+id/menu_item_animation_scale"
+        android:title="放大">
+    </item>
+
+</menu>

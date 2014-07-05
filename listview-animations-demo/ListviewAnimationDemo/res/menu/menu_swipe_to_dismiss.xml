@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item android:id="@+id/swipe_menu_main" android:title="滑动删除"></item>
+    <item android:id="@+id/swipe_menu_with_undo" android:title="可撤销的滑动删除"></item>
+     <item android:id="@+id/swipe_menu_with_undo_2" android:title="撤销栏自动消失的可撤销滑动删除"></item>
+      <item android:id="@+id/swipe_menu_with_undo_3" android:title="带倒计时的滑动删除"></item>
+
+</menu>
