@@ -9,8 +9,9 @@ import com.caesar.PSL_demo.library.PinnedSectionListView;
 
 import android.os.Bundle;
 import android.app.Activity;
-import android.view.Menu;
-import android.widget.ListView;
+import android.os.Handler;
+import android.os.Message;
+import android.util.Log;
 
 public class MainActivity extends Activity {
 	
@@ -20,16 +21,35 @@ public class MainActivity extends Activity {
 	
 	private PinnedSectionListView mListView;
 
+    Handler handler = new Handler(){
+        @Override
+        public void dispatchMessage(Message msg) {
+            mListView.stopRefresh();
+
+        }
+    };
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+
+
 		
 		mListView = (PinnedSectionListView) this.findViewById(R.id.listview);
 		mAdapter = new PinnedAdapter(this, getDate());
 		mListView.setAdapter(mAdapter);
-		
-		
+        mListView.setOnRefreshListener(new PinnedSectionListView.OnRefreshListener() {
+            @Override
+            public void OnRefresh() {
+                Log.d(TAG, "OnRefresh");
+                handler.sendEmptyMessageDelayed(0,2000);
+            }
+        });
+
+        Log.d(TAG,"onCreate");
+
+
 	}
 
 	

@@ -17,6 +17,7 @@
 package com.caesar.PSL_demo.library;
 
 import com.caesar.PSL_demo.BuildConfig;
+import com.caesar.PSL_demo.view.HeadView;
 
 import android.content.Context;
 import android.database.DataSetObserver;
@@ -28,15 +29,19 @@ import android.graphics.drawable.GradientDrawable;
 import android.graphics.drawable.GradientDrawable.Orientation;
 import android.os.Parcelable;
 import android.util.AttributeSet;
+import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.SoundEffectConstants;
 import android.view.View;
 import android.view.ViewConfiguration;
 import android.view.accessibility.AccessibilityEvent;
+import android.view.animation.DecelerateInterpolator;
 import android.widget.AbsListView;
 import android.widget.HeaderViewListAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.ProgressBar;
+import android.widget.Scroller;
 import android.widget.SectionIndexer;
 
 
@@ -44,6 +49,45 @@ import android.widget.SectionIndexer;
  * ListView, which is capable to pin section views at its top while the rest is still scrolled.
  */
 public class PinnedSectionListView extends ListView {
+
+    /**添加下拉刷新   -----------start---------------------*/
+
+    /** The m last y. */
+    private float mLastY = -1;
+
+    /** The m scroller. */
+    private Scroller mScroller;
+
+    /** The m list view listener. */
+    private OnRefreshListener mOnRefreshListener;
+
+    /** The m header view. */
+    private HeadView mHeaderView;
+
+    /** The m header view height. */
+    private int mHeaderViewHeight;
+
+    /** The m enable pull refresh. */
+    private boolean mEnablePullRefresh = true;
+
+    /** The m pull refreshing. */
+    private boolean mPullRefreshing = false;
+
+    // for mScroller, scroll back from header or footer.
+    /** The m scroll back. */
+    private int mScrollBack;
+
+    /** The Constant SCROLLBACK_HEADER. */
+    private final static int SCROLLBACK_HEADER = 0;
+
+    /** The Constant SCROLL_DURATION. */
+    private final static int SCROLL_DURATION = 200;
+
+    /** The Constant OFFSET_RADIO. */
+    private final static float OFFSET_RADIO = 1.8f; // support iOS like pull feature.
+
+    /**添加下拉刷新  ------------end------------------*/
+
 
     //-- inner classes
 
@@ -144,17 +188,39 @@ public class PinnedSectionListView extends ListView {
     public PinnedSectionListView(Context context, AttributeSet attrs) {
         super(context, attrs);
         initView();
+        initWithContext(context);
     }
 
     public PinnedSectionListView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         initView();
+        initWithContext(context);
     }
 
     private void initView() {
         setOnScrollListener(mOnScrollListener);
         mTouchSlop = ViewConfiguration.get(getContext()).getScaledTouchSlop();
         initShadow(true);
+    }
+
+    /** 初始化下拉刷新上下文
+     * @param context
+     */
+    private void initWithContext(Context context) {
+
+        mScroller = new Scroller(context, new DecelerateInterpolator());
+
+        super.setOnScrollListener(mOnScrollListener);
+
+        // init header view
+        mHeaderView = new HeadView(context);
+
+        // init header height
+        mHeaderViewHeight = mHeaderView.getHeaderHeight();
+        mHeaderView.setGravity(Gravity.BOTTOM);
+        addHeaderView(mHeaderView);
+        // 默认是可以下拉刷新
+        setPullRefreshEnable(true);
     }
 
     //-- public API methods
@@ -509,6 +575,155 @@ public class PinnedSectionListView extends ListView {
             adapter = ((HeaderViewListAdapter)adapter).getWrappedAdapter();
         }
         return ((PinnedSectionListAdapter) adapter).isItemViewTypePinned(viewType);
+    }
+
+
+    //下拉刷新添加方法----------------------------start-----------------------------
+
+    /** 打开下拉刷新开关
+     * @param enable  true可以  false不能
+     */
+    public void setPullRefreshEnable(boolean enable) {
+        mEnablePullRefresh = enable;
+        if (!mEnablePullRefresh) {
+            mHeaderView.setVisibility(View.INVISIBLE);
+        } else {
+            mHeaderView.setVisibility(View.VISIBLE);
+        }
+    }
+
+    /**
+     * 停止刷新，重置headerView
+     */
+    public void stopRefresh() {
+        if (mPullRefreshing == true) {
+            mPullRefreshing = false;
+            resetHeaderHeight();
+        }
+    }
+
+    /**
+     * 重置headerView 高度
+     */
+    private void resetHeaderHeight() {
+        //当前下拉到的高度
+        int height = mHeaderView.getVisiableHeight();
+        if (height < mHeaderViewHeight || !mPullRefreshing) {
+            //距离短  隐藏
+            mScrollBack = SCROLLBACK_HEADER;
+            mScroller.startScroll(0, height, 0, -1*height, SCROLL_DURATION);
+        }else if(height > mHeaderViewHeight || !mPullRefreshing){
+            //距离多的  弹回到mHeaderViewHeight
+            mScrollBack = SCROLLBACK_HEADER;
+            mScroller.startScroll(0, height, 0, -(height-mHeaderViewHeight), SCROLL_DURATION);
+        }
+
+        invalidate();
+    }
+
+    /** 更新headerView 高度
+     * @param delta
+     */
+    private void updateHeaderHeight(float delta) {
+        int newHeight = (int) delta + mHeaderView.getVisiableHeight();
+        mHeaderView.setVisiableHeight(newHeight);
+        if (mEnablePullRefresh && !mPullRefreshing) {
+            if (mHeaderView.getVisiableHeight() >= mHeaderViewHeight) {
+                mHeaderView.setState(HeadView.STATE_READY);
+            } else {
+                mHeaderView.setState(HeadView.STATE_NORMAL);
+            }
+        }
+        setSelection(0);
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent ev) {
+        if (mLastY == -1) {
+            mLastY = ev.getRawY();
+        }
+
+        switch (ev.getAction()) {
+            case MotionEvent.ACTION_DOWN:
+                mLastY = ev.getRawY();
+                break;
+            case MotionEvent.ACTION_MOVE:
+                final float deltaY = ev.getRawY() - mLastY;
+                mLastY = ev.getRawY();
+                //下拉滑动
+                if (mEnablePullRefresh && getFirstVisiblePosition() == 0 && (mHeaderView.getVisiableHeight() > 0 || deltaY > 0)) {
+                    updateHeaderHeight(deltaY / OFFSET_RADIO);
+                }
+                break;
+            case MotionEvent.ACTION_UP:
+                mLastY = -1;
+                if (getFirstVisiblePosition() == 0) {
+                    //需要刷新的条件
+                    if (mEnablePullRefresh && mHeaderView.getVisiableHeight() >= mHeaderViewHeight) {
+                        mPullRefreshing = true;
+                        mHeaderView.setState(HeadView.STATE_REFRESHING);
+                        if (mOnRefreshListener != null) {
+                            //刷新
+                            mOnRefreshListener.OnRefresh();
+                        }
+                    }
+
+                    if(mEnablePullRefresh){
+                        //弹回
+                        resetHeaderHeight();
+                    }
+                    //在到底部就加载下一页
+                }
+                break;
+            default:
+                break;
+        }
+        return super.onTouchEvent(ev);
+    }
+
+
+    @Override
+    public void computeScroll() {
+        if (mScroller.computeScrollOffset()) {
+            if (mScrollBack == SCROLLBACK_HEADER) {
+                mHeaderView.setVisiableHeight(mScroller.getCurrY());
+            }
+            postInvalidate();
+        }
+        super.computeScroll();
+    }
+
+
+    /**
+     *  添加下拉刷新监听接口
+     *
+     * @param
+     */
+    public void setOnRefreshListener(OnRefreshListener onRefreshListener) {
+        mOnRefreshListener = onRefreshListener;
+    }
+
+
+    /** 获得头部view
+     * @return
+     */
+    public HeadView getHeaderView() {
+        return mHeaderView;
+    }
+
+    /** 获得头部progressBar 用于自定义样式
+     * @return
+     */
+    public ProgressBar getHeaderProgressBar() {
+        return mHeaderView.getHeaderProgressBar();
+    }
+
+    /**
+     * 下拉刷新接口
+     *
+     */
+    public interface OnRefreshListener{
+        void OnRefresh();
     }
 
 }
