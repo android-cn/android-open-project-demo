@@ -6,9 +6,8 @@ Android 开源项目之 pinned-section-listview
 
 ## **功能**
 - 快速的滚动
-- 上拉加载更多
+- 点击SectionItem
 - 下拉刷新
-- 你还可以点击SectionItem
 
 
  这是一些简单的功能，你可以fork项目添加你自己的想法:)
@@ -20,6 +19,7 @@ Android 开源项目之 pinned-section-listview
 使用方法非常简单
 
 1.在你的`layout.xml`中使用`PinnedSectionListView`来代替系统提供的`ListView`
+
 ```xml
 <com.caesar.PSL_demo.library.PinnedSectionListView
             android:id="@+id/listview"
@@ -34,7 +34,7 @@ Android 开源项目之 pinned-section-listview
             
 看起来很简单
 
-2.书写一个`ListAdatper`这个累继承于`BaseAdaper`，当然也可以继承其他Adaper，然后实现`PinnedSectionListAdapter` 添加一个简单的方法 `isItemViewTypePinned(int viewType)` 这个方法如果反悔`true` 那么这个item就是你要SctionItem.
+2.书写一个`MyAdatper`这个类继承于`BaseAdaper`，当然也可以继承其他Adaper，然后实现`PinnedSectionListAdapter`这个接口 添加一个简单的方法 `isItemViewTypePinned(int viewType)` 这个方法如果返回`true` 那么这个`Item`就是你要`SctionItem`.
 
 ```java 
 //实现了PinnedSctionListAdapter 这个接口
