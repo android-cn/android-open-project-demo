@@ -1,8 +1,6 @@
 Android 开源项目之 pinned-section-listview
 =========================
 
-本工程主要用于 [Android 优秀开源项目实现原理解析](https://github.com/android-cn/android-open-project-analysis) 的 Demo 代码托管
-
 ## [pinned-section-listview](https://github.com/beworker/pinned-section-listview) 简介
 这是一个简单的listview控件，可以简单的使SectionItem悬停在title，直到下一个SectionItem出现。类似效果淘宝购物车功能等。
 
@@ -10,7 +8,8 @@ Android 开源项目之 pinned-section-listview
 - 快速的滚动
 - 上拉加载更多
 - 下拉刷新
-- 你还可以点击SectionItem 
+- 你还可以点击SectionItem
+
 
  这是一些简单的功能，你可以fork项目添加你自己的想法:)
  这是个简单的Library,根本不会影响你功能的大小，他甚至只是一个类。
@@ -21,7 +20,7 @@ Android 开源项目之 pinned-section-listview
 使用方法非常简单
 
 1.在你的`layout.xml`中使用`PinnedSectionListView`来代替系统提供的`ListView`
-``` xml
+```xml
 <com.caesar.PSL_demo.library.PinnedSectionListView
             android:id="@+id/listview"
             android:layout_width="match_parent"
@@ -31,7 +30,7 @@ Android 开源项目之 pinned-section-listview
             android:divider="@android:color/transparent"
             android:footerDividersEnabled="false"
             android:headerDividersEnabled="false" />
-            ```
+```
             
 看起来很简单
 
@@ -59,23 +58,24 @@ public class PinnedAdapter extends BaseAdapter implements PinnedSectionListAdapt
  
  ## 分析详解
  
- 1.这是一个基于`ListView` 控件的一个扩展
- ```java 
+1.这是一个基于`ListView` 控件的一个扩展
+ 
+```java 
  public class PinnedSectionListView extends ListView {
  
     ···
- }
- ```
+ } 
+```
  
- 2.
- 
- 
+2.
  
  
  
  
  
- ## 感谢
+ 
+ 
+## 感谢
  
  感谢 [Sergej Shafarenka](https://github.com/beworker)期待有更好的开源项目，造福开发者。
  
