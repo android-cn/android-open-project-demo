@@ -16,10 +16,6 @@ import java.util.List;
 import se.emilsjolander.stickylistheaders.StickyListHeadersListView;
 
 /**
- * 1.确定要显示什么内容？通信录
- * 2.获取通信录的代码
- * 3.如何获取姓名的首字母 ok
- * 4.
  */
 public class DemoMainActivity extends ActionBarActivity {
 
@@ -35,11 +31,11 @@ public class DemoMainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_demo_main);
         mList = (StickyListHeadersListView)findViewById(R.id.list);
+        mList.setAreHeadersSticky(true);
         AsyncTask<Void,Void,Void> asyncTask = new AsyncTask<Void, Void, Void>() {
             @Override
             protected Void doInBackground(Void... voids) {
                 fetchPhoneContacts();
-                sortContactsByFirstLetter();
                 return null;
             }
 
@@ -68,7 +64,14 @@ public class DemoMainActivity extends ActionBarActivity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_header_sticky) {
+            if(mList.areHeadersSticky()){
+                mList.setAreHeadersSticky(false);
+                item.setTitle(R.string.action_enable_header_sticky);
+            }else {
+                mList.setAreHeadersSticky(true);
+                item.setTitle(R.string.action_disable_header_sticky);
+            }
             return true;
         }
         return super.onOptionsItemSelected(item);
@@ -95,10 +98,4 @@ public class DemoMainActivity extends ActionBarActivity {
         }
     }
 
-    /**
-     * 按照首字母排序
-     */
-    private void sortContactsByFirstLetter() {
-//        mContactsName
-    }
 }

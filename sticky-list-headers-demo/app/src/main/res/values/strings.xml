@@ -4,5 +4,7 @@
     <string name="app_name">Sticky-list-headers-demo</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="action_disable_header_sticky">关闭StickyHeader</string>
+    <string name="action_enable_header_sticky">启用StickyHeader</string>
 
 </resources>
