@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">PSL_demmo</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+
+    
+    
+    <string-array name="mall_name">
+        <item >mall_1</item>
+        <item >mall_2</item>
+        <item >mall_3</item>
+        <item >mall_4</item>
+        <item >mall_5</item>
+        <item >mall_6</item>
+        <item >mall_7</item>
+        <item >mall_8</item>
+        <item >mall_9</item>
+    </string-array>
+</resources>

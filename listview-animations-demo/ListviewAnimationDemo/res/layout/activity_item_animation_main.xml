@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F0F0F0"
+    android:orientation="vertical"
+    android:padding="5dp" >
+
+    <Button
+        android:id="@+id/item_animation_main_1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="listview item动画" />
+
+    <Button
+        android:id="@+id/item_animation_main_google_card"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Google card" >
+    </Button>
+
+    <Button
+        android:id="@+id/item_animation_main_gridview"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="GridView动画" >
+    </Button>
+
+    
+</LinearLayout>
