@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="xushuai.viewpager_indicator_demo" >
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".SampleCirclesDefault"></activity>
+        <activity android:name=".SampleTitlesDefault"></activity>
+        <activity android:name=".SampleIconsDefault"></activity>
+        <activity android:name=".SampleLinesDefault"></activity>
+        <activity android:name=".SampleTabsDefault"></activity>
+        <activity android:name=".SampleUnderlinesDefault"></activity>
+
+
+
+    </application>
+
+</manifest>

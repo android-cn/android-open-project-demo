@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">viewpager-indicator-demo</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="recycled">Recycled?</string>
+    <string name="position">Position</string>
+    <string name="word">Word</string>
+
+</resources>
