@@ -1,6 +1,5 @@
 package com.rengwuxian.daggerdemo;
 
-import com.rengwuxian.daggerdemo.model.Boss;
 import com.rengwuxian.daggerdemo.model.Coder;
 
 import dagger.Module;
@@ -12,7 +11,7 @@ import dagger.Provides;
 @Module(injects = MainActivity.class)
 public class AppModule {
     @Provides
-    Coder provideCoder(Boss boss) {
-        return new Coder(boss);
+    Coder provideCoder() {
+        return new Coder();
     }
 }

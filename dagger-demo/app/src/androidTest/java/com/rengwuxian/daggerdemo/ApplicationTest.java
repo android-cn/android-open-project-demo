@@ -1,4 +1,4 @@
-package com.example.rengw_000.myapplication;
+package com.rengwuxian.daggerdemo;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

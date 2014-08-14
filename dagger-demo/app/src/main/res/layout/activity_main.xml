@@ -18,19 +18,19 @@
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="40dp"/>
 
     <Button
+        android:id="@+id/codeBt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="code"
-        android:text="@string/code"/>
+        tools:text="程序员写代码"/>
 
     <Button
+        android:id="@+id/nextCoderBt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="nextCoder"
-        android:text="@string/next_coder"/>
+        tools:text="老板去下一个工位"/>
 
 </LinearLayout>
 
