@@ -14,8 +14,8 @@ import com.mingy.fancycoverflow.base.FancyCoverFlowBaseAdapter;
 
 
 /**
- * Ò»¡¢FancyCoverFlowÊ¹ÓÃ²½Öè£º
- * 1¡¢ÔÚactivityµÄ²¼¾ÖÎÄ¼şÖĞÒıÓÃFancyCoverFlow£¬eg£º
+ * ä¸€ã€FancyCoverFlowä½¿ç”¨æ­¥éª¤ï¼š
+ * 1ã€åœ¨activityçš„å¸ƒå±€æ–‡ä»¶ä¸­å¼•ç”¨FancyCoverFlowï¼Œegï¼š
  * <at.technikum.mti.fancycoverflow.FancyCoverFlow
 		android:id="@+id/fancyCoverFlowId"
 		android:layout_width="wrap_content"
@@ -29,7 +29,7 @@ import com.mingy.fancycoverflow.base.FancyCoverFlowBaseAdapter;
 		/>
  * 
  * 
- * 2¡¢×Ô¶¨ÒåAdapter£¬Adapter¼Ì³Ğ×ÔFancyCoverFlowBaseAdapter,eg£º
+ * 2ã€è‡ªå®šä¹‰Adapterï¼ŒAdapterç»§æ‰¿è‡ªFancyCoverFlowBaseAdapter,egï¼š
  * 	public class FancyCoverFlowBaseAdapter extends FancyCoverFlowAdapter {
 		public FancyCoverFlowBaseAdapter( Context context, Integer[] dataList ){
 			mDataList = dataList;
@@ -70,21 +70,25 @@ import com.mingy.fancycoverflow.base.FancyCoverFlowBaseAdapter;
 	}
  * 
  * 
- * 3¡¢ÊµÀı»¯FancyCoverFlow£¬ÎªÆäÉèÖÃAdapter£¬eg
+ * 3ã€å®ä¾‹åŒ–FancyCoverFlowï¼Œä¸ºå…¶è®¾ç½®Adapterï¼Œeg
  * FancyCoverFlowBaseAdapter fancyCoverFlowBaseAdapter = new FancyCoverFlowBaseAdapter( this, getBaseDataList( ) );
    mFancyCoverFlow.setAdapter( fancyCoverFlowBaseAdapter );
  * 
  * 
- * ¶ş¡¢×¢ÒâÊÂÏî£º
- * 1¡¢ÔÚ²¼¾ÖÎÄ¼şÖĞÒıÓÃFancyCoverFlowÊ±£¬Èç¹ûĞèÒªÊ¹ÓÃ×Ô¶¨ÒåÊôĞÔ£¬±ØĞëÒªÔÚ¸ú²¼¾ÖÎÄ¼şÖĞ¶¨Òå×Ô¶¨ÒåÊôĞÔµÄÃüÃû¿Õ¼ä¡°xmlns:fcf="http://schemas.android.com/apk/res-auto"¡±£»
- * 2¡¢FancyCoverFlowÊÇĞ§¹ûÊÇ»ùÓÚ»­ÀÈGalleryµÄ£¬ËùÒÔÔÚ×Ô¶¨ÒåAdapterÊ±£¬ÔÚÆägetCoverFlowItem·½·¨ÖĞÒ»¶¨Òª×¢Òâ×Ô¶¨ÒåviewµÄÊôĞÔ£¬ÏêÇé²Î¼û±¾demoÖĞµÄFancyCoverFlowBaseAdapterÀà£»
+ * äºŒã€æ³¨æ„äº‹é¡¹ï¼š
+ * 1ã€åœ¨å¸ƒå±€æ–‡ä»¶ä¸­å¼•ç”¨FancyCoverFlowæ—¶ï¼Œå¦‚æœéœ€è¦ä½¿ç”¨è‡ªå®šä¹‰å±æ€§ï¼Œå¿…é¡»è¦åœ¨è·Ÿå¸ƒå±€æ–‡ä»¶ä¸­å®šä¹‰è‡ªå®šä¹‰å±æ€§çš„å‘½åç©ºé—´â€œxmlns:fcf="http://schemas.android.com/apk/res-auto"â€ï¼›
+ * 2ã€FancyCoverFlowæ˜¯æ•ˆæœæ˜¯åŸºäºç”»å»ŠGalleryçš„ï¼Œæ‰€ä»¥åœ¨è‡ªå®šä¹‰Adapteræ—¶ï¼Œåœ¨å…¶getCoverFlowItemæ–¹æ³•ä¸­ä¸€å®šè¦æ³¨æ„è‡ªå®šä¹‰viewçš„å±æ€§ï¼Œè¯¦æƒ…å‚è§æœ¬demoä¸­çš„FancyCoverFlowBaseAdapterç±»ï¼›
  * */
 public class FancyCoverFlowMainActivity extends BaseActivity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		setContentView(R.layout.activity_fancycoverflow_layout);
 		super.onCreate(savedInstanceState);
+	}
+	
+	@Override
+	public void setContentView() {
+		setContentView(R.layout.activity_fancycoverflow_layout);
 	}
 	
 	@Override
