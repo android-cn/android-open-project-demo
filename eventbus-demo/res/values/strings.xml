@@ -1,5 +1,20 @@
-<resources>
+<resources xmlns:android="http://schemas.android.com/apk/res/android" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-    <string name="app_name">eventbus-demo</string>
-
+    <string name="app_name" translatable="false">Eventbus Demo</string>
+    
+    <string name="send_event_simplest">send simplest event</string>
+    <string name="send_event_self_defined">send self defined event</string>
+    <string name="send_event_diff_thread_mode">send event in different thread</string>
+    <string name="send_event_ordered">send ordered event</string>
+    <string name="send_event_sticky">send sticky event</string>
+    
+    <string name="event_content_hint">New Message</string>
+    <string name="event_content_simplest_hint">Simplest String event</string>
+    <string name="event_content_defined_name_hint">Trinea</string>
+    <string name="event_content_defined_desc_hint">Dev of Android</string>
+    <string name="send_event">Send</string>
+    <string name="send_event_to_all">Send To All Receiver</string>
+    <string name="send_ordered_event">Send Ordered Event</string>
+    <string name="send_sticky_event">Send Sticky Event</string>
+    <string name="cancel_after_first_time">Cancel event after first time</string>
 </resources>

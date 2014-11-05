@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <Button
+            android:id="@+id/send_simplest_event"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/send_event_simplest" />
+
+        <Button
+            android:id="@+id/send_event_self_defined"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/send_simplest_event"
+            android:text="@string/send_event_self_defined" />
+
+        <Button
+            android:id="@+id/diff_thread_mode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/send_event_self_defined"
+            android:text="@string/send_event_diff_thread_mode" />
+
+        <Button
+            android:id="@+id/send_ordered_event"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/diff_thread_mode"
+            android:text="@string/send_event_ordered" />
+
+        <Button
+            android:id="@+id/send_sticky_event"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/send_ordered_event"
+            android:text="@string/send_event_sticky" />
+    </RelativeLayout>
+
+</ScrollView>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <EditText
+        android:id="@+id/event_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/event_content_hint" />
+
+    <CheckBox
+        android:id="@+id/event_cancel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/event_content"
+        android:text="@string/cancel_after_first_time" />
+
+    <Button
+        android:id="@+id/send_event"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/event_cancel"
+        android:text="@string/send_ordered_event" />
+
+    <RelativeLayout
+        android:id="@+id/pager_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/send_event"
+        android:clipChildren="false"
+        android:layerType="software" >
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="320dp"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:clipChildren="false" />
+
+        <TextView
+            android:id="@+id/view_pager_index"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/view_pager"
+            android:layout_centerHorizontal="true"
+            android:textSize="14sp" />
+    </RelativeLayout>
+
+</RelativeLayout>

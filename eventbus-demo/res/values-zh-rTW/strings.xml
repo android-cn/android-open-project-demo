@@ -1,0 +1,21 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    
+    <string name="app_name" translatable="false">Eventbus Demo</string>
+    
+    <string name="send_event_simplest">發送最簡單 Event</string>
+    <string name="send_event_self_defined">發送自定義 Event</string>
+    <string name="send_event_diff_thread_mode">不同線程接收 Event</string>
+    <string name="send_event_ordered">發送有序 Event</string>
+    <string name="send_event_sticky">發送粘性 Event</string>
+    
+    <string name="event_content_hint">新消息到了</string>
+    <string name="event_content_simplest_hint">最簡單字符串消息</string>
+    <string name="event_content_defined_name_hint">Trinea</string>
+    <string name="event_content_defined_desc_hint">Android 開發</string>
+    <string name="send_event">發送</string>
+    <string name="send_event_to_all">發送給所有接收者</string>
+    <string name="send_ordered_event">發送有序 Event</string>
+    <string name="send_sticky_event">發送粘性 Event</string>
+    <string name="cancel_after_first_time">第一優先級接收到後取消 Event</string>
+
+</resources>

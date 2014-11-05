@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="dp_4">4dp</dimen>
+    <dimen name="dp_8">8dp</dimen>
+    <dimen name="view_pager_margin">145dp</dimen>
+    <dimen name="page_margin">15dp</dimen>
+
+</resources>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lint>
+    <issue id="ClickableViewAccessibility">
+        <ignore path="src/cn/trinea/android/demo/eventbus/ViewPagerDemo.java" />
+    </issue>
+    <issue id="ExtraTranslation">
+        <ignore path="res/values-zh-rCN/strings.xml" />
+        <ignore path="res/values-zh-rTW/strings.xml" />
+    </issue>
+    <issue id="LintError" severity="ignore" />
+    <issue id="MissingTranslation">
+        <ignore path="res/values/strings.xml" />
+    </issue>
+    <issue id="OldTargetApi">
+        <ignore path="AndroidManifest.xml" />
+    </issue>
+    <issue id="Registered">
+        <ignore path="src/cn/trinea/android/demo/eventbus/BaseActivity.java" />
+        <ignore path="src/cn/trinea/android/demo/eventbus/BaseFragmentActivity.java" />
+    </issue>
+    <issue id="UnusedResources" severity="ignore" />
+</lint>
