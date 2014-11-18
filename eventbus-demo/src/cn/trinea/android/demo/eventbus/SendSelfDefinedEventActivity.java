@@ -21,16 +21,18 @@ public class SendSelfDefinedEventActivity extends BaseActivity {
         super.onCreate(savedInstanceState, R.layout.activity_send_defined_event);
 
         initView();
+    }
 
-        // Register
+    @Override
+    public void onStart() {
+        super.onStart();
         EventBus.getDefault().register(this);
     }
 
     @Override
-    protected void onDestroy() {
-        // Unregister
+    public void onStop() {
         EventBus.getDefault().unregister(this);
-        super.onDestroy();
+        super.onStop();
     }
 
     // Receive Event
