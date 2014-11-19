@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?><!-- 列表界面tab栏的点击时文字颜色，可随触摸事件变化 -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 选中时 -->
+    <item android:state_checked="true" android:color="@color/white"/>
+    <!-- 单击时 -->
+    <item android:state_pressed="true" android:color="@color/white"/>
+    <!-- 默认 -->
+    <item android:color="@color/listtab_off"/>
+
+</selector>

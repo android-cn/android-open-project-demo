@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/animation_area"
+        android:layout_centerInParent="true"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_marginRight="16dp"
+            android:id="@+id/hover_menu_ershou"
+            android:src="@drawable/icon_hover_ershou"
+            android:layout_width="65dp"
+            android:layout_height="65dp"/>
+
+        <ImageView
+            android:id="@+id/hover_menu_lvyou"
+            android:layout_marginRight="16dp"
+            android:src="@drawable/icon_hover_lvyou"
+            android:layout_width="65dp"
+            android:layout_height="65dp"/>
+
+        <ImageView
+            android:id="@+id/hover_menu_wenda"
+            android:layout_marginRight="16dp"
+            android:src="@drawable/icon_hover_ask"
+            android:layout_width="65dp"
+            android:layout_height="65dp"/>
+
+        <ImageView
+            android:id="@+id/hover_menu_tantian"
+            android:src="@drawable/icon_hover_tantian"
+            android:layout_width="65dp"
+            android:layout_height="65dp"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/description"
+        android:text="@string/menu_hover_text"
+        android:layout_marginLeft="12dp"
+        android:textColor="#de000000"
+        android:layout_marginBottom="12dp"
+        android:layout_alignParentBottom="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+</RelativeLayout>

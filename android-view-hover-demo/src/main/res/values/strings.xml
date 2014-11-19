@@ -2,12 +2,14 @@
 <resources>
 
     <string name="app_name">AndroidViewHoverDemo</string>
-    <string name="title_section1">Section 1</string>
-    <string name="title_section2">Section 2</string>
-    <string name="title_section3">Section 3</string>
+    <string name="title_section1">Layout</string>
+    <string name="title_section2">View</string>
+    <string name="title_section3">Inbox</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="action_example">Example action</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_about">by Drakeet</string>
+    <string name="action_toggle">Menu</string>
+    <string name="about_developer">https://github.com/drakeet</string>
+    <string name="menu_hover_text">Menu~~</string>
 
 </resources>

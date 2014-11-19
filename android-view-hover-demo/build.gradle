@@ -9,7 +9,9 @@ android {
         minSdkVersion 9
         targetSdkVersion 21
         versionCode 1
-        versionName "1.0"
+        versionName "0.3"
+        renderscriptTargetApi 19
+        renderscriptSupportMode true
     }
     buildTypes {
         release {
@@ -22,4 +24,9 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:21.0.0'
+    compile 'com.nineoldandroids:library:2.4.0'
+    compile 'com.daimajia.easing:library:1.0.0@aar'
+    compile 'com.daimajia.androidanimations:library:1.1.2@aar'
+    compile 'com.daimajia.androidviewhover:library:1.0.3@aar'
+    compile 'com.jakewharton:butterknife:6.0.0'
 }

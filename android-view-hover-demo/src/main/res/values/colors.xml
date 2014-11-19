@@ -1,0 +1,10 @@
+<resources>
+    <color name="theme_primary">#ff1b9aff</color>
+    <color name="theme_primary_dark">#303f9f</color>
+    <color name="theme_primary_light">#7986cb</color>
+    <color name="theme_accent_2">#e91e63</color>
+    <color name="white">#ffffff</color>
+    <color name="listtab_off">#8d8d8d</color>
+    <color name="transparent">#00000000</color>
+
+</resources>

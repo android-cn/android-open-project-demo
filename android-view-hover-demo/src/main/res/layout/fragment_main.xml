@@ -1,16 +1,57 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:tools="http://schemas.android.com/tools"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:paddingLeft="@dimen/activity_horizontal_margin"
-                android:paddingRight="@dimen/activity_horizontal_margin"
-                android:paddingTop="@dimen/activity_vertical_margin"
-                android:paddingBottom="@dimen/activity_vertical_margin"
-                tools:context=".MainActivity$PlaceholderFragment">
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <TextView
-        android:id="@+id/section_label"
+    <com.daimajia.androidviewhover.BlurLayout
+        android:id="@+id/blur_layout"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="0dp"
+        android:layout_weight="1">
 
-</RelativeLayout>
+        <FrameLayout
+            android:id="@+id/fragment_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            >
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="centerCrop"
+                android:src="@drawable/main1"/>
+        </FrameLayout>
+    </com.daimajia.androidviewhover.BlurLayout>
+
+    <RadioGroup
+        android:id="@+id/rg_tab"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="bottom"
+        android:gravity="center"
+        android:background="@drawable/pro_bottom_bar">
+
+        <RadioButton
+            style="@style/tab_item"
+            android:drawableTop="@drawable/list_mylist_selector"
+            android:id="@+id/attention_tab_mylist"
+            android:text="我的信息"/>
+
+        <RadioButton
+            style="@style/tab_item"
+            android:drawableTop="@drawable/list_mainpage_selector"
+            android:checked="true"
+            android:id="@+id/attention_tab_main"
+            android:text="+"/>
+
+        <RadioButton
+            style="@style/tab_item"
+            android:drawableTop="@drawable/list_other_selector"
+            android:id="@+id/attention_tab_other"
+            android:text="其他"/>
+    </RadioGroup>
+</LinearLayout>
