@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">XUtilsDemo</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="db">数据库</string>
+    <string name="http">网络访问</string>
+    <string name="down">文件下载</string>
+    <string name="bitmap">图片下载</string>
+    <string name="id">学号</string>
+    <string name="name">学号</string>
+    <string name="age">年龄</string>
+    <string name="add">增加</string>
+    <string name="find">查找</string>
+    <string name="update">修改</string>
+    <string name="delete">删除</string>
+    <string name="get">get请求数据</string>
+    <string name="post">post请求数据</string>
+    <string name="start">开始</string>
+    <string name="pause">暂停</string>
+    <string name="continu">继续</string> 
+
+</resources>
