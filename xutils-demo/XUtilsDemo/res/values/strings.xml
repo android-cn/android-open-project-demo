@@ -14,5 +14,10 @@
     <string name="find">查找</string>
     <string name="update">修改</string>
     <string name="delete">删除</string>
+    <string name="get">get请求数据</string>
+    <string name="post">post请求数据</string>
+    <string name="start">开始</string>
+    <string name="pause">暂停</string>
+    <string name="continu">继续</string> 
 
 </resources>
