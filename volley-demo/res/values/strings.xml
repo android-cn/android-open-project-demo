@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Volley Demo</string>
+    <string name="string_request">String请求</string>
+    <string name="json_request">JSON请求</string>
+    <string name="image_request">图片请求</string>
+    <string name="custom_request">自定义请求（xml）</string>
+    <string name="post_request">post请求</string>
+    <string name="sample">综合实例</string>
+    <string name="action_about">关于</string>
+</resources>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical" 
+        android:paddingTop="10dp">
+
+        <Button
+            android:id="@+id/btn_string_request"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dip"
+            android:layout_marginRight="10dip" 
+            android:text="@string/string_request"/>
+
+        <Button
+            android:id="@+id/btn_json_request"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dip"
+            android:layout_marginRight="10dip" 
+            android:text="@string/json_request"/>
+
+        <Button
+            android:id="@+id/btn_image_request"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dip"
+            android:layout_marginRight="10dip" 
+            android:text="@string/image_request"/>
+
+        <Button
+            android:id="@+id/btn_custom_request"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dip"
+            android:layout_marginRight="10dip" 
+            android:text="@string/custom_request"/>
+
+        <Button
+            android:id="@+id/btn_post_request"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dip"
+            android:layout_marginRight="10dip" 
+            android:layout_marginTop="15dp"
+            android:text="@string/post_request"/>
+        
+        <Button
+            android:id="@+id/btn_sample"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dip"
+            android:layout_marginRight="10dip" 
+            android:layout_marginTop="15dp"
+            android:text="@string/sample"/>
+    </LinearLayout>
+
+</ScrollView>
