@@ -9,5 +9,13 @@
     <string name="post_request">post请求</string>
     <string name="sample">综合实例</string>
     <string name="action_about">关于</string>
+    <string name="about_text">
+	<![CDATA[
+	<div>
+	<br />作者：<a href="https://github.com/grumoon">Grumoon</a><br />
+	<br />更多内容请关注 <a href="https://github.com/android-cn/android-open-project-analysis">Android 开源项目实现原理解析</a><br />
+	</div>
+	]]>
+    </string>
 
 </resources>
