@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <Button 
+        android:text="@string/add"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:id="@+id/db_add"/>
+    
+    <Button 
+        android:text="@string/find"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:id="@+id/db_find"/>
+    
+    <Button 
+        android:text="@string/update"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:id="@+id/db_update"/>
+    
+    <Button 
+        android:text="@string/delete"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:id="@+id/db_delete"/>
+    
+    <TextView 
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:id="@+id/tv_info"/>
+
+</LinearLayout>
