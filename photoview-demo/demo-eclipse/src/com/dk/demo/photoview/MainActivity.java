@@ -18,12 +18,12 @@ public class MainActivity extends Activity {
 	private static final int DEMO_FULL_SCREEN = 0;
 	private static final int DEMO_WITH_VIEWPAGER = 1;
 	private static final int DEMO_WITH_GALLERY = 2;
-	private static final int DEMO_INTERGRATION_WITH_IMAGELOADER = 3;
-	private static final int DEMO_INTERGRATION_WITH_PICASSO = 4;
+	private static final int DEMO_INTEGRATION_WITH_IMAGELOADER = 3;
+	private static final int DEMO_INTEGRATION_WITH_PICASSO = 4;
 
 	private String strings[] = new String[] { "Full Screen",
 			"Demo with ViewPager", "Demo with Gallery",
-			"Intergration with ImageLoader", "Intergration with Picasso" };
+			"Integration with ImageLoader", "Integration with Picasso" };
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -50,10 +50,10 @@ public class MainActivity extends Activity {
 			case DEMO_WITH_GALLERY:
 				intent = new Intent(MainActivity.this, GalleryDemo.class);
 				break;
-			case DEMO_INTERGRATION_WITH_IMAGELOADER:
+			case DEMO_INTEGRATION_WITH_IMAGELOADER:
 				intent = new Intent(MainActivity.this, ImageLoaderDemo.class);
 				break;
-			case DEMO_INTERGRATION_WITH_PICASSO:
+			case DEMO_INTEGRATION_WITH_PICASSO:
 				intent = new Intent(MainActivity.this, PicassoDemo.class);
 				break;
 			}
