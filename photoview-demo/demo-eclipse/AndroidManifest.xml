@@ -22,6 +22,21 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".FullScreenDemo"
+            android:label="@string/app_name" />
+        <activity
+            android:name=".GalleryDemo"
+            android:label="@string/app_name" />
+        <activity
+            android:name=".ImageLoaderDemo"
+            android:label="@string/app_name" />
+        <activity
+            android:name=".PicassoDemo"
+            android:label="@string/app_name" />
+        <activity
+            android:name=".ViewPagerDemo"
+            android:label="@string/app_name" />
     </application>
 
 </manifest>
