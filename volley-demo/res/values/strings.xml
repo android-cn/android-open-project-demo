@@ -2,12 +2,28 @@
 <resources>
 
     <string name="app_name">Volley Demo</string>
+    
+    <string name="data_request_text">数据请求</string>
     <string name="string_request">String请求</string>
-    <string name="json_request">JSON请求</string>
-    <string name="image_request">图片请求</string>
-    <string name="custom_request">自定义请求（xml）</string>
+    <string name="json_object_request">JsonObject请求</string>
+    <string name="json_array_request">JsonArray请求</string>
+    
+    
+    <string name="image_request_text">图片请求</string>
+    <string name="image_request">Image请求</string>
+    <string name="image_loader">ImageLoader</string>
+    <string name="network_image_view">NetworkImageView</string>
+    
+    <string name="custom_request_text">自定义请求</string>
+    <string name="xml_request">Xml请求 </string>
+    
+    <string name="post_request_text">post请求</string>
     <string name="post_request">post请求</string>
+    
+    <string name="sample_text">综合实例</string>
     <string name="sample">综合实例</string>
+    
+
     <string name="action_about">关于</string>
     <string name="about_text">
 	<![CDATA[
@@ -17,5 +33,9 @@
 	</div>
 	]]>
     </string>
+    
+    <string name="request_url_hint">请输入请求地址</string>
+    <string name="request_send">发送</string>
+    <string name="request_cancel">取消</string>
 
 </resources>

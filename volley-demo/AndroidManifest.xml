@@ -7,6 +7,8 @@
     <uses-sdk
         android:minSdkVersion="14"
         android:targetSdkVersion="21" />
+    
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
@@ -24,7 +26,7 @@
         </activity>
         <activity android:name=".AboutActivity" >
         </activity>
-        <activity android:name=".SampleActivity" >
+        <activity android:name=".RequestActivity" >
         </activity>
     </application>
 

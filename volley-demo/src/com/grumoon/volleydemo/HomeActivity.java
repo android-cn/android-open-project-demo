@@ -1,17 +1,62 @@
 package com.grumoon.volleydemo;
 
+import com.grumoon.volleydemo.fragment.ImageLoaderFragment;
+import com.grumoon.volleydemo.fragment.ImageRequestFragment;
+import com.grumoon.volleydemo.fragment.JsonArrayRequestFragment;
+import com.grumoon.volleydemo.fragment.JsonObjectRequestFragment;
+import com.grumoon.volleydemo.fragment.NetworkImageViewFragment;
+import com.grumoon.volleydemo.fragment.PostRequestFragment;
+import com.grumoon.volleydemo.fragment.SampleFragment;
+import com.grumoon.volleydemo.fragment.StringRequestFragment;
+import com.grumoon.volleydemo.fragment.XmlRequestFragment;
+import com.grumoon.volleydemo.util.Constants;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.View.OnClickListener;
 
-public class HomeActivity extends Activity {
+public class HomeActivity extends Activity implements OnClickListener {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.app_main);
+		initView();
+
+	}
+
+	private void initView() {
+		// String请求
+		findViewById(R.id.btn_string_request).setOnClickListener(this);
+
+		// JsonObject请求
+		findViewById(R.id.btn_json_object_request).setOnClickListener(this);
+		
+		// JsonArray请求
+		findViewById(R.id.btn_json_array_request).setOnClickListener(this);
+
+		// Image请求
+		findViewById(R.id.btn_image_request).setOnClickListener(this);
+
+		// ImageLoader
+		findViewById(R.id.btn_image_loader).setOnClickListener(this);
+
+		// NetworkImageView
+		findViewById(R.id.btn_network_image_view).setOnClickListener(this);
+
+		// Xml请求
+		findViewById(R.id.btn_xml_request).setOnClickListener(this);
+
+		// post请求
+		findViewById(R.id.btn_post_request).setOnClickListener(this);
+
+		// 综合实例
+		findViewById(R.id.btn_sample).setOnClickListener(this);
+
 	}
 
 	@Override
@@ -30,6 +75,45 @@ public class HomeActivity extends Activity {
 		default:
 			return false;
 		}
+	}
+
+	@Override
+	public void onClick(View v) {
+		Intent intent = new Intent(HomeActivity.this, RequestActivity.class);
+		switch (v.getId()) {
+		case R.id.btn_string_request:
+			intent.putExtra(Constants.Extra.FRAGMENT_INDEX, StringRequestFragment.INDEX);
+			break;
+		case R.id.btn_json_object_request:
+			intent.putExtra(Constants.Extra.FRAGMENT_INDEX, JsonObjectRequestFragment.INDEX);
+			break;
+		case R.id.btn_json_array_request:
+			intent.putExtra(Constants.Extra.FRAGMENT_INDEX, JsonArrayRequestFragment.INDEX);
+			break;
+		case R.id.btn_image_request:
+			intent.putExtra(Constants.Extra.FRAGMENT_INDEX, ImageRequestFragment.INDEX);
+			break;
+		case R.id.btn_image_loader:
+			intent.putExtra(Constants.Extra.FRAGMENT_INDEX, ImageLoaderFragment.INDEX);
+			break;
+		case R.id.btn_network_image_view:
+			intent.putExtra(Constants.Extra.FRAGMENT_INDEX, NetworkImageViewFragment.INDEX);
+			break;
+		case R.id.btn_xml_request:
+			intent.putExtra(Constants.Extra.FRAGMENT_INDEX, XmlRequestFragment.INDEX);
+			break;
+		case R.id.btn_post_request:
+			intent.putExtra(Constants.Extra.FRAGMENT_INDEX, PostRequestFragment.INDEX);
+			break;
+		case R.id.btn_sample:
+			intent.putExtra(Constants.Extra.FRAGMENT_INDEX, SampleFragment.INDEX);
+			break;
+		default:
+			break;
+		}
+		
+		startActivity(intent);
+
 	}
 
 }

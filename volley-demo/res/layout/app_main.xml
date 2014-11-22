@@ -1,65 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" 
-    android:background="@color/app_bg">
+    android:layout_height="match_parent"
+    android:background="@color/app_bg" >
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:orientation="vertical" 
-        android:paddingTop="10dp">
+        android:orientation="vertical"
+        android:padding="10dp" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/data_request_text" />
 
         <Button
             android:id="@+id/btn_string_request"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dip"
-            android:layout_marginRight="10dip" 
-            android:text="@string/string_request"/>
+            android:text="@string/string_request" />
 
         <Button
-            android:id="@+id/btn_json_request"
+            android:id="@+id/btn_json_object_request"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dip"
-            android:layout_marginRight="10dip" 
-            android:text="@string/json_request"/>
+            android:text="@string/json_object_request" />
+        
+        <Button
+            android:id="@+id/btn_json_array_request"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/json_array_request" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="@string/image_request_text" />
 
         <Button
             android:id="@+id/btn_image_request"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dip"
-            android:layout_marginRight="10dip" 
-            android:text="@string/image_request"/>
+            android:text="@string/image_request" />
 
         <Button
-            android:id="@+id/btn_custom_request"
+            android:id="@+id/btn_image_loader"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dip"
-            android:layout_marginRight="10dip" 
-            android:text="@string/custom_request"/>
+            android:text="@string/image_loader" />
+
+        <Button
+            android:id="@+id/btn_network_image_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/network_image_view" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="@string/custom_request_text" />
+
+        <Button
+            android:id="@+id/btn_xml_request"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/xml_request" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="@string/post_request_text" />
 
         <Button
             android:id="@+id/btn_post_request"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dip"
-            android:layout_marginRight="10dip" 
-            android:layout_marginTop="15dp"
-            android:text="@string/post_request"/>
-        
+            android:text="@string/post_request" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="@string/sample_text" />
+
         <Button
             android:id="@+id/btn_sample"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dip"
-            android:layout_marginRight="10dip" 
-            android:layout_marginTop="15dp"
-            android:text="@string/sample"/>
+            android:text="@string/sample" />
     </LinearLayout>
 
 </ScrollView>
