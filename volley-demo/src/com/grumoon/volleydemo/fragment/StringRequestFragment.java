@@ -30,7 +30,7 @@ public class StringRequestFragment extends Fragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-		View view = inflater.inflate(R.layout.fr_string_request, null);
+		View view = inflater.inflate(R.layout.fr_string_request, container,false);
 
 		initView(view);
 

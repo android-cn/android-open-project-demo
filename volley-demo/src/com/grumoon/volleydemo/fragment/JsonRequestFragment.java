@@ -45,7 +45,7 @@ public class JsonRequestFragment extends Fragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-		View view = inflater.inflate(R.layout.fr_json_request, null);
+		View view = inflater.inflate(R.layout.fr_json_request, container,false);
 
 		carDataList = new ArrayList<Map<String, String>>();
 
