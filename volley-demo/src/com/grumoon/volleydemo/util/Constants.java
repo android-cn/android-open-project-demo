@@ -4,7 +4,7 @@ public class Constants {
 	
 	public static final String DEFAULT_STRING_REQUEST_URL="www.baidu.com";
 	public static final String DEFAULT_JSON_REQUEST_URL="http://app.api.autohome.com.cn/autov4.3/cars/seriesprice-a2-pm2-v4.3.0-b42-t1.html";
-	public static final String DEFAULT_XML_REQUEST_URL="";
+	public static final String DEFAULT_XML_REQUEST_URL="http://flash.weather.com.cn/wmaps/xml/china.xml";
 	public static final String DEFAULT_POST_REQUEST_URL="";
 	
 	public static final String[] IMAGE_URLS = new String[] {
