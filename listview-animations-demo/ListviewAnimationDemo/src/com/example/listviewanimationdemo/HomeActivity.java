@@ -34,6 +34,7 @@ public class HomeActivity extends FragmentActivity implements OnClickListener {
 		findViewById(R.id.home_item_add_btn).setOnClickListener(this);
 		findViewById(R.id.home_item_go_github).setOnClickListener(this);
 		findViewById(R.id.home_item_go_la_github).setOnClickListener(this);
+		findViewById(R.id.home_item_go_demo_author_blog).setOnClickListener(this);
 	}
 
 	@Override
@@ -67,6 +68,11 @@ public class HomeActivity extends FragmentActivity implements OnClickListener {
 			Toast.makeText(this, "正在转向ListviewAnimation项目主页...",
 					Toast.LENGTH_SHORT).show();
 			openBrower("https://github.com/nhaarman/ListViewAnimations");
+			break;
+		case R.id.home_item_go_demo_author_blog:
+			Toast.makeText(this, "正在转向Demo作者博客主页...",
+					Toast.LENGTH_SHORT).show();
+			openBrower("http://waylife.github.io");
 			break;
 		default:
 			break;
