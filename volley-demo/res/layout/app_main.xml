@@ -24,16 +24,10 @@
             android:text="@string/string_request" />
 
         <Button
-            android:id="@+id/btn_json_object_request"
+            android:id="@+id/btn_json_request"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/json_object_request" />
-        
-        <Button
-            android:id="@+id/btn_json_array_request"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/json_array_request" />
+            android:text="@string/json_request" />
 
         <TextView
             android:layout_width="match_parent"
@@ -85,19 +79,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/post_request" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:gravity="center"
-            android:text="@string/sample_text" />
-
-        <Button
-            android:id="@+id/btn_sample"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/sample" />
     </LinearLayout>
 
 </ScrollView>

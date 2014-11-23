@@ -1,16 +1,5 @@
 package com.grumoon.volleydemo;
 
-import com.grumoon.volleydemo.fragment.ImageLoaderFragment;
-import com.grumoon.volleydemo.fragment.ImageRequestFragment;
-import com.grumoon.volleydemo.fragment.JsonArrayRequestFragment;
-import com.grumoon.volleydemo.fragment.JsonObjectRequestFragment;
-import com.grumoon.volleydemo.fragment.NetworkImageViewFragment;
-import com.grumoon.volleydemo.fragment.PostRequestFragment;
-import com.grumoon.volleydemo.fragment.SampleFragment;
-import com.grumoon.volleydemo.fragment.StringRequestFragment;
-import com.grumoon.volleydemo.fragment.XmlRequestFragment;
-import com.grumoon.volleydemo.util.Constants;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -18,6 +7,15 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
+
+import com.grumoon.volleydemo.fragment.ImageLoaderFragment;
+import com.grumoon.volleydemo.fragment.ImageRequestFragment;
+import com.grumoon.volleydemo.fragment.JsonRequestFragment;
+import com.grumoon.volleydemo.fragment.NetworkImageViewFragment;
+import com.grumoon.volleydemo.fragment.PostRequestFragment;
+import com.grumoon.volleydemo.fragment.StringRequestFragment;
+import com.grumoon.volleydemo.fragment.XmlRequestFragment;
+import com.grumoon.volleydemo.util.Constants;
 
 public class HomeActivity extends Activity implements OnClickListener {
 
@@ -33,12 +31,9 @@ public class HomeActivity extends Activity implements OnClickListener {
 		// String请求
 		findViewById(R.id.btn_string_request).setOnClickListener(this);
 
-		// JsonObject请求
-		findViewById(R.id.btn_json_object_request).setOnClickListener(this);
+		// Json请求
+		findViewById(R.id.btn_json_request).setOnClickListener(this);
 		
-		// JsonArray请求
-		findViewById(R.id.btn_json_array_request).setOnClickListener(this);
-
 		// Image请求
 		findViewById(R.id.btn_image_request).setOnClickListener(this);
 
@@ -53,10 +48,7 @@ public class HomeActivity extends Activity implements OnClickListener {
 
 		// post请求
 		findViewById(R.id.btn_post_request).setOnClickListener(this);
-
-		// 综合实例
-		findViewById(R.id.btn_sample).setOnClickListener(this);
-
+		
 	}
 
 	@Override
@@ -84,11 +76,8 @@ public class HomeActivity extends Activity implements OnClickListener {
 		case R.id.btn_string_request:
 			intent.putExtra(Constants.Extra.FRAGMENT_INDEX, StringRequestFragment.INDEX);
 			break;
-		case R.id.btn_json_object_request:
-			intent.putExtra(Constants.Extra.FRAGMENT_INDEX, JsonObjectRequestFragment.INDEX);
-			break;
-		case R.id.btn_json_array_request:
-			intent.putExtra(Constants.Extra.FRAGMENT_INDEX, JsonArrayRequestFragment.INDEX);
+		case R.id.btn_json_request:
+			intent.putExtra(Constants.Extra.FRAGMENT_INDEX, JsonRequestFragment.INDEX);
 			break;
 		case R.id.btn_image_request:
 			intent.putExtra(Constants.Extra.FRAGMENT_INDEX, ImageRequestFragment.INDEX);
@@ -104,9 +93,6 @@ public class HomeActivity extends Activity implements OnClickListener {
 			break;
 		case R.id.btn_post_request:
 			intent.putExtra(Constants.Extra.FRAGMENT_INDEX, PostRequestFragment.INDEX);
-			break;
-		case R.id.btn_sample:
-			intent.putExtra(Constants.Extra.FRAGMENT_INDEX, SampleFragment.INDEX);
 			break;
 		default:
 			break;

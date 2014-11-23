@@ -21,17 +21,16 @@ import com.grumoon.volleydemo.util.ToastUtil;
 import com.grumoon.volleydemo.util.VolleyUtil;
 
 public class StringRequestFragment extends Fragment {
-	public static final int INDEX = 1;
+	public static final int INDEX = 11;
 
 	private EditText etUrl;
 	private Button btnSend;
-	private Button btnCancel;
 	private TextView tvResult;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-		View view = inflater.inflate(R.layout.fr_common_request, null);
+		View view = inflater.inflate(R.layout.fr_string_request, null);
 
 		initView(view);
 
@@ -41,7 +40,6 @@ public class StringRequestFragment extends Fragment {
 	private void initView(View view) {
 		etUrl = (EditText) view.findViewById(R.id.et_url);
 		btnSend = (Button) view.findViewById(R.id.btn_send);
-		btnCancel = (Button) view.findViewById(R.id.btn_cancel);
 		tvResult = (TextView) view.findViewById(R.id.tv_result);
 
 		etUrl.setText(Constants.DEFAULT_STRING_REQUEST_URL);
@@ -54,6 +52,9 @@ public class StringRequestFragment extends Fragment {
 					ToastUtil.showToast(getActivity(), "请输入请求地址");
 					return;
 				}
+				//请求之前，先取消之前的请求（取消还没有进行完的请求）
+				VolleyUtil.getQueue(getActivity()).cancelAll(this);
+				tvResult.setText("");
 
 				StringRequest request = new StringRequest(StringUtil.preUrl(etUrl.getText().toString().trim()),
 						new Listener<String>() {
@@ -67,24 +68,27 @@ public class StringRequestFragment extends Fragment {
 
 							@Override
 							public void onErrorResponse(VolleyError arg0) {
-								// TODO Auto-generated method stub
+								ToastUtil.showToast(getActivity(), getResources().getString(R.string.request_fail_text));
 
 							}
 						});
+				//请求加上Tag,用于取消请求
+				request.setTag(this);
+				
 				
 				VolleyUtil.getQueue(getActivity()).add(request);
 
 			}
 		});
-
-		btnCancel.setOnClickListener(new OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				
-				
-			}
-		});
 	}
+
+	@Override
+	public void onDestroyView() {
+		VolleyUtil.getQueue(getActivity()).cancelAll(this);
+		super.onDestroyView();
+	}
+	
+	
+	
 
 }

@@ -16,34 +16,20 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
-            android:inputType="textUri" 
             android:hint="@string/request_url_hint"
-            />
+            android:inputType="textUri" />
 
-        <LinearLayout
+        <Button
+            android:id="@+id/btn_send"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal" >
-
-            <Button
-                android:id="@+id/btn_cancel"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" 
-                android:text="@string/request_cancel"/>
-
-            <Button
-                android:id="@+id/btn_send"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" 
-                android:text="@string/request_send"/>
-        </LinearLayout>
+            android:text="@string/request_send" />
 
         <TextView
             android:id="@+id/tv_result"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content" 
+            android:lineSpacingExtra="2dp"/>
     </LinearLayout>
 
 </ScrollView>
