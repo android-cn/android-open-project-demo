@@ -11,6 +11,7 @@ import android.view.View;
  * Author: wyouflf
  * Date: 13-9-9
  * Time: 下午12:29
+ * 只是一个包装类， 包装传入的对象
  */
 public class ViewFinder {
 

@@ -36,11 +36,19 @@ import java.lang.reflect.Array;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
+/**
+ * @author Caij
+ *此模块只要掌握了注解和反射， 其实很简单
+ */
 public class ViewUtils {
 
     private ViewUtils() {
     }
 
+    /**
+     * 主要传入需要绑定数据的对象
+     * @param view
+     */
     public static void inject(View view) {
         injectObject(view, new ViewFinder(view));
     }
@@ -74,19 +82,19 @@ public class ViewUtils {
 
         Class<?> handlerType = handler.getClass();
 
-        // inject ContentView
+        // inject ContentView 获取传入对象的注解ContentView
         ContentView contentView = handlerType.getAnnotation(ContentView.class);
-        if (contentView != null) {
+        if (contentView != null) { 
             try {
                 Method setContentViewMethod = handlerType.getMethod("setContentView", int.class);
-                setContentViewMethod.invoke(handler, contentView.value());
+                setContentViewMethod.invoke(handler, contentView.value()); //赋值
             } catch (Throwable e) {
                 LogUtils.e(e.getMessage(), e);
             }
         }
 
-        // inject view
-        Field[] fields = handlerType.getDeclaredFields();
+        // inject view 获取所有的成员变量
+        Field[] fields = handlerType.getDeclaredFields(); 
         if (fields != null && fields.length > 0) {
             for (Field field : fields) {
                 ViewInject viewInject = field.getAnnotation(ViewInject.class);
@@ -131,7 +139,7 @@ public class ViewUtils {
             }
         }
 
-        // inject event
+        // inject event 获取所有的方法
         Method[] methods = handlerType.getDeclaredMethods();
         if (methods != null && methods.length > 0) {
             for (Method method : methods) {

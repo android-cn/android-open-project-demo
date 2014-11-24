@@ -72,7 +72,7 @@ public class HttpUtils {
 
     public HttpUtils(int connTimeout, String userAgent) {
         HttpParams params = new BasicHttpParams();
-
+        //主要是配置
         ConnManagerParams.setTimeout(params, connTimeout);
         HttpConnectionParams.setSoTimeout(params, connTimeout);
         HttpConnectionParams.setConnectionTimeout(params, connTimeout);
@@ -95,7 +95,7 @@ public class HttpUtils {
 
         httpClient = new DefaultHttpClient(new ThreadSafeClientConnManager(params, schemeRegistry), params);
 
-        httpClient.setHttpRequestRetryHandler(new RetryHandler(DEFAULT_RETRY_TIMES));
+        httpClient.setHttpRequestRetryHandler(new RetryHandler(DEFAULT_RETRY_TIMES));  //最多重试3次
 
         httpClient.addRequestInterceptor(new HttpRequestInterceptor() {
             @Override
@@ -139,7 +139,7 @@ public class HttpUtils {
     private static final String HEADER_ACCEPT_ENCODING = "Accept-Encoding";
     private static final String ENCODING_GZIP = "gzip";
 
-    private final static int DEFAULT_POOL_SIZE = 3;
+    private final static int DEFAULT_POOL_SIZE = 3; //默认3个线程
     private final static PriorityExecutor EXECUTOR = new PriorityExecutor(DEFAULT_POOL_SIZE);
 
     public HttpClient getHttpClient() {

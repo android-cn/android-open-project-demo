@@ -83,6 +83,10 @@ public class EventListenerManager {
         }
     }
 
+    /**
+     * @author Caij
+     *涉及到动态代理
+     */
     public static class DynamicHandler implements InvocationHandler {
         private WeakReference<Object> handlerRef;
         private final HashMap<String, Method> methodMap = new HashMap<String, Method>(1);

@@ -105,7 +105,7 @@ public class HttpHandler<T> extends PriorityAsyncTask<Object, Object, Void> impl
                     fileLen = downloadFile.length();
                 }
                 if (fileLen > 0) {
-                    request.setHeader("RANGE", "bytes=" + fileLen + "-");
+                    request.setHeader("RANGE", "bytes=" + fileLen + "-"); //这里是断点下载的关键
                 }
             }
 
@@ -113,22 +113,23 @@ public class HttpHandler<T> extends PriorityAsyncTask<Object, Object, Void> impl
             IOException exception = null;
             try {
                 requestMethod = request.getMethod();
+                //主要是判断请求是否存在缓存， 存在直接从缓存中读取，直接返回。
                 if (HttpUtils.sHttpCache.isEnabled(requestMethod)) {
                     String result = HttpUtils.sHttpCache.get(requestUrl);
                     if (result != null) {
-                        return new ResponseInfo<T>(null, (T) result, true);
+                        return new ResponseInfo<T>(null, (T) result, true);   
                     }
                 }
 
                 ResponseInfo<T> responseInfo = null;
                 if (!isCancelled()) {
-                    HttpResponse response = client.execute(request, context);
-                    responseInfo = handleResponse(response);
+                    HttpResponse response = client.execute(request, context);  //获取网络返回的数据
+                    responseInfo = handleResponse(response); //将数据包装
                 }
                 return responseInfo;
             } catch (UnknownHostException e) {
                 exception = e;
-                retry = retryHandler.retryRequest(exception, ++retriedCount, context);
+                retry = retryHandler.retryRequest(exception, ++retriedCount, context);  //重试
             } catch (IOException e) {
                 exception = e;
                 retry = retryHandler.retryRequest(exception, ++retriedCount, context);
@@ -153,6 +154,7 @@ public class HttpHandler<T> extends PriorityAsyncTask<Object, Object, Void> impl
     protected Void doInBackground(Object... params) {
         if (this.state == State.CANCELLED || params == null || params.length == 0) return null;
 
+        //主要是判断是否是下载文件
         if (params.length > 3) {
             fileSavePath = String.valueOf(params[1]);
             isDownloadingFile = fileSavePath != null;
@@ -169,17 +171,17 @@ public class HttpHandler<T> extends PriorityAsyncTask<Object, Object, Void> impl
                 callback.setRequestUrl(requestUrl);
             }
 
-            this.publishProgress(UPDATE_START);
+            this.publishProgress(UPDATE_START); //回调， 开始
 
             lastUpdateTime = SystemClock.uptimeMillis();
 
             ResponseInfo<T> responseInfo = sendRequest(request);
             if (responseInfo != null) {
-                this.publishProgress(UPDATE_SUCCESS, responseInfo);
+                this.publishProgress(UPDATE_SUCCESS, responseInfo); //回调， 成功
                 return null;
             }
         } catch (HttpException e) {
-            this.publishProgress(UPDATE_FAILURE, e, e.getMessage());
+            this.publishProgress(UPDATE_FAILURE, e, e.getMessage()); //回调， 失败
         }
 
         return null;
@@ -190,6 +192,10 @@ public class HttpHandler<T> extends PriorityAsyncTask<Object, Object, Void> impl
     private final static int UPDATE_FAILURE = 3;
     private final static int UPDATE_SUCCESS = 4;
 
+    /* (non-Javadoc)
+     * @see com.lidroid.xutils.task.PriorityAsyncTask#onProgressUpdate(Progress[])
+     *回调
+     */
     @Override
     @SuppressWarnings("unchecked")
     protected void onProgressUpdate(Object... values) {
@@ -245,7 +251,7 @@ public class HttpHandler<T> extends PriorityAsyncTask<Object, Object, Void> impl
                     StringDownloadHandler downloadHandler = new StringDownloadHandler();
                     result = downloadHandler.handleEntity(entity, this, charset);
                     if (HttpUtils.sHttpCache.isEnabled(requestMethod)) {
-                        HttpUtils.sHttpCache.put(requestUrl, (String) result, expiry);
+                        HttpUtils.sHttpCache.put(requestUrl, (String) result, expiry);  //只有是字符串才会缓存，文件不缓存， 否则OOM
                     }
                 }
             }

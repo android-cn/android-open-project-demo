@@ -72,7 +72,7 @@ public class DbUtils {
         SQLiteDatabase database = dao.database;
         int oldVersion = database.getVersion();
         int newVersion = daoConfig.getDbVersion();
-        if (oldVersion != newVersion) {
+        if (oldVersion != newVersion) { //数据库升级
             if (oldVersion != 0) {
                 DbUpgradeListener upgradeListener = daoConfig.getDbUpgradeListener();
                 if (upgradeListener != null) {
