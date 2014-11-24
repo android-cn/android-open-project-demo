@@ -29,8 +29,7 @@ public class NetworkImageViewAdapter extends ImageBaseAdapter{
 		NetworkImageView networkImageView=(NetworkImageView)imageView;
 		networkImageView.setDefaultImageResId(R.drawable.ic_empty);  
 		networkImageView.setErrorImageResId(R.drawable.ic_empty);  
-		networkImageView.setImageUrl(StringUtil.preUrl(imageUrl),  
-		                imageLoader); 
+		networkImageView.setImageUrl(StringUtil.preUrl(imageUrl),  imageLoader); 
 	}
 
 }

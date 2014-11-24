@@ -41,13 +41,12 @@ public class ImageRequestAdapter extends ImageBaseAdapter {
 			@Override
 			public void onResponse(Bitmap bitmap) {
 				imageView.setImageBitmap(bitmap);
-				
 			}
 		}, 0, 0, Config.RGB_565, new ErrorListener() {
 
 			@Override
 			public void onErrorResponse(VolleyError arg0) {
-
+				imageView.setImageResource(R.drawable.ic_empty);
 			}
 		});
 		

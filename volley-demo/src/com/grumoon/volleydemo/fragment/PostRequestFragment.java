@@ -64,22 +64,27 @@ public class PostRequestFragment extends Fragment {
 
 				tvResult.setText("");
 
-				StringRequest request = new StringRequest(Method.POST, StringUtil.preUrl(etUrl.getText().toString().trim()), new Listener<String>() {
+				Listener<String> listener = new Listener<String>() {
 
 					@Override
 					public void onResponse(String response) {
 						tvResult.setText(response);
 
 					}
-				}, new ErrorListener() {
+				};
+
+				ErrorListener errorListener = new ErrorListener() {
 
 					@Override
 					public void onErrorResponse(VolleyError arg0) {
 						ToastUtil.showToast(getActivity(), getResources().getString(R.string.request_fail_text));
 
 					}
-				}) {
+				};
 
+				StringRequest request = new StringRequest(Method.POST, StringUtil.preUrl(etUrl.getText().toString().trim()), listener, errorListener) {
+
+					//重写getParams设置post请求的参数
 					@Override
 					protected Map<String, String> getParams() throws AuthFailureError {
 						Map<String, String> paramMap = new HashMap<String, String>();

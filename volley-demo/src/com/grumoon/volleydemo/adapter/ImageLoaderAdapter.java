@@ -33,6 +33,7 @@ public class ImageLoaderAdapter extends ImageBaseAdapter{
 		ImageContainer container;
 		
 		try {
+			//如果当前ImageView上存在请求，先取消
 			if(imageView.getTag()!=null)
 			{
 				container=(ImageContainer)imageView.getTag();
@@ -46,6 +47,7 @@ public class ImageLoaderAdapter extends ImageBaseAdapter{
 		
 		container= imageLoader.get(StringUtil.preUrl(imageUrl),listener);
 		
+		//在ImageView上存储当前请求的Container，用于取消请求
 		imageView.setTag(container);
 		
 	}

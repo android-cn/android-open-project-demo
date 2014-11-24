@@ -73,8 +73,6 @@ public class XmlRequestFragment extends Fragment {
 										weatherMap.put("wind", parser.getAttributeValue(8));
 
 										weatherDataList.add(weatherMap);
-
-
 									}
 									break;
 								}
