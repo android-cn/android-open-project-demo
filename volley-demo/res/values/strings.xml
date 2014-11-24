@@ -35,5 +35,7 @@
     <string name="request_send">发送</string>
     
     <string name="request_fail_text">请求失败</string>
+    
+    <string name="request_params_text">参数格式:key=value，多个参数用 ; 分隔</string>
  
 </resources>
