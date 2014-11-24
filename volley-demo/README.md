@@ -1,4 +1,3 @@
 Volley Demo
 ================================
-
-<a href="apk/VolleyDemo.apk" target="_blank" title="点击下载到本地">apk下载</a>
+[apk下载](https://github.com/android-cn/android-open-project-demo/blob/master/volley-demo/apk/VolleyDemo.apk)
