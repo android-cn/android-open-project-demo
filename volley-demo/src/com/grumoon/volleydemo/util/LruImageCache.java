@@ -4,14 +4,18 @@ import android.graphics.Bitmap;
 import android.support.v4.util.LruCache;
 
 import com.android.volley.toolbox.ImageLoader.ImageCache;
-
+/**
+ * LRU图片缓存
+ * @author grumoon
+ *
+ */
 public class LruImageCache implements ImageCache{
 
-	private LruCache<String, Bitmap> mCache;  
+	private LruCache<String, Bitmap> lruCache;  
 	  
     public LruImageCache() {  
         int maxSize = 10 * 1024 * 1024;  
-        mCache = new LruCache<String, Bitmap>(maxSize) {  
+        lruCache = new LruCache<String, Bitmap>(maxSize) {  
             @Override  
             protected int sizeOf(String key, Bitmap bitmap) {  
                 return bitmap.getRowBytes() * bitmap.getHeight();  
@@ -21,12 +25,12 @@ public class LruImageCache implements ImageCache{
   
     @Override  
     public Bitmap getBitmap(String url) {  
-        return mCache.get(url);  
+        return lruCache.get(url);  
     }  
   
     @Override  
     public void putBitmap(String url, Bitmap bitmap) {  
-        mCache.put(url, bitmap);  
+    	lruCache.put(url, bitmap);  
     }  
 
 }

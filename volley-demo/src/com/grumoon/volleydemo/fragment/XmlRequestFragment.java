@@ -6,30 +6,26 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.json.JSONArray;
-import org.json.JSONObject;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
-
-import com.android.volley.VolleyError;
-import com.android.volley.Response.ErrorListener;
-import com.android.volley.Response.Listener;
-import com.android.volley.toolbox.JsonObjectRequest;
-import com.grumoon.volleydemo.R;
-import com.grumoon.volleydemo.custom.XmlRequest;
-import com.grumoon.volleydemo.util.Constants;
-import com.grumoon.volleydemo.util.StringUtil;
-import com.grumoon.volleydemo.util.ToastUtil;
-import com.grumoon.volleydemo.util.VolleyUtil;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+
+import com.android.volley.Response.ErrorListener;
+import com.android.volley.Response.Listener;
+import com.android.volley.VolleyError;
+import com.grumoon.volleydemo.R;
+import com.grumoon.volleydemo.custom.XmlRequest;
+import com.grumoon.volleydemo.util.Constants;
+import com.grumoon.volleydemo.util.StringUtil;
+import com.grumoon.volleydemo.util.ToastUtil;
+import com.grumoon.volleydemo.util.VolleyUtil;
 
 public class XmlRequestFragment extends Fragment {
 	public static final int INDEX = 31;
@@ -73,12 +69,10 @@ public class XmlRequestFragment extends Fragment {
 
 										weatherMap.put("city", parser.getAttributeValue(2));
 										weatherMap.put("detail", parser.getAttributeValue(5));
-										weatherMap.put("temp", parser.getAttributeValue(6)+"℃-"+parser.getAttributeValue(7)+"℃");
+										weatherMap.put("temp", parser.getAttributeValue(7)+"℃ 到 "+parser.getAttributeValue(6)+"℃");
 										weatherMap.put("wind", parser.getAttributeValue(8));
 
 										weatherDataList.add(weatherMap);
-
-
 									}
 									break;
 								}
