@@ -24,7 +24,6 @@ public class ImageRequestAdapter extends ImageBaseAdapter {
 
 	@Override
 	int getItemLayout() {
-		// TODO Auto-generated method stub
 		return R.layout.fr_image_request_list_item;
 	}
 

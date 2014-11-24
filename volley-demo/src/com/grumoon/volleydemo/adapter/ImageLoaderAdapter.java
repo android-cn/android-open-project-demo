@@ -13,13 +13,11 @@ import com.grumoon.volleydemo.util.VolleyUtil;
 
 public class ImageLoaderAdapter extends ImageBaseAdapter{
 	
-	private Context context;
 	private ImageLoader imageLoader;
 	
 
 	public ImageLoaderAdapter(Context context, String[] imageUrlArray) {
 		super(context, imageUrlArray);
-		this.context=context;
 		this.imageLoader=new ImageLoader(VolleyUtil.getQueue(context), new LruImageCache());
 	}
 
@@ -41,7 +39,7 @@ public class ImageLoaderAdapter extends ImageBaseAdapter{
 				container.cancelRequest();
 			}
 		} catch (Exception e) {
-			// TODO: handle exception
+
 		}
 		
 		ImageListener listener=ImageLoader.getImageListener(imageView, R.drawable.ic_empty, R.drawable.ic_empty);

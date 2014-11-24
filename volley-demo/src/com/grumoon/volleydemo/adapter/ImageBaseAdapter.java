@@ -12,12 +12,10 @@ import com.grumoon.volleydemo.R;
 public abstract class ImageBaseAdapter extends BaseAdapter {
 
 	private String[] imageUrlArray;
-	private Context context;
 	private LayoutInflater inflater;
 
 	public ImageBaseAdapter(Context context,String[] imageUrlArray) {
-
-		this.context = context;
+		
 		this.imageUrlArray = imageUrlArray;
 		this.inflater = LayoutInflater.from(context);
 	}

@@ -5,10 +5,10 @@ public class Constants {
 	public static final String DEFAULT_STRING_REQUEST_URL="www.baidu.com";
 	public static final String DEFAULT_JSON_REQUEST_URL="http://app.api.autohome.com.cn/autov4.3/cars/seriesprice-a2-pm2-v4.3.0-b42-t1.html";
 	public static final String DEFAULT_XML_REQUEST_URL="http://flash.weather.com.cn/wmaps/xml/china.xml";
-	public static final String DEFAULT_POST_REQUEST_URL="http://webservice.webxml.com.cn/WebServices/MobileCodeWS.asmx/getMobileCodeInfo";
+	public static final String DEFAULT_POST_REQUEST_URL="webservice.webxml.com.cn/WebServices/MobileCodeWS.asmx/getMobileCodeInfo";
 	
 	public static final String[] IMAGE_URLS = new String[] {
-		// Light
+		// 小图
 		"http://car0.autoimg.cn/upload/2014/10/3/s_20141003015514509-110.jpg",
 		"http://car0.autoimg.cn/upload/2014/10/3/s_20141003015436443-110.jpg",
 		"http://car0.autoimg.cn/upload/2014/9/25/s_2014092522261885926411.jpg",
@@ -210,7 +210,7 @@ public class Constants {
 		"http://car0.autoimg.cn/upload/spec/5742/s_20101014155343862264.jpg",
 		"http://car0.autoimg.cn/upload/spec/5742/s_20101014155341643264.jpg",
 		
-		// heavy
+		// 大图
 		"http://car0.autoimg.cn/upload/spec/5742/w_20101014155156565264.jpg",
 		"http://car0.autoimg.cn/upload/spec/5742/w_20101014155157815264.jpg",
 		"http://car0.autoimg.cn/upload/spec/5742/w_20101014155159018264.jpg",
@@ -320,7 +320,6 @@ public class Constants {
 	
 	public static class Extra {
 		public static final String FRAGMENT_INDEX = "com.grumoon.volleydemo.FRAGMENT_INDEX";
-		
 	}
 
 }
