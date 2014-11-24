@@ -65,6 +65,7 @@ public abstract class MenuAnimationHandler {
         subActionItem.view.setScaleY(1);
         subActionItem.view.setAlpha(1);
         if(actionType == ActionType.OPENING) {
+            //与父视图的边框距离，只要设置左上两个方位就能确定位置
             params.setMargins(subActionItem.x, subActionItem.y, 0, 0);
             subActionItem.view.setLayoutParams(params);
         }

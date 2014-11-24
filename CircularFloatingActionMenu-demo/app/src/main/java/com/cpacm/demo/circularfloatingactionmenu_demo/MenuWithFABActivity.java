@@ -57,7 +57,7 @@ public class MenuWithFABActivity extends Activity {
         int redActionMenuRadius = getResources().getDimensionPixelSize(R.dimen.red_action_menu_radius);
         int blueSubActionButtonSize = getResources().getDimensionPixelSize(R.dimen.blue_sub_action_button_size);
         int blueSubActionButtonContentMargin = getResources().getDimensionPixelSize(R.dimen.blue_sub_action_button_content_margin);
-            
+
         ImageView fabIconStar = new ImageView(this);
         fabIconStar.setImageDrawable(getResources().getDrawable(R.drawable.ic_action_important));
 

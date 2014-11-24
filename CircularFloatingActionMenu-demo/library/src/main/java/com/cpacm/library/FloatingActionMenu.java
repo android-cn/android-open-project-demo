@@ -10,6 +10,9 @@ import android.graphics.PathMeasure;
 import android.graphics.Point;
 import android.graphics.Rect;
 import android.graphics.RectF;
+import android.util.DisplayMetrics;
+import android.util.Log;
+import android.view.Display;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -231,13 +234,25 @@ public class FloatingActionMenu {
         int[] coords = new int[2];
         // This method returns a x and y values that can be larger than the dimensions of the device screen.
         mainActionView.getLocationOnScreen(coords);
-        Rect activityFrame = new Rect(); getActivityContentView().getWindowVisibleDisplayFrame(activityFrame);
+        Rect activityFrame = new Rect();
+        getActivityContentView().getWindowVisibleDisplayFrame(activityFrame);
         // So, we need to deduce the offsets.
         coords[0] -= (getScreenSize().x - getActivityContentView().getMeasuredWidth());
         coords[1] -= (activityFrame.height() + activityFrame.top - getActivityContentView().getMeasuredHeight());
+        //魅族坑爹的长度(好像是把下面的100高度左右给截去做呼吸灯了)
+        if(activityFrame.height() + activityFrame.top == 1800){
+            coords[1]+=100;
+        }
         return new Point(coords[0], coords[1]);
     }
 
+    public float getDensity(){
+        DisplayMetrics metric = new DisplayMetrics();
+        Display display;
+        display = ((Activity)mainActionView.getContext()).getWindowManager().getDefaultDisplay();
+        display.getMetrics(metric);
+        return metric.density;
+    }
     /**
      * Returns the center point of the main action view
      * @return
@@ -256,8 +271,8 @@ public class FloatingActionMenu {
         // Create an arc that starts from startAngle and ends at endAngle
         // in an area that is as large as 4*radius^2
         Point center = getActionViewCenter();
+        //内切弧形路径
         RectF area = new RectF(center.x - radius, center.y - radius, center.x + radius, center.y + radius);
-
         Path orbit = new Path();
         orbit.addArc(area, startAngle, endAngle - startAngle);
 
@@ -311,6 +326,7 @@ public class FloatingActionMenu {
     private Point getScreenSize() {
         Point size = new Point();
         ((Activity)mainActionView.getContext()).getWindowManager().getDefaultDisplay().getSize(size);
+
         return size;
     }
 

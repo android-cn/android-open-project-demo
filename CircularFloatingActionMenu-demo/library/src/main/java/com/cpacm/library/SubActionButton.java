@@ -42,10 +42,13 @@ public class SubActionButton extends FrameLayout {
             }
         }
         else {
+            //通过mutate()方法解决Drawable共用一个内存空间的问题
             backgroundDrawable = backgroundDrawable.mutate().getConstantState().newDrawable();
         }
+        //设置背景（考虑版本问题）
         setBackgroundResource(backgroundDrawable);
         if(contentView != null) {
+            //添加view(即菜单的选项视图)
             setContentView(contentView, contentParams);
         }
         setClickable(true);
@@ -77,6 +80,7 @@ public class SubActionButton extends FrameLayout {
 
     private void setBackgroundResource(Drawable drawable) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+            //设置背景
             setBackground(drawable);
         }
         else {
@@ -86,6 +90,7 @@ public class SubActionButton extends FrameLayout {
 
     /**
      * A builder for {@link com.cpacm.library.SubActionButton} in conventional Java Builder format
+     * 菜单选项的建造器
      */
     public static class Builder {
 
@@ -102,6 +107,7 @@ public class SubActionButton extends FrameLayout {
             // Default SubActionButton settings
             int size = activity.getResources().getDimensionPixelSize(R.dimen.sub_action_button_size);
             LayoutParams params = new LayoutParams(size, size, Gravity.TOP | Gravity.LEFT);
+
             setLayoutParams(params);
             setTheme(SubActionButton.THEME_LIGHT);
         }
