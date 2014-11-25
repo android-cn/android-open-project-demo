@@ -27,15 +27,15 @@ public class BarFragment extends SherlockFragment {
 
         ArrayList<Bar> points = new ArrayList<Bar>();
         Bar d = new Bar();
-        d.setColor(Color.parseColor("##99CC00"));
+        d.setColor(Color.parseColor("#99CC00"));
         d.setName("小明");
         d.setValue(10);
         Bar d2 = new Bar();
-        d2.setColor(Color.parseColor("##99CC00"));
+        d2.setColor(Color.parseColor("#99CC00"));
         d2.setName("小四");
         d2.setValue(20);
         Bar d3 = new Bar();
-        d3.setColor(Color.parseColor("##CCCC99"));
+        d3.setColor(Color.parseColor("#CCCC99"));
         d3.setName("大大");
         d3.setStackedBar(true);
         d3.AddStackValue(new BarStackSegment(2, Color.parseColor("#99CC00")));
