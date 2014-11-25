@@ -10,6 +10,6 @@ Android 开源项目 Demo
 - 若没有自己的 Code Format 文件，使用 [common](https://github.com/android-cn/android-open-project-demo/tree/master/common) 文件夹下 code format，code template 文件；  
 - 文件夹下需要有名为 apk 的子文件夹，用于存放可运行 APK 文件；  
 - 文件夹下需要有名为 README.md 的介绍文件，其中包含以下内容。  
-1. Demo Download  
-2. Screenshot 截图可使用 [licecap](http://www.cockos.com/licecap/)  
+(1). Demo Download  
+(2). Screenshot 截图可使用 [licecap](http://www.cockos.com/licecap/)  
 具体可参考：[EventBus Demo ReadMe](https://github.com/android-cn/android-open-project-demo/tree/master/eventbus-demo)  
