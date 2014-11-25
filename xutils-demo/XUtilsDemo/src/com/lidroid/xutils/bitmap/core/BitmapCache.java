@@ -130,6 +130,13 @@ public class BitmapCache {
         }
     }
 
+    /**
+     * 下载图片
+     * @param uri
+     * @param config
+     * @param task
+     * @return
+     */
     public Bitmap downloadBitmap(String uri, BitmapDisplayConfig config, final BitmapUtils.BitmapLoadTask<?> task) {
 
         BitmapMeta bitmapMeta = new BitmapMeta();
@@ -150,6 +157,7 @@ public class BitmapCache {
                     try {
                         snapshot = mDiskLruCache.get(uri);
                         if (snapshot == null) {
+                        	//先将数据写入闪存中
                             LruDiskCache.Editor editor = mDiskLruCache.edit(uri);
                             if (editor != null) {
                                 outputStream = editor.newOutputStream(DISK_CACHE_INDEX);
@@ -161,6 +169,7 @@ public class BitmapCache {
                                     editor.setEntryExpiryTimestamp(bitmapMeta.expiryTimestamp);
                                     editor.commit();
                                 }
+                                //存闪存中读出
                                 snapshot = mDiskLruCache.get(uri);
                             }
                         }
@@ -192,6 +201,7 @@ public class BitmapCache {
 
             if (bitmap != null) {
                 bitmap = rotateBitmapIfNeeded(uri, config, bitmap);
+                //添加到运行内存的缓存中
                 bitmap = addBitmapToMemoryCache(uri, config, bitmap, bitmapMeta.expiryTimestamp);
             }
             return bitmap;
@@ -383,19 +393,34 @@ public class BitmapCache {
         }
     }
 
+    /**
+     * @author Caij
+     * 存放图片数据的包装对象
+     */
     private class BitmapMeta {
         public FileInputStream inputStream;
         public byte[] data;
         public long expiryTimestamp;
     }
 
+    /**
+     * 流转化为bitmap， 而且根据config压缩图片
+     * @param bitmapMeta
+     * @param config
+     * @return
+     * @throws IOException
+     */
     private Bitmap decodeBitmapMeta(BitmapMeta bitmapMeta, BitmapDisplayConfig config) throws IOException {
         if (bitmapMeta == null) return null;
         Bitmap bitmap = null;
         if (bitmapMeta.inputStream != null) {
+        	//BitmapFromDescriptor这一块使用的是这个方法而不是直接用流， 在网上找了一些
+        	//资料， 这种转化能避免一些莫名其妙的图片加载不出来的问题
             if (config == null || config.isShowOriginal()) {
+            	//原图
                 bitmap = BitmapDecoder.decodeFileDescriptor(bitmapMeta.inputStream.getFD());
             } else {
+            	//压缩图
                 bitmap = BitmapDecoder.decodeSampledBitmapFromDescriptor(
                         bitmapMeta.inputStream.getFD(),
                         config.getBitmapMaxSize(),

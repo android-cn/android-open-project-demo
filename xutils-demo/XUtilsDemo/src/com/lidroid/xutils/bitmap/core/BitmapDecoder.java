@@ -74,10 +74,11 @@ public class BitmapDecoder {
     public static Bitmap decodeSampledBitmapFromDescriptor(FileDescriptor fileDescriptor, BitmapSize maxSize, Bitmap.Config config) {
         synchronized (lock) {
             final BitmapFactory.Options options = new BitmapFactory.Options();
-            options.inJustDecodeBounds = true;
+            options.inJustDecodeBounds = true; // 只读头信息
             options.inPurgeable = true;
             options.inInputShareable = true;
             BitmapFactory.decodeFileDescriptor(fileDescriptor, null, options);
+            //这个就是图片压缩倍数的参数
             options.inSampleSize = calculateInSampleSize(options, maxSize.getWidth(), maxSize.getHeight());
             options.inJustDecodeBounds = false;
             if (config != null) {
@@ -169,6 +170,13 @@ public class BitmapDecoder {
         }
     }
 
+    /**
+     * 图片压缩倍数的计算
+     * @param options
+     * @param maxWidth
+     * @param maxHeight
+     * @return
+     */
     public static int calculateInSampleSize(BitmapFactory.Options options, int maxWidth, int maxHeight) {
         final int height = options.outHeight;
         final int width = options.outWidth;

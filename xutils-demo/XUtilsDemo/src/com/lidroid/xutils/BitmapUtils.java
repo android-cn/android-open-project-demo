@@ -47,8 +47,8 @@ public class BitmapUtils implements TaskHandler {
     private final Object pauseTaskLock = new Object();
 
     private Context context;
-    private BitmapGlobalConfig globalConfig;
-    private BitmapDisplayConfig defaultDisplayConfig;
+    private BitmapGlobalConfig globalConfig;  //这个数缓存配置
+    private BitmapDisplayConfig defaultDisplayConfig;  //这个是图片的配置，是否压缩，  显示大小等。
 
     /////////////////////////////////////////////// create ///////////////////////////////////////////////////
     public BitmapUtils(Context context) {
@@ -219,15 +219,16 @@ public class BitmapUtils implements TaskHandler {
         }
 
         if (callBack == null) {
-            callBack = new DefaultBitmapLoadCallBack<T>();
+            callBack = new DefaultBitmapLoadCallBack<T>();  //默认的回调
         }
 
         if (displayConfig == null || displayConfig == defaultDisplayConfig) {
-            displayConfig = defaultDisplayConfig.cloneNew();
+            displayConfig = defaultDisplayConfig.cloneNew();// 默认展示图片的设置
         }
 
         // Optimize Max Size
         BitmapSize size = displayConfig.getBitmapMaxSize();
+        //配置显示控件的大小
         displayConfig.setBitmapMaxSize(BitmapCommonUtils.optimizeMaxSizeByView(container, size.getWidth(), size.getHeight()));
 
         container.clearAnimation();
@@ -240,7 +241,7 @@ public class BitmapUtils implements TaskHandler {
         // start loading
         callBack.onPreLoad(container, uri, displayConfig);
 
-        // find bitmap from mem cache.
+        // find bitmap from mem cache. 优先从运行内存的缓存中读取
         Bitmap bitmap = globalConfig.getBitmapCache().getBitmapFromMemCache(uri, displayConfig);
 
         if (bitmap != null) {
@@ -251,7 +252,7 @@ public class BitmapUtils implements TaskHandler {
                     bitmap,
                     displayConfig,
                     BitmapLoadFrom.MEMORY_CACHE);
-        } else if (!bitmapLoadTaskExist(container, uri, callBack)) {
+        } else if (!bitmapLoadTaskExist(container, uri, callBack)) { //这里判断任务是否正在加载中
 
             final BitmapLoadTask<T> loadTask = new BitmapLoadTask<T>(container, uri, displayConfig, callBack);
 
@@ -260,7 +261,8 @@ public class BitmapUtils implements TaskHandler {
             File diskCacheFile = this.getBitmapFileFromDiskCache(uri);
             boolean diskCacheExist = diskCacheFile != null && diskCacheFile.exists();
             if (diskCacheExist && executor.isBusy()) {
-                executor = globalConfig.getDiskCacheExecutor();
+            	//如果闪存中有缓存，而且BitmapLoadExecutor线程池不够用就使用DiskCacheExecutor的线程池
+                executor = globalConfig.getDiskCacheExecutor();  
             }
             // set loading image
             Drawable loadingDrawable = displayConfig.getLoadingDrawable();
@@ -381,9 +383,10 @@ public class BitmapUtils implements TaskHandler {
     }
 
     private static <T extends View> boolean bitmapLoadTaskExist(T container, String uri, BitmapLoadCallBack<T> callBack) {
+    	//这里的判断个人感觉可以优化， 其实如果uri一样， 其实就可以视作为任务存在。
         final BitmapLoadTask<T> oldLoadTask = getBitmapTaskFromContainer(container, callBack);
 
-        if (oldLoadTask != null) {
+        if (oldLoadTask != null) {  
             final String oldUrl = oldLoadTask.uri;
             if (TextUtils.isEmpty(oldUrl) || !oldUrl.equals(uri)) {
                 oldLoadTask.cancel(true);
@@ -394,6 +397,11 @@ public class BitmapUtils implements TaskHandler {
         return false;
     }
 
+    /**
+     * @author Caij
+     * 加载图片的异步任务
+     * @param <T>
+     */
     public class BitmapLoadTask<T extends View> extends PriorityAsyncTask<Object, Object, Bitmap> {
         private final String uri;
         private final WeakReference<T> containerReference;
@@ -417,9 +425,9 @@ public class BitmapUtils implements TaskHandler {
         protected Bitmap doInBackground(Object... params) {
 
             synchronized (pauseTaskLock) {
-                while (pauseTask && !this.isCancelled()) {
+                while (pauseTask && !this.isCancelled()) {  
                     try {
-                        pauseTaskLock.wait();
+                        pauseTaskLock.wait(); //将锁释放， 让其他Bitmap任务也进来。 当暂停且没有销毁的的时候就是一个死循环
                         if (cancelAllTask) {
                             return null;
                         }
@@ -433,11 +441,14 @@ public class BitmapUtils implements TaskHandler {
             // get cache from disk cache
             if (!this.isCancelled() && this.getTargetContainer() != null) {
                 this.publishProgress(PROGRESS_LOAD_STARTED);
+                //这里是优先从闪存内存中读取
                 bitmap = globalConfig.getBitmapCache().getBitmapFromDiskCache(uri, displayConfig);
+                //from 默认是BitmapLoadFrom.DISK_CACHE， 所以这里不需要设置
             }
 
             // download image
             if (bitmap == null && !this.isCancelled() && this.getTargetContainer() != null) {
+            	//开启下载任务
                 bitmap = globalConfig.getBitmapCache().downloadBitmap(uri, displayConfig, this);
                 from = BitmapLoadFrom.URI;
             }

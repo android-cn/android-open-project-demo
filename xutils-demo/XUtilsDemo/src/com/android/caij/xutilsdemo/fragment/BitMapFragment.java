@@ -73,7 +73,7 @@ public class BitMapFragment extends Fragment{
 
 		public MyAdapter(Context context) {
 			super();
-			this.imgSrcList = new ArrayList<>();
+			this.imgSrcList = new ArrayList<String>();
 			this.context = context;
 		}
 

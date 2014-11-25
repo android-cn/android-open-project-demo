@@ -78,7 +78,7 @@ public class BitmapDisplayConfig {
         this.autoRotation = autoRotation;
     }
 
-    public boolean isShowOriginal() {
+    public boolean isShowOriginal() { //是否显示原图
         return showOriginal;
     }
 
