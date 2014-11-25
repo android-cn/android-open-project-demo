@@ -1,12 +1,11 @@
-apply plugin: 'android'
+apply plugin: 'com.android.application'
 apply plugin: 'android-apt'
 
 android {
     compileSdkVersion 19
-    buildToolsVersion "19.0.3"
+    buildToolsVersion "19.1.0"
 
     defaultConfig {
-        packageName "com.promeg.learn.otto.demo"
         minSdkVersion 14
         targetSdkVersion 19
         versionCode 1

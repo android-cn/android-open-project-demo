@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.promeg.learn.otto.demo" >
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name="com.promeg.learn.otto.demo.app.OttoDemoApp"
         android:allowBackup="true"
