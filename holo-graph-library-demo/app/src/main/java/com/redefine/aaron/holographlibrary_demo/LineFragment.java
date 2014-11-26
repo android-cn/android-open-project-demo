@@ -40,7 +40,7 @@ public class LineFragment extends SherlockFragment {
         p.setX(10);
         p.setY(7);
         l.addPoint(p);
-        l.setColor(Color.parseColor("##0000CC"));
+        l.setColor(Color.parseColor("#99CC00"));
 
         LineGraph li = (LineGraph) v.findViewById(R.id.linegraph);
         li.addLine(l);
