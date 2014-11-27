@@ -8,12 +8,10 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import com.viewpagerindicator.CirclePageIndicator;
-
 public class MainActivity extends Activity implements AdapterView.OnItemClickListener{
     private ListView mSampleLv;
-    private String[] adapterData = new String[] { "SampleCirclesDefault", "SampleUnderlinesDefault","SampleLinesDefault", "SampleTitlesDefault",
-            "SampleIconsDefault" };//"SampleTabsDefault",
+    private String[] adapterData = new String[] { "Circles", "lines","Underlines", "Titles",
+            "Icons","Tabs" };//"SampleTabsDefault",
 
     @Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -29,24 +27,23 @@ public class MainActivity extends Activity implements AdapterView.OnItemClickLis
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         switch (position){
             case 0:
-                redictTo(SampleCirclesDefault.class);
+                redictTo(CirclesSamples.class);
                 break;
             case 1:
                 redictTo(SampleLinesDefault.class);
                 break;
             case 2:
-                redictTo(SampleUnderlinesDefault.class);
+                redictTo(UnderlinesSamples.class);
 
                 break;
             case 3:
-                redictTo(SampleTitlesDefault.class);
+                redictTo(TitlesSamples.class);
                 break;
             case 4:
-
                 redictTo(SampleIconsDefault.class);
                 break;
             case 5:
-                redictTo(SampleTabsDefault.class);
+                redictTo(TabsSamples.class);
                 break;
         }
     }

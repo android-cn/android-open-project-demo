@@ -70,7 +70,7 @@
         <item name="android:padding">10dp</item>
         <item name="android:textSize">17sp</item>
         <item name="android:textColor">@android:color/holo_blue_light</item>
-        <item name="android:background">@android:color/white</item>
+<!--        <item name="android:background">@android:color/white</item>-->
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_weight">1</item>
