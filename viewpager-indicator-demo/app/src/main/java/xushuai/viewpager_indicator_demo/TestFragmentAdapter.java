@@ -8,12 +8,13 @@ import com.viewpagerindicator.IconPagerAdapter;
 
 class TestFragmentAdapter extends FragmentPagerAdapter implements IconPagerAdapter {
 
-    protected String[] CONTENT = new String[] { "Reading", "Travel", "Sport" };
+    protected static  String[] CONTENT = new String[] { "This", "Is", "A" };
 
     protected static final int[] ICONS = new int[] {
-            R.drawable.actionbar_bg_user,
-            R.drawable.actionbar_bg_music,
-            R.drawable.actionbar_bg_cast,
+            R.drawable.perm_group_calendar,
+            R.drawable.perm_group_camera,
+            R.drawable.perm_group_device_alarms,
+            R.drawable.perm_group_location
     };
 
     private int mCount = CONTENT.length;
@@ -38,7 +39,7 @@ class TestFragmentAdapter extends FragmentPagerAdapter implements IconPagerAdapt
 
     @Override
     public CharSequence getPageTitle(int position) {
-      return CONTENT[position % CONTENT.length];
+      return TestFragmentAdapter.CONTENT[position % CONTENT.length];
     }
 
     @Override

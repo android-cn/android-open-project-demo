@@ -6,7 +6,7 @@ import android.support.v4.view.ViewPager;
 import com.viewpagerindicator.TitlePageIndicator;
 
 public class SampleTitlesDefault extends BaseSampleActivity {
-    private final String[] CONTENT = new String[]  { "Reading", "Travel","Music" ,"Sport" };
+    private static final String[] CONTENT = new String[] { "推荐", "科技", "原创", "房产"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

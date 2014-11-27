@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?><!-- Copyright (C) 2012 Jake Wharton
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2012 Jake Wharton
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -15,54 +16,65 @@
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:orientation="vertical">
+    android:layout_height="fill_parent">
+
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:background="@android:color/white"
+    android:layout_height="wrap_content">
 
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:gravity="center_horizontal"
+        android:layout_gravity="center_horizontal"
+        >
 
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:gravity="center_horizontal">
+        <TextView
+            android:id="@+id/tab_left"
+            android:text="主页"
+            style="@style/Tab"
+            />
 
-            <TextView
-                android:id="@+id/tab_left"
-                style="@style/Tab"
-                android:text="主页" />
+        <TextView
+            android:id="@+id/tab_mid"
+            android:text="发现"
+            style="@style/Tab"
+            />
 
-            <TextView
-                android:id="@+id/tab_mid"
-                style="@style/Tab"
-                android:text="发现" />
+        <TextView
+            android:id="@+id/tab_right"
+            android:text="动态"
+            style="@style/Tab"
+            />
 
-            <TextView
-                android:id="@+id/tab_right"
-                style="@style/Tab"
-                android:text="动态" />
-
-        </LinearLayout>
-
-
-        <com.viewpagerindicator.UnderlinePageIndicator
-            android:id="@+id/indicator"
-            android:layout_width="fill_parent"
-            android:layout_height="2dp" />
     </LinearLayout>
 
-    <View
+    <!--<View
         android:layout_width="fill_parent"
         android:layout_height="1px"
-        android:background="@android:color/darker_gray" />
+        android:background="@android:color/darker_gray"
+        />
+-->
+    <com.viewpagerindicator.UnderlinePageIndicator
+        android:id="@+id/indicator"
+        android:layout_height="2dp"
+        app:fades="false"
+        android:layout_width="fill_parent"
+        />
+</LinearLayout>
+
+
+
 
     <android.support.v4.view.ViewPager
         android:id="@+id/pager"
         android:layout_width="fill_parent"
         android:layout_height="0dp"
-        android:layout_weight="1" />
+        android:layout_weight="1"
+        />
 
 </LinearLayout>

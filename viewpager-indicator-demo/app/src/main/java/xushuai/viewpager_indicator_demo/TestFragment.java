@@ -6,20 +6,23 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
 import android.widget.LinearLayout.LayoutParams;
-import android.widget.ListView;
 import android.widget.TextView;
 
-import java.util.ArrayList;
-
-public final class ListFragment extends Fragment {
+public final class TestFragment extends Fragment {
     private static final String KEY_CONTENT = "TestFragment:Content";
 
-    public static ListFragment newInstance(String content) {
-        ListFragment fragment = new ListFragment();
-        fragment.mContent = content;
+    public static TestFragment newInstance(String content) {
+        TestFragment fragment = new TestFragment();
+
+        StringBuilder builder = new StringBuilder();
+        for (int i = 0; i < 20; i++) {
+            builder.append(content).append(" ");
+        }
+        builder.deleteCharAt(builder.length() - 1);
+        fragment.mContent = builder.toString();
+
         return fragment;
     }
 
@@ -36,23 +39,18 @@ public final class ListFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-       ListView lv = (ListView) inflater.inflate(R.layout.layout_list_view, null);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(
-                getActivity(),
-                android.R.layout.simple_expandable_list_item_1,
-                getData());
-        lv.setAdapter(adapter);
-        return lv;
-    }
+        TextView text = new TextView(getActivity());
+        text.setGravity(Gravity.CENTER);
+        text.setText(mContent);
+        text.setTextSize(20 * getResources().getDisplayMetrics().density);
+        text.setPadding(20, 20, 20, 20);
 
-    private ArrayList<String> getData()
-    {
-        ArrayList<String> list = new ArrayList<String>();
-        list.add("120平米的房子");
-        list.add("温柔贤惠的老婆");
-        list.add("健康的身体");
-        list.add("喜欢的事业");
-        return list;
+        LinearLayout layout = new LinearLayout(getActivity());
+        layout.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT));
+        layout.setGravity(Gravity.CENTER);
+        layout.addView(text);
+
+        return layout;
     }
 
     @Override
