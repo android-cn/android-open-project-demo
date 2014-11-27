@@ -46,19 +46,23 @@ public class DefaultDownloader extends Downloader {
 
         long result = -1;
         long fileLen = 0;
-        long currCount = 0;
+        long currCount = 0;  
         try {
-            if (uri.startsWith("/")) {
+        	//分三种方式获取图片
+            if (uri.startsWith("/")) { 
+            	//sd卡获取
                 FileInputStream fileInputStream = new FileInputStream(uri);
                 fileLen = fileInputStream.available();
                 bis = new BufferedInputStream(fileInputStream);
                 result = System.currentTimeMillis() + this.getDefaultExpiry();
-            } else if (uri.startsWith("assets/")) {
+            } else if (uri.startsWith("assets/")) { 
+            	//资产文件夹
                 InputStream inputStream = this.getContext().getAssets().open(uri.substring(7, uri.length()));
                 fileLen = inputStream.available();
                 bis = new BufferedInputStream(inputStream);
                 result = Long.MAX_VALUE;
-            } else {
+            } else {  
+            	//网络
                 final URL url = new URL(uri);
                 urlConnection = url.openConnection();
                 urlConnection.setConnectTimeout(this.getDefaultConnectTimeout());
@@ -78,7 +82,7 @@ public class DefaultDownloader extends Downloader {
                 out.write(buffer, 0, len);
                 currCount += len;
                 if (task.isCancelled() || task.getTargetContainer() == null) return -1;
-                task.updateProgress(fileLen, currCount);
+                task.updateProgress(fileLen, currCount);     //回调
             }
             out.flush();
         } catch (Throwable e) {

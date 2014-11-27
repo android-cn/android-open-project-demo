@@ -24,7 +24,7 @@ import java.io.*;
 public class FileDownloadHandler {
 
     public File handleEntity(HttpEntity entity,
-                             RequestCallBackHandler callBackHandler,
+                             RequestCallBackHandler callBackHandler, //这个就是HttpHandler
                              String target,
                              boolean isResume,
                              String responseFileName) throws IOException {
@@ -48,7 +48,7 @@ public class FileDownloadHandler {
             FileOutputStream fileOutputStream = null;
             if (isResume) {
                 current = targetFile.length();
-                fileOutputStream = new FileOutputStream(target, true);
+                fileOutputStream = new FileOutputStream(target, true); //以追加的方式
             } else {
                 fileOutputStream = new FileOutputStream(target);
             }
@@ -66,7 +66,8 @@ public class FileDownloadHandler {
                 bos.write(tmp, 0, len);
                 current += len;
                 if (callBackHandler != null) {
-                    if (!callBackHandler.updateProgress(total, current, false)) {
+                	//回调， 当停止时这里直接返回，中断下载
+                    if (!callBackHandler.updateProgress(total, current, false)) { 
                         return targetFile;
                     }
                 }
@@ -80,7 +81,8 @@ public class FileDownloadHandler {
             IOUtils.closeQuietly(bos);
         }
 
-        if (targetFile.exists() && !TextUtils.isEmpty(responseFileName)) {
+      //如果是自动命名的时候
+        if (targetFile.exists() && !TextUtils.isEmpty(responseFileName)) {  
             File newFile = new File(targetFile.getParent(), responseFileName);
             while (newFile.exists()) {
                 newFile = new File(targetFile.getParent(), System.currentTimeMillis() + responseFileName);

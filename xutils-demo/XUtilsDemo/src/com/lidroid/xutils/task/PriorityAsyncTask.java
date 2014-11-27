@@ -58,8 +58,9 @@ public abstract class PriorityAsyncTask<Params, Progress, Result> implements Tas
      * Creates a new asynchronous task. This constructor must be invoked on the UI thread.
      */
     public PriorityAsyncTask() {
-        mWorker = new WorkerRunnable<Params, Result>() {
-            public Result call() throws Exception {
+    	//这一块为什么不直接使用Runnable， 我的见解是这种使用能获取返回值
+        mWorker = new WorkerRunnable<Params, Result>() {  
+            public Result call() throws Exception { //在子线程中运行
                 mTaskInvoked.set(true);
 
                 android.os.Process.setThreadPriority(android.os.Process.THREAD_PRIORITY_BACKGROUND);
@@ -68,9 +69,9 @@ public abstract class PriorityAsyncTask<Params, Progress, Result> implements Tas
             }
         };
 
-        mFuture = new FutureTask<Result>(mWorker) {
+        mFuture = new FutureTask<Result>(mWorker) { //
             @Override
-            protected void done() {
+            protected void done() {  
                 try {
                     postResultIfNotInvoked(get());
                 } catch (InterruptedException e) {
@@ -148,7 +149,7 @@ public abstract class PriorityAsyncTask<Params, Progress, Result> implements Tas
      * @see #publishProgress
      * @see #doInBackground
      */
-    @SuppressWarnings({"UnusedDeclaration"})
+    @SuppressWarnings({"UnusedDeclaration"}) //见HttpHandler中重写的这个方法
     protected void onProgressUpdate(Progress... values) {
     }
 
@@ -349,7 +350,7 @@ public abstract class PriorityAsyncTask<Params, Progress, Result> implements Tas
      *
      * @param values The progress values to update the UI with.
      * @see #onProgressUpdate
-     * @see #doInBackground
+     * @see #doInBackground  
      */
     protected final void publishProgress(Progress... values) {
         if (!isCancelled()) {
@@ -369,7 +370,7 @@ public abstract class PriorityAsyncTask<Params, Progress, Result> implements Tas
     private static class InternalHandler extends Handler {
 
         private InternalHandler() {
-            super(Looper.getMainLooper());
+            super(Looper.getMainLooper());  //这里很关键 这个是在UI线程中创建handler， 可以跟新界面。 （handler通信机制不了解的需要去具体了解）
         }
 
         @SuppressWarnings({"unchecked", "RawUseOfParameterizedType"})
@@ -379,10 +380,10 @@ public abstract class PriorityAsyncTask<Params, Progress, Result> implements Tas
             switch (msg.what) {
                 case MESSAGE_POST_RESULT:
                     // There is only one result
-                    result.mTask.finish(result.mData[0]);
+                    result.mTask.finish(result.mData[0]);  // 任务完成后， 主要控制的是任务的生命周期
                     break;
                 case MESSAGE_POST_PROGRESS:
-                    result.mTask.onProgressUpdate(result.mData);
+                    result.mTask.onProgressUpdate(result.mData); //主要是用于回调callback中的方法
                     break;
             }
         }

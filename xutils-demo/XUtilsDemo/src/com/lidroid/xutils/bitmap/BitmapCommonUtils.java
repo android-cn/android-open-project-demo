@@ -39,17 +39,24 @@ public class BitmapCommonUtils {
         return screenSize;
     }
 
+    /**
+     * @param view
+     * @param maxImageWidth
+     * @param maxImageHeight
+     * 设置显示View的大小
+     * @return
+     */
     public static BitmapSize optimizeMaxSizeByView(View view, int maxImageWidth, int maxImageHeight) {
         int width = maxImageWidth;
         int height = maxImageHeight;
 
-        if (width > 0 && height > 0) {
+        if (width > 0 && height > 0) { //当设置不为0的时候
             return new BitmapSize(width, height);
         }
 
-        final ViewGroup.LayoutParams params = view.getLayoutParams();
-        if (params != null) {
-            if (params.width > 0) {
+        final ViewGroup.LayoutParams params = view.getLayoutParams(); 
+        if (params != null) { 
+            if (params.width > 0) {  //如果布局文件中配置了大小
                 width = params.width;
             } else if (params.width != ViewGroup.LayoutParams.WRAP_CONTENT) {
                 width = view.getWidth();

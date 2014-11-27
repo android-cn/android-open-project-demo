@@ -23,6 +23,7 @@ import java.util.*;
 
 /**
  * Build "insert", "replace",，"update", "delete" and "create" sql.
+ * 组合sql语句
  */
 public class SqlInfoBuilder {
 
