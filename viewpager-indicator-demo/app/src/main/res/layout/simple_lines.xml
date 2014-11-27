@@ -29,7 +29,7 @@
         />
     <com.viewpagerindicator.LinePageIndicator
         android:id="@+id/indicator"
-        android:padding="5dip"
+        android:padding="10dip"
         android:layout_height="wrap_content"
         android:layout_width="fill_parent"
         />
