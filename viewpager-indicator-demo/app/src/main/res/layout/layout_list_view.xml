@@ -2,6 +2,7 @@
 <ListView xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/lv_sample"
     android:layout_width="wrap_content"
+    android:scrollbars="none"
     android:layout_height="fill_parent">
 
 </ListView>

@@ -1,7 +1,7 @@
 apply plugin: 'android'
 
 android {
-    compileSdkVersion 14
+    compileSdkVersion 21
     buildToolsVersion '19.1.0'
     defaultConfig {
         applicationId 'xushuai.viewpager_indicator_demo'
@@ -12,7 +12,7 @@ android {
     }
     buildTypes {
         release {
-            runProguard false
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
@@ -23,8 +23,9 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile project(':library')
-//    compile project(':android-auto-scroll-view-pager')
-//    compile project(':salvage')
-//    compile 'com.android.support:support-v4:19.1.0'
+    //    compile project(':android-auto-scroll-view-pager')
+    //    compile project(':salvage')
+    //    compile 'com.android.support:support-v4:19.1.0'
+    compile 'com.android.support:appcompat-v7:21.0.0'
 }
 

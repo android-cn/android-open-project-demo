@@ -48,10 +48,17 @@ public final class ListFragment extends Fragment {
     private ArrayList<String> getData()
     {
         ArrayList<String> list = new ArrayList<String>();
-        list.add("120平米的房子");
-        list.add("温柔贤惠的老婆");
-        list.add("健康的身体");
-        list.add("喜欢的事业");
+        list.add(this.mContent );
+        list.add(this.mContent );
+        list.add(this.mContent );
+        list.add(this.mContent );
+        list.add(this.mContent );
+        list.add(this.mContent );
+        list.add(this.mContent );
+        list.add(this.mContent );
+        list.add(this.mContent );
+        list.add(this.mContent );
+        list.add(this.mContent );
         return list;
     }
 
