@@ -1,0 +1,16 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    
+        <dimen name="gridview_item_margin">@dimen/gridview_item_margin_small</dimen>
+    <dimen name="gridview_item_dimension_user">@dimen/gridview_item_dimension_user_small</dimen>
+    <dimen name="gridview_item_dimension_selected">@dimen/gridview_item_dimension_selected_small
+    </dimen>
+    <dimen name="grid_item_caption_text_size">@dimen/gridview_item_caption_text_size_small</dimen>
+    <dimen name="listview_item_dimension">@dimen/listview_item_dimension_small</dimen>
+    <dimen name="fragment_title_text_size">@dimen/fragment_title_text_size_small</dimen>
+    
+</resources>

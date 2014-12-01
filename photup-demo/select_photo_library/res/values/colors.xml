@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Raw Colour Values -->
+    <color name="blue_v_dark">#ff1A556B</color>
+    <color name="blue_dark">#ff166C8C</color>
+    <color name="blue_med">#ff33b5e5</color>
+    <color name="blue_light">#ff6FCDF7</color>
+    <color name="translucent_dk_grey">#88000000</color>
+    <color name="translucent_grey">#50000000</color>
+    <color name="translucent_lght_grey">#30000000</color>
+    <color name="pressed_color">#cc6fccf7</color>
+
+    <!-- Logical Colours -->
+    <color name="item_bg_dark">@color/blue_dark</color>
+    <color name="item_bg_mid">@color/blue_med</color>
+    <color name="item_bg_light">@color/blue_light</color>
+    <color name="crop_rectangle_line">@android:color/white</color>
+    <color name="crop_rectangle_area">@color/translucent_grey</color>
+    <color name="selected_fragment_bg">@color/blue_v_dark</color>
+
+</resources>

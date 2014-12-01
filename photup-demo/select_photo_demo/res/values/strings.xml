@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">图片选择</string>
+    <string name="hello_world">图片选择</string>
+    <string name="action_settings">Settings</string>
+    <string name="album_all">所有图片</string>
+    <string name="tip_text">选择</string>
+    <string name="filter_original">Photo Location</string>
+    <string name="filter_instafix">Photo Location</string>
+    <string name="filter_ansel">Photo Location</string>
+    <string name="filter_testino">Photo Location</string>
+    <string name="filter_xpro">Photo Location</string>
+    <string name="filter_retro">Photo Location</string>
+    <string name="filter_bw">Photo Location</string>
+    <string name="filter_sepia">Photo Location</string>
+    <string name="filter_cyano">Photo Location</string>
+    <string name="filter_georgia">Photo Location</string>
+    <string name="filter_sahara">Photo Location</string>
+    <string name="filter_hdr">Photo Location</string>
+
+</resources>
