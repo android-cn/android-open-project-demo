@@ -17,12 +17,11 @@ public class MainActivity extends Activity {
 	private ListView mListView;
 	private static final int DEMO_FULL_SCREEN = 0;
 	private static final int DEMO_WITH_VIEWPAGER = 1;
-	private static final int DEMO_WITH_GALLERY = 2;
-	private static final int DEMO_INTEGRATION_WITH_IMAGELOADER = 3;
-	private static final int DEMO_INTEGRATION_WITH_PICASSO = 4;
+	private static final int DEMO_INTEGRATION_WITH_IMAGELOADER = 2;
+	private static final int DEMO_INTEGRATION_WITH_PICASSO = 3;
 
 	private String strings[] = new String[] { "Full Screen",
-			"Demo with ViewPager", "Demo with Gallery",
+			"Demo with ViewPager",
 			"Integration with ImageLoader", "Integration with Picasso" };
 
 	@Override
@@ -46,9 +45,6 @@ public class MainActivity extends Activity {
 				break;
 			case DEMO_WITH_VIEWPAGER:
 				intent = new Intent(MainActivity.this, ViewPagerDemo.class);
-				break;
-			case DEMO_WITH_GALLERY:
-				intent = new Intent(MainActivity.this, GalleryDemo.class);
 				break;
 			case DEMO_INTEGRATION_WITH_IMAGELOADER:
 				intent = new Intent(MainActivity.this, ImageLoaderDemo.class);
