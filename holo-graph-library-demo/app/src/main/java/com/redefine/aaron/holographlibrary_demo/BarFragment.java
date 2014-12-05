@@ -37,9 +37,12 @@ public class BarFragment extends SherlockFragment {
         Bar d3 = new Bar();
         d3.setColor(Color.parseColor("#CCCC99"));
         d3.setName("大大");
+
         d3.setStackedBar(true);
         d3.AddStackValue(new BarStackSegment(2, Color.parseColor("#99CC00")));
         d3.AddStackValue(new BarStackSegment(4, Color.RED));
+        d3.AddStackValue(new BarStackSegment(2, Color.BLUE));
+        d3.AddStackValue(new BarStackSegment(2, Color.BLACK));
         points.add(d);
         points.add(d2);
         points.add(d3);
