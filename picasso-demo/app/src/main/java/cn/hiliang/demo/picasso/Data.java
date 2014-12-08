@@ -4,20 +4,28 @@ package cn.hiliang.demo.picasso;
  * Created by liang on 11/26/14.
  */
 final public class Data {
-    static final String BASE = "http://i.imgur.com/";
-    static final String EXT = ".jpg";
-    static final String[] URLS = {
-            BASE + "CqmBjo5" + EXT, BASE + "zkaAooq" + EXT, BASE + "0gqnEaY" + EXT,
-            BASE + "9gbQ7YR" + EXT, BASE + "aFhEEby" + EXT, BASE + "0E2tgV7" + EXT,
-            BASE + "P5JLfjk" + EXT, BASE + "nz67a4F" + EXT, BASE + "dFH34N5" + EXT,
-            BASE + "FI49ftb" + EXT, BASE + "DvpvklR" + EXT, BASE + "DNKnbG8" + EXT,
-            BASE + "yAdbrLp" + EXT, BASE + "55w5Km7" + EXT, BASE + "NIwNTMR" + EXT,
-            BASE + "DAl0KB8" + EXT, BASE + "xZLIYFV" + EXT, BASE + "HvTyeh3" + EXT,
-            BASE + "Ig9oHCM" + EXT, BASE + "7GUv9qa" + EXT, BASE + "i5vXmXp" + EXT,
-            BASE + "glyvuXg" + EXT, BASE + "u6JF6JZ" + EXT, BASE + "ExwR7ap" + EXT,
-            BASE + "Q54zMKT" + EXT, BASE + "9t6hLbm" + EXT, BASE + "F8n3Ic6" + EXT,
-            BASE + "P5ZRSvT" + EXT, BASE + "jbemFzr" + EXT, BASE + "8B7haIK" + EXT,
-            BASE + "aSeTYQr" + EXT, BASE + "OKvWoTh" + EXT, BASE + "zD3gT4Z" + EXT,
-            BASE + "z77CaIt" + EXT,
-    };
+
+    static final String AVATAR_BASE = "https://avatars2.githubusercontent.com/u/";
+
+    enum ANDROID_CN_PEOPLE {
+        AARONPLAY("AaronPlay", "4213205"),
+        DAIMAJIA("daimajia", "2503423"),
+        HALZHANG("halzhang", "542297"),
+        KESENHOO("kesenhoo", "1456490"),
+        LIANG7("liang7", "1677220"),
+        SINGWHATIWANNA("singwhatiwanna", "3346272"),
+        STORMZHANG("stormzhang", "2267900"),
+        TRINEA("Trinea", "1169522"),
+        WAYLIFE("waylife", "3348620");
+
+        private final People people;
+
+        private ANDROID_CN_PEOPLE(String name, String id){
+            this.people = new People(id, name, AVATAR_BASE+id);
+        }
+
+        public People getPeople(){
+            return this.people;
+        }
+    }
 }
