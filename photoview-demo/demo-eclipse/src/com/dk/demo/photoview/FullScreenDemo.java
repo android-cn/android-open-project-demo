@@ -13,6 +13,6 @@ public class FullScreenDemo extends Activity {
 		setContentView(R.layout.activity_fullscreen);
 		mPhotoView = (PhotoView) findViewById(R.id.photoview);
 		mPhotoView.setImageResource(R.drawable.saya);
+				
 	}
-
 }

@@ -1,7 +1,7 @@
 PhotoView Demo
 ====================
 ###Download
-    <a href="apk/photoview-demo.apk" target="_blank" title="点击下载到本地">本地下载</a>
+    <a href="app/photoview-demo.apk" target="_blank" title="点击下载到本地">本地下载</a>
 ###Document
 
 ###Features
