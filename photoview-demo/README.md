@@ -2,9 +2,8 @@ PhotoView Demo
 ====================
 ###Download
 
-<a href="app/photoview-demo.apk" target="_blank" title="点击下载到本地">本地下载</a>
-	
-###Document
+<a href="https://github.com/android-cn/android-open-project-demo/raw/master/photoview-demo/app/photoview-demo.apk" target="_blank" title="点击下载到本地">本地下载</a>
+    
 
 ###Features
 
@@ -20,3 +19,13 @@ PhotoView Demo
 - Works perfectly when using used in a scrolling parent (such as ViewPager).
 - Allows the application to be notified when the displayed Matrix has changed. Useful for when you need to update your UI based on the current zoom/scroll position.
 - Allows the application to be notified when the user taps on the Photo.
+
+
+
+
+---
+
+MatrixDemo
+=====================
+
+一个简单的Matrix变换效果展示Demo
