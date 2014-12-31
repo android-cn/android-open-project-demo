@@ -46,7 +46,7 @@ public class BarGraph extends View {
     private OnBarClickedListener listener;
     private Bitmap fullImage;
     private boolean shouldUpdate = false;
-    private String unit = "$";
+    private String unit = "$";  //显示数据的单位
     private Boolean append = false;
     private Rect r2 = new Rect();
     private Rect r3 = new Rect();
@@ -90,17 +90,21 @@ public class BarGraph extends View {
 
     public void onDraw(Canvas ca) {
 
+        //判断是否需要绘制或者刷新
         if (fullImage == null || shouldUpdate) {
+            //画布初始化
             fullImage = Bitmap.createBitmap(getWidth(), getHeight(), Config.ARGB_8888);
             Canvas canvas = new Canvas(fullImage);
             canvas.drawColor(Color.TRANSPARENT);
             NinePatchDrawable popup = (NinePatchDrawable) this.getResources().getDrawable(R.drawable.popup_black);
 
+            //柱体的样式定义
             float maxValue = 0;
             float padding = 7;
             int selectPadding = 4;
             float bottomPadding = 40;
 
+            //定义绘制柱体的区间
             float usableHeight;
             if (showBarText) {
                 this.p.setTextSize(40);
@@ -110,7 +114,7 @@ public class BarGraph extends View {
                 usableHeight = getHeight() - bottomPadding;
             }
 
-
+            //定义笔刷
             p.setColor(Color.BLACK);
             p.setStrokeWidth(2);
             p.setAlpha(50);
@@ -128,17 +132,20 @@ public class BarGraph extends View {
 
             path.reset();
 
+            //绘制柱体
             int count = 0;
             for (Bar p : points) {
-
+                //绘制每个柱体里的自定义区间
                 if(p.getStackedBar()){
                     ArrayList<BarStackSegment> values = new ArrayList<BarStackSegment>(p.getStackedValues());
                     int prevValue = 0;
+                    //标记每个区间段的起始位置
                     for(BarStackSegment value : values) {
                         value.Value += prevValue;
                         prevValue += value.Value;
                     }
                     Collections.reverse(values);
+
 
                     for(BarStackSegment value : values) {
                         r.set((int) ((padding * 2) * count + padding + barWidth * count), (int) ((getHeight() - bottomPadding - (usableHeight * (value.Value / maxValue)))), (int) ((padding * 2) * count + padding + barWidth * (count + 1)), (int) ((getHeight() - bottomPadding)));
@@ -150,6 +157,7 @@ public class BarGraph extends View {
                         canvas.drawRect(r, this.p);
                     }
                 }else {
+                    //若没有自定义区间，则正常绘制
                     r.set((int) ((padding * 2) * count + padding + barWidth * count), (int) (getHeight() - bottomPadding - (usableHeight * (p.getValue() / maxValue))), (int) ((padding * 2) * count + padding + barWidth * (count + 1)), (int) (getHeight() - bottomPadding));
                     path.addRect(new RectF(r.left - selectPadding, r.top - selectPadding, r.right + selectPadding, r.bottom + selectPadding), Path.Direction.CW);
                     p.setPath(path);
@@ -159,7 +167,7 @@ public class BarGraph extends View {
                     canvas.drawRect(r, this.p);
                 }
 
-
+                //标题绘制
                 this.p.setTextSize(20);
                 canvas.drawText(p.getName(), (int) (((r.left + r.right) / 2) - (this.p.measureText(p.getName()) / 2)), getHeight() - 5, this.p);
                 if (showBarText) {

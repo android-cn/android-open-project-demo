@@ -26,23 +26,23 @@ public class BarFragment extends SherlockFragment {
         assert v !=null;
 
         ArrayList<Bar> points = new ArrayList<Bar>();
-        Bar d = new Bar();
+        Bar d = new Bar(); //创建第一个柱体
         d.setColor(Color.parseColor("#99CC00"));
-        d.setName("小明");
+        d.setName("Test1");
         d.setValue(10);
-        Bar d2 = new Bar();
+        Bar d2 = new Bar();//创建第二个柱体
         d2.setColor(Color.parseColor("#99CC00"));
-        d2.setName("小四");
+        d2.setName("Test2");
         d2.setValue(20);
-        Bar d3 = new Bar();
+        Bar d3 = new Bar();//创建第三个柱体
         d3.setColor(Color.parseColor("#CCCC99"));
-        d3.setName("大大");
+        d3.setName("Test3");
 
         d3.setStackedBar(true);
-        d3.AddStackValue(new BarStackSegment(2, Color.parseColor("#99CC00")));
-        d3.AddStackValue(new BarStackSegment(4, Color.RED));
-        d3.AddStackValue(new BarStackSegment(2, Color.BLUE));
-        d3.AddStackValue(new BarStackSegment(2, Color.BLACK));
+        d3.AddStackValue(new BarStackSegment(2, Color.GRAY)); //创建第一个扩展柱体模块
+        d3.AddStackValue(new BarStackSegment(4, Color.RED));//创建第二个扩展柱体模块
+        d3.AddStackValue(new BarStackSegment(2, Color.BLUE));//创建第三个扩展柱体模块
+        d3.AddStackValue(new BarStackSegment(2, Color.BLACK));//创建第四个扩展柱体模块
         points.add(d);
         points.add(d2);
         points.add(d3);
@@ -59,7 +59,6 @@ public class BarFragment extends SherlockFragment {
             public void onClick(int index) {
 
             }
-
         });
 
         return v;

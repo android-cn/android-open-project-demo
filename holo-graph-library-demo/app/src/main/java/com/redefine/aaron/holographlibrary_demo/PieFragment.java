@@ -23,23 +23,23 @@ public class PieFragment extends SherlockFragment {
         final View v =  inflater.inflate(R.layout.fragment_pie, container, false);
 
         PieGraph pieGraph  = (PieGraph) v.findViewById(R.id.piegraph);
-        PieSlice slice = new PieSlice();
-        slice.setColor(Color.parseColor("#FFBB33"));
-        slice.setValue(1);
+        PieSlice slice = new PieSlice();    //设置第一个扇形
+        slice.setColor(Color.parseColor("#FFBB33"));    //设置颜色
+        slice.setValue(1);          //设置大小
         pieGraph.addSlice(slice);
-        slice = new PieSlice();
+        slice = new PieSlice();     //设置第二个扇形
         slice.setColor(Color.parseColor("#AA66CC"));
         slice.setValue(2);
         pieGraph.addSlice(slice);
-        slice = new PieSlice();
+        slice = new PieSlice();     //设置第三个扇形
         slice.setColor(Color.parseColor("#333333"));
         slice.setValue(2);
         pieGraph.addSlice(slice);
-        slice = new PieSlice();
+        slice = new PieSlice();     //设置第三个扇形
         slice.setColor(Color.parseColor("#339933"));
         slice.setValue(4);
         pieGraph.addSlice(slice);
-        slice = new PieSlice();
+        slice = new PieSlice();     //设置第四个扇形
         slice.setColor(Color.parseColor("#99CC00"));
         slice.setValue(9);
         pieGraph.addSlice(slice);

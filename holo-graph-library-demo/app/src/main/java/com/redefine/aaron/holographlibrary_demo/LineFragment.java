@@ -23,22 +23,22 @@ public class LineFragment extends SherlockFragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         final View v =  inflater.inflate(R.layout.fragment_line, container, false);
-        Line l = new Line();
+        Line l = new Line();    //创建第一个点
         LinePoint p = new LinePoint();
-        p.setX(0);
-        p.setY(2);
+        p.setX(0);  //设置x坐标
+        p.setY(2);  //设置y坐标
         l.addPoint(p);
-        p = new LinePoint();
-        p.setX(3);
-        p.setY(3);
+        p = new LinePoint();    //创建第二个点
+        p.setX(3);  //设置x坐标
+        p.setY(3);  //设置y坐标
         l.addPoint(p);
-        p = new LinePoint();
-        p.setX(5);
-        p.setY(9);
+        p = new LinePoint();    //创建第三个点
+        p.setX(5);  //设置x坐标
+        p.setY(9);  //设置y坐标
         l.addPoint(p);
-        p = new LinePoint();
-        p.setX(10);
-        p.setY(7);
+        p = new LinePoint();    //创建第四个点
+        p.setX(10); //设置x坐标
+        p.setY(7);  //设置y坐标
         l.addPoint(p);
         l.setColor(Color.parseColor("#99CC00"));
 
