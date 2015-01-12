@@ -21,10 +21,10 @@ public class DrawerMenuAdapter extends BaseAdapter {
 
     private int selectedIndex = 0;
 
-    private List<HashMap<String, String>> menuList;
+    private List<HashMap<String, Object>> menuList;
     private LayoutInflater layoutInflater;
 
-    public DrawerMenuAdapter(Context context, List<HashMap<String, String>> menuList) {
+    public DrawerMenuAdapter(Context context, List<HashMap<String, Object>> menuList) {
         this.layoutInflater = LayoutInflater.from(context);
         this.menuList = menuList;
     }
@@ -65,15 +65,15 @@ public class DrawerMenuAdapter extends BaseAdapter {
             viewHolder = (ViewHolder) convertView.getTag();
         }
 
-        Map<String, String> menuItem = menuList.get(position);
+        Map<String, Object> menuItem = menuList.get(position);
         if (menuItem.containsKey(DataUtil.MENU_KEY_GROUP_NAME)) {
-            viewHolder.tvGroupName.setText(menuItem.get(DataUtil.MENU_KEY_GROUP_NAME));
+            viewHolder.tvGroupName.setText(menuItem.get(DataUtil.MENU_KEY_GROUP_NAME).toString());
             viewHolder.tvGroupName.setVisibility(View.VISIBLE);
         } else {
             viewHolder.tvGroupName.setVisibility(View.GONE);
         }
 
-        viewHolder.tvItemName.setText(menuItem.get(DataUtil.MENU_KEY_ITEM_NAME));
+        viewHolder.tvItemName.setText(menuItem.get(DataUtil.MENU_KEY_ITEM_NAME).toString());
 
         if (position == selectedIndex) {
             viewHolder.tvItemName.setBackgroundResource(R.drawable.drawer_menu_item_selected_bg);

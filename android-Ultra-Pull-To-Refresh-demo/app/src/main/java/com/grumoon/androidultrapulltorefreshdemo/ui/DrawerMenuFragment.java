@@ -3,6 +3,7 @@ package com.grumoon.androidultrapulltorefreshdemo.ui;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,8 @@ import android.widget.ListView;
 import com.grumoon.androidultrapulltorefreshdemo.R;
 import com.grumoon.androidultrapulltorefreshdemo.adapter.DrawerMenuAdapter;
 import com.grumoon.androidultrapulltorefreshdemo.util.DataUtil;
+
+import java.util.Objects;
 
 
 /**
@@ -42,10 +45,26 @@ public class DrawerMenuFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 adapter.setSelectedIndex(position);
-                ((AppHome) getActivity()).drawerMenuClose();
+
+                if (getActivity() instanceof OnDrawerMenuItemClickListener) {
+                    ((OnDrawerMenuItemClickListener) getActivity()).onItemClick(adapter.getItem(position));
+                }
             }
         });
+
+
+        //触发点击第一个menu
+        try {
+            lvMenu.performItemClick(lvMenu.getAdapter().getView(0, null, null), 0, lvMenu.getItemIdAtPosition(0));
+        } catch (Exception e) {
+        }
+
+
     }
 
+
+    public interface OnDrawerMenuItemClickListener {
+        public void onItemClick(Object itemData);
+    }
 
 }

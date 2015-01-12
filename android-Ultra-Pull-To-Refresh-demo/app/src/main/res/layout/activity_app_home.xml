@@ -30,10 +30,6 @@
             android:orientation="vertical"
             android:background="#ffffff">
 
-            <fragment
-                android:name="com.grumoon.androidultrapulltorefreshdemo.ui.DrawerMenuFragment"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
         </LinearLayout>
 
     </android.support.v4.widget.DrawerLayout>
