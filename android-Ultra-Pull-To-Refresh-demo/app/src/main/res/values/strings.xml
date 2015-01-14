@@ -2,4 +2,21 @@
 <resources>
 
     <string name="app_name">Ultra-PTR-Demo</string>
+
+    <string name="app_about"><![CDATA[
+	<div>
+	<br/><a href="https://github.com/liaohuqiu/android-Ultra-Pull-To-Refresh">android-Ultra-Pull-To-Refresh</a><br />
+	<br/>项目作者：<a href="https://github.com/liaohuqiu">liaohuqiu</a><br />
+	<br/>这是现在已经停止维护的下拉刷新项目的替代方案。继承于ViewGroup可以包含任何View。功能比SwipeRefreshLayout强大。
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>Demo作者：<a href="https://github.com/grumoon">Grumoon</a><br />
+	<br/>更多内容请关注 <a href="https://github.com/android-cn/android-open-project-analysis">Android 开源项目实现原理解析</a><br />
+	</div>
+	]]></string>
 </resources>
