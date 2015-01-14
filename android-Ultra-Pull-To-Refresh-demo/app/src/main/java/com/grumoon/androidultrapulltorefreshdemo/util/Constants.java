@@ -1,5 +1,7 @@
 package com.grumoon.androidultrapulltorefreshdemo.util;
 
+import com.grumoon.androidultrapulltorefreshdemo.R;
+
 public class Constants {
 
 
@@ -312,6 +314,13 @@ public class Constants {
             "http://car0.autoimg.cn/upload/spec/10691/w_20111024092359357264.jpg",
             "http://car0.autoimg.cn/upload/spec/10691/w_20111024092356966264.jpg",
     };
+
+    public static final String[] VERTICAL_IMAGE_URLS = new String[]{
+            "drawable://"+ R.drawable.vertical_image_1,
+            "drawable://"+ R.drawable.vertical_image_2,
+            "drawable://"+ R.drawable.vertical_image_3,
+    };
+
 
     private Constants() {
     }

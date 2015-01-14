@@ -7,10 +7,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import com.grumoon.androidultrapulltorefreshdemo.R;
 import com.grumoon.androidultrapulltorefreshdemo.util.Constants;
@@ -21,15 +18,12 @@ import com.nostra13.universalimageloader.core.listener.ImageLoadingListener;
 import in.srain.cube.views.ptr.PtrClassicFrameLayout;
 import in.srain.cube.views.ptr.PtrDefaultHandler;
 import in.srain.cube.views.ptr.PtrFrameLayout;
-import in.srain.cube.views.ptr.PtrHandler;
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class ContentImageViewFragment extends Fragment {
 
-
-    private static final int IMAGE_COUNT = 5;
 
     //下拉次数
     private int ptrTimes;
@@ -58,7 +52,7 @@ public class ContentImageViewFragment extends Fragment {
             @Override
             public void onRefreshBegin(final PtrFrameLayout ptrFrameLayout) {
 
-                ImageLoader.getInstance().displayImage(Constants.BIG_IMAGE_URLS[ptrTimes % IMAGE_COUNT], ivImage, new ImageLoadingListener() {
+                ImageLoader.getInstance().displayImage(Constants.VERTICAL_IMAGE_URLS[ptrTimes % Constants.VERTICAL_IMAGE_URLS.length], ivImage, new ImageLoadingListener() {
                     @Override
                     public void onLoadingStarted(String imageUri, View view) {
 
