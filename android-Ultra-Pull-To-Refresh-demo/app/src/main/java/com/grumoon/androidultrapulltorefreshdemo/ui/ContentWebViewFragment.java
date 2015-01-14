@@ -27,6 +27,15 @@ import in.srain.cube.views.ptr.PtrHandler;
 public class ContentWebViewFragment extends Fragment {
 
 
+    private static final String[] URLS = new String[]{
+            "https://github.com/grumoon",
+            "https://github.com/android-cn/android-open-project-analysis",
+            "https://github.com/liaohuqiu/android-Ultra-Pull-To-Refresh",
+    };
+
+    //下拉次数
+    private int ptrTimes;
+
     private PtrClassicFrameLayout ptr;
 
     private WebView wvMain;
@@ -73,7 +82,9 @@ public class ContentWebViewFragment extends Fragment {
 
             @Override
             public void onRefreshBegin(PtrFrameLayout ptrFrameLayout) {
-                wvMain.loadUrl("https://github.com/android-cn/android-open-project-analysis");
+
+                wvMain.loadUrl(URLS[ptrTimes % URLS.length]);
+                ptrTimes++;
             }
         });
 
