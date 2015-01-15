@@ -45,10 +45,10 @@ public class AppHome extends ActionBarActivity implements DrawerMenuFragment.OnD
         drawerToggle.syncState();
         dlHome.setDrawerListener(drawerToggle);
 
-        fm=getSupportFragmentManager();
+        fm = getSupportFragmentManager();
 
         //添加菜单
-        fm.beginTransaction().add(R.id.dl_menu,new DrawerMenuFragment()).commit();
+        fm.beginTransaction().add(R.id.dl_menu, new DrawerMenuFragment()).commit();
     }
 
     @Override
@@ -57,6 +57,8 @@ public class AppHome extends ActionBarActivity implements DrawerMenuFragment.OnD
         try {
             HashMap<String, Object> itemDataMap = (HashMap<String, Object>) itemData;
             Fragment fragment = (Fragment) (itemDataMap.get(DataUtil.MENU_KEY_FRAGMENT));
+
+            setTitle((String)itemDataMap.get(DataUtil.MENU_KEY_ITEM_NAME));
 
             fm.beginTransaction().replace(R.id.dl_container, fragment).commit();
 

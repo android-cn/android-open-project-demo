@@ -1,10 +1,20 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_height="match_parent"
-    tools:context="com.grumoon.androidultrapulltorefreshdemo.ui.MaterialHeaderFragment">
+    android:layout_width="match_parent">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView android:layout_width="match_parent" android:layout_height="match_parent"
-        android:text="Material风格头部" />
+    <in.srain.cube.views.ptr.PtrFrameLayout
+        android:id="@+id/ptr_main"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent">
 
-</FrameLayout>
+        <ImageView
+            android:id="@+id/iv_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:background="#ffffff" />
+    </in.srain.cube.views.ptr.PtrFrameLayout>
+
+</RelativeLayout>
+
+
