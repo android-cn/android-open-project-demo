@@ -4,6 +4,7 @@ import com.grumoon.androidultrapulltorefreshdemo.ui.AutoRefreshFragment;
 import com.grumoon.androidultrapulltorefreshdemo.ui.ContentGridViewFragment;
 import com.grumoon.androidultrapulltorefreshdemo.ui.ContentImageViewFragment;
 import com.grumoon.androidultrapulltorefreshdemo.ui.ContentListViewFragment;
+import com.grumoon.androidultrapulltorefreshdemo.ui.ContentRecyclerViewFragment;
 import com.grumoon.androidultrapulltorefreshdemo.ui.ContentScrollViewFragment;
 import com.grumoon.androidultrapulltorefreshdemo.ui.ContentTextViewFragment;
 import com.grumoon.androidultrapulltorefreshdemo.ui.ContentWebViewFragment;
@@ -67,6 +68,12 @@ public class DataUtil {
         menuItem = new HashMap<String, Object>();
         menuItem.put(MENU_KEY_ITEM_NAME, "WebView");
         menuItem.put(MENU_KEY_FRAGMENT, new ContentWebViewFragment());
+
+        menuList.add(menuItem);
+
+        menuItem = new HashMap<String, Object>();
+        menuItem.put(MENU_KEY_ITEM_NAME, "RecyclerView");
+        menuItem.put(MENU_KEY_FRAGMENT, new ContentRecyclerViewFragment());
 
         menuList.add(menuItem);
 

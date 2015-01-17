@@ -43,7 +43,7 @@ public class ContentImageViewFragment extends Fragment {
 
     private void initView(View v) {
 
-        ivImage = (ImageView) v.findViewById(R.id.iv_image);
+        ivImage = (ImageView) v.findViewById(R.id.iv_main);
 
 
         ptr = (PtrClassicFrameLayout) v.findViewById(R.id.ptr_main);

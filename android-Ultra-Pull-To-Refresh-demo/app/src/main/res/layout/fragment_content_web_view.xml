@@ -1,17 +1,11 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<in.srain.cube.views.ptr.PtrClassicFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ptr_main"
     android:layout_height="match_parent"
     android:layout_width="match_parent">
 
-    <in.srain.cube.views.ptr.PtrClassicFrameLayout
-        android:id="@+id/ptr_main"
+    <WebView
+        android:id="@+id/wv_main"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_width="match_parent">
-
-        <WebView
-            android:id="@+id/wv_main"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#ffffff" />
-    </in.srain.cube.views.ptr.PtrClassicFrameLayout>
-
-</RelativeLayout>
+        android:background="#ffffff" />
+</in.srain.cube.views.ptr.PtrClassicFrameLayout>

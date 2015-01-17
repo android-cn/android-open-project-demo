@@ -3,11 +3,9 @@
     android:layout_height="match_parent"
     android:layout_width="match_parent">
 
-    <ImageView
-        android:id="@+id/iv_main"
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scaleType="fitXY"
         android:background="#ffffff" />
 </in.srain.cube.views.ptr.PtrClassicFrameLayout>
-

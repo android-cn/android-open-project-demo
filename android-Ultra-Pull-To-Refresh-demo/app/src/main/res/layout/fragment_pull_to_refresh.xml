@@ -1,18 +1,12 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<in.srain.cube.views.ptr.PtrClassicFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ptr_main"
     android:layout_height="match_parent"
     android:layout_width="match_parent">
 
-    <in.srain.cube.views.ptr.PtrClassicFrameLayout
-        android:id="@+id/ptr_main"
+    <ImageView
+        android:id="@+id/iv_main"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_width="match_parent">
-
-        <ImageView
-            android:id="@+id/iv_image"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="fitXY"
-            android:background="#ffffff" />
-    </in.srain.cube.views.ptr.PtrClassicFrameLayout>
-
-</RelativeLayout>
+        android:scaleType="fitXY"
+        android:background="#ffffff" />
+</in.srain.cube.views.ptr.PtrClassicFrameLayout>

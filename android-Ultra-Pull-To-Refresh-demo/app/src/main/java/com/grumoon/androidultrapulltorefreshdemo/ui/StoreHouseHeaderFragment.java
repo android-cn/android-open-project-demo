@@ -48,7 +48,7 @@ public class StoreHouseHeaderFragment extends Fragment {
     private void initView(View v) {
         ptr = (PtrFrameLayout) v.findViewById(R.id.ptr_main);
 
-        ivImage = (ImageView) v.findViewById(R.id.iv_image);
+        ivImage = (ImageView) v.findViewById(R.id.iv_main);
 
         final StoreHouseHeader header = new StoreHouseHeader(getActivity());
         header.setPadding(0, DisplayUtil.dp2px(15), 0, DisplayUtil.dp2px(15));

@@ -4,16 +4,14 @@ package com.grumoon.androidultrapulltorefreshdemo.ui;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
-import android.widget.GridView;
-import android.widget.ListView;
 
 import com.grumoon.androidultrapulltorefreshdemo.R;
-import com.grumoon.androidultrapulltorefreshdemo.adapter.GradViewAdapter;
-import com.grumoon.androidultrapulltorefreshdemo.adapter.ListViewAdapter;
+import com.grumoon.androidultrapulltorefreshdemo.adapter.RecyclerViewAdapter;
 import com.grumoon.androidultrapulltorefreshdemo.util.Constants;
 
 import in.srain.cube.views.ptr.PtrClassicFrameLayout;
@@ -23,27 +21,31 @@ import in.srain.cube.views.ptr.PtrFrameLayout;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ContentGridViewFragment extends Fragment {
+public class ContentRecyclerViewFragment extends Fragment {
 
-
-    private GridView gvMain;
-    private BaseAdapter adapter;
+    private RecyclerView rvMain;
 
     private PtrClassicFrameLayout ptr;
+
+    private RecyclerViewAdapter adapter;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_content_grid_view, container, false);
+        View v = inflater.inflate(R.layout.fragment_content_recycler_view, container, false);
         initView(v);
         return v;
     }
 
-
     private void initView(View v) {
 
-        gvMain = (GridView) v.findViewById(R.id.gv_main);
         ptr = (PtrClassicFrameLayout) v.findViewById(R.id.ptr_main);
+
+        rvMain = (RecyclerView) v.findViewById(R.id.rv_main);
+
+
+        rvMain.setLayoutManager(new LinearLayoutManager(getActivity()));
+
         ptr.setPtrHandler(new PtrDefaultHandler() {
             @Override
             public void onRefreshBegin(PtrFrameLayout ptrFrameLayout) {
@@ -63,8 +65,8 @@ public class ContentGridViewFragment extends Fragment {
 
 
     private void getData() {
-        adapter = new GradViewAdapter(getActivity(), Constants.SMALL_IMAGE_URLS);
-        gvMain.setAdapter(adapter);
+        adapter = new RecyclerViewAdapter(getActivity(), Constants.SMALL_IMAGE_URLS);
+        rvMain.setAdapter(adapter);
     }
 
 
