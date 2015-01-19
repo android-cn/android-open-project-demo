@@ -6,8 +6,9 @@
 
     <ImageView
         android:id="@+id/iv_car"
-        android:layout_width="80dp"
-        android:layout_height="60dp"
-        android:scaleType="centerCrop"
-        android:layout_gravity="center" />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="2dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop" />
 </LinearLayout>

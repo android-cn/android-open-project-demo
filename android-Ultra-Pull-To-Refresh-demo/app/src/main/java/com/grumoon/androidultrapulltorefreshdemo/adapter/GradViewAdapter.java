@@ -26,9 +26,9 @@ public class GradViewAdapter extends BaseAdapter {
         this.imageUrls = imageUrls;
 
         options = new DisplayImageOptions.Builder()
-                .showImageForEmptyUri(R.drawable.ic_empty)
-                .showImageOnLoading(R.drawable.ic_empty)
-                .showImageOnFail(R.drawable.ic_empty)
+                .showImageForEmptyUri(R.drawable.ic_empty_small)
+                .showImageOnLoading(R.drawable.ic_empty_small)
+                .showImageOnFail(R.drawable.ic_empty_small)
                 .cacheInMemory(true)
                 .build();
 

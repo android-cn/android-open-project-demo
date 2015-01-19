@@ -13,7 +13,6 @@ import android.widget.ListView;
 
 import com.grumoon.androidultrapulltorefreshdemo.R;
 import com.grumoon.androidultrapulltorefreshdemo.adapter.GradViewAdapter;
-import com.grumoon.androidultrapulltorefreshdemo.adapter.ListViewAdapter;
 import com.grumoon.androidultrapulltorefreshdemo.util.Constants;
 
 import in.srain.cube.views.ptr.PtrClassicFrameLayout;

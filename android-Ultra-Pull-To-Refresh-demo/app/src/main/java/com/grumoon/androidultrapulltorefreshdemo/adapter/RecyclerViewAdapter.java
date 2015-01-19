@@ -29,10 +29,9 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter {
         this.imageUrls = imageUrls;
 
         options = new DisplayImageOptions.Builder()
-                .showImageForEmptyUri(R.drawable.ic_empty)
-                .showImageOnLoading(R.drawable.ic_empty)
-                .showImageOnFail(R.drawable.ic_empty)
-                .cacheInMemory(true)
+                .showImageForEmptyUri(R.drawable.ic_empty_large)
+                .showImageOnLoading(R.drawable.ic_empty_large)
+                .showImageOnFail(R.drawable.ic_empty_large)
                 .build();
 
     }

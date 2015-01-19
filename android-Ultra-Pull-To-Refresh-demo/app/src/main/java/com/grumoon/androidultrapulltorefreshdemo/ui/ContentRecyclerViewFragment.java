@@ -65,7 +65,7 @@ public class ContentRecyclerViewFragment extends Fragment {
 
 
     private void getData() {
-        adapter = new RecyclerViewAdapter(getActivity(), Constants.SMALL_IMAGE_URLS);
+        adapter = new RecyclerViewAdapter(getActivity(), Constants.BIG_IMAGE_URLS);
         rvMain.setAdapter(adapter);
     }
 
