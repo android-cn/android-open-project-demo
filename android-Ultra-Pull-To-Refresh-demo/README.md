@@ -1,7 +1,7 @@
 UltraPTR Demo
 ================================
 ###1.Demo Download
-[本地下载](https://github.com/android-cn/android-open-project-demo/blob/master/volley-demo/apk/VolleyDemo.apk?raw=true)
+[本地下载](https://raw.githubusercontent.com/android-cn/android-open-project-demo/master/android-Ultra-Pull-To-Refresh-demo/apk/UltraPTR-demo.apk?raw=true)
 
 ###2.Screenshot
 ####包含内容
