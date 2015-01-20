@@ -224,7 +224,7 @@ public class GetMoreListView extends ListView {
 
 
     /**
-     * 如果项目中其他地方需要重新设置PullListView的OnScrollListener<br/>
+     * 如果项目中其他地方需要重新设置GetMoreListView的OnScrollListener<br/>
      * 请在新的listener中onScrollStateChanged方法内调用此方法，保证PullListView正常运行。
      *
      * @param view
@@ -251,7 +251,7 @@ public class GetMoreListView extends ListView {
     }
 
     /**
-     * 如果项目中其他地方需要重新设置PullListView的OnScrollListener<br/>
+     * 如果项目中其他地方需要重新设置GetMoreListView的OnScrollListener<br/>
      * 请在新的listener中onScroll方法内调用此方法，保证PullListView正常运行。
      *
      * @param view
