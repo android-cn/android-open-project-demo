@@ -3,10 +3,9 @@
     android:layout_height="match_parent"
     android:layout_width="match_parent">
 
-    <ImageView
-        android:id="@+id/iv_main"
+    <com.grumoon.androidultrapulltorefreshdemo.view.GetMoreListView
+        android:id="@+id/gmlv_main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scaleType="fitXY"
         android:background="#ffffff" />
 </in.srain.cube.views.ptr.PtrFrameLayout>

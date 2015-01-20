@@ -12,6 +12,8 @@ import com.grumoon.androidultrapulltorefreshdemo.R;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
+import java.util.List;
+
 
 /**
  * Created by grumoon on 15/1/17.
@@ -19,11 +21,11 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 public class ListViewAdapter extends BaseAdapter {
 
     private LayoutInflater layoutInflater;
-    private String[] imageUrls;
+    private List<String> imageUrls;
 
     private DisplayImageOptions options;
 
-    public ListViewAdapter(Context context, String[] imageUrls) {
+    public ListViewAdapter(Context context, List<String> imageUrls) {
 
         this.layoutInflater = LayoutInflater.from(context);
         this.imageUrls = imageUrls;
@@ -42,15 +44,15 @@ public class ListViewAdapter extends BaseAdapter {
         if (imageUrls == null) {
             return 0;
         }
-        return imageUrls.length;
+        return imageUrls.size();
     }
 
     @Override
     public Object getItem(int position) {
-        if (imageUrls == null || position > imageUrls.length - 1) {
+        if (imageUrls == null || position > imageUrls.size() - 1) {
             return null;
         }
-        return imageUrls[position];
+        return imageUrls.get(position);
     }
 
     @Override
@@ -72,7 +74,7 @@ public class ListViewAdapter extends BaseAdapter {
         }
 
 
-        ImageLoader.getInstance().displayImage(imageUrls[position], viewHolder.ivCar, options);
+        ImageLoader.getInstance().displayImage(imageUrls.get(position), viewHolder.ivCar, options);
 
         return convertView;
     }

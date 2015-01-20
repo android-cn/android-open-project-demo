@@ -15,6 +15,9 @@ import com.grumoon.androidultrapulltorefreshdemo.R;
 import com.grumoon.androidultrapulltorefreshdemo.adapter.ListViewAdapter;
 import com.grumoon.androidultrapulltorefreshdemo.util.Constants;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 import in.srain.cube.views.ptr.PtrClassicFrameLayout;
 import in.srain.cube.views.ptr.PtrDefaultHandler;
 import in.srain.cube.views.ptr.PtrFrameLayout;
@@ -61,7 +64,7 @@ public class ContentListViewFragment extends Fragment {
 
 
     private void getData() {
-        adapter = new ListViewAdapter(getActivity(), Constants.SMALL_IMAGE_URLS);
+        adapter = new ListViewAdapter(getActivity(), Arrays.asList(Constants.SMALL_IMAGE_URLS));
         lvMain.setAdapter(adapter);
     }
 

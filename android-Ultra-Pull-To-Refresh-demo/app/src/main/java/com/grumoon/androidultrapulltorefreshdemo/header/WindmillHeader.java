@@ -3,13 +3,9 @@ package com.grumoon.androidultrapulltorefreshdemo.header;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.LinearInterpolator;
-import android.view.animation.RotateAnimation;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.grumoon.androidultrapulltorefreshdemo.R;
@@ -18,7 +14,7 @@ import in.srain.cube.views.ptr.PtrFrameLayout;
 import in.srain.cube.views.ptr.PtrUIHandler;
 
 /**
- * Created by Administrator on 2015/1/20.
+ * Created by grumoon on 2015/1/20.
  */
 public class WindmillHeader extends FrameLayout implements PtrUIHandler {
 
@@ -34,11 +30,6 @@ public class WindmillHeader extends FrameLayout implements PtrUIHandler {
     private ImageView ivWindmill;
 
     private WindmillDrawable drawable;
-
-    // 旋转动画
-    private RotateAnimation animation;
-    // 反向旋转动画
-    private RotateAnimation reverseAnimation;
 
     public WindmillHeader(Context context) {
         this(context, null);
@@ -61,43 +52,18 @@ public class WindmillHeader extends FrameLayout implements PtrUIHandler {
      */
     private void init(Context context) {
 
-        initAnimation();
-
-
-
         inflater = LayoutInflater.from(context);
-
         /**
          * 头部
          */
         headView = (ViewGroup) inflater.inflate(R.layout.windmill_header, this, true);
         ivWindmill = (ImageView) headView.findViewById(R.id.iv_windmill);
         tvHeadTitle = (TextView) headView.findViewById(R.id.tv_head_title);
-
-        drawable = new WindmillDrawable(context,ivWindmill);
-
+        drawable = new WindmillDrawable(context, ivWindmill);
         ivWindmill.setImageDrawable(drawable);
 
 
     }
-
-    /**
-     * 初始化动画
-     */
-    private void initAnimation() {
-        // 旋转
-        animation = new RotateAnimation(-180, 0, RotateAnimation.RELATIVE_TO_SELF, 0.5f, RotateAnimation.RELATIVE_TO_SELF, 0.5f);
-        animation.setInterpolator(new LinearInterpolator());
-        animation.setDuration(300);
-        animation.setFillAfter(true);
-
-        // 反向旋转
-        reverseAnimation = new RotateAnimation(0, -180, RotateAnimation.RELATIVE_TO_SELF, 0.5f, RotateAnimation.RELATIVE_TO_SELF, 0.5f);
-        reverseAnimation.setInterpolator(new LinearInterpolator());
-        reverseAnimation.setDuration(300);
-        reverseAnimation.setFillAfter(true);
-    }
-
 
     @Override
     public void onUIReset(PtrFrameLayout ptrFrameLayout) {
@@ -128,5 +94,19 @@ public class WindmillHeader extends FrameLayout implements PtrUIHandler {
             drawable.postRotation(currentPos - lastPos);
             invalidate();
         }
+
+        final int mOffsetToRefresh = frame.getOffsetToRefresh();
+        if (currentPos < mOffsetToRefresh && lastPos >= mOffsetToRefresh) {
+            if (isUnderTouch && status == PtrFrameLayout.PTR_STATUS_PREPARE) {
+                tvHeadTitle.setText("下拉刷新");
+
+            }
+        } else if (currentPos > mOffsetToRefresh && lastPos <= mOffsetToRefresh) {
+            if (isUnderTouch && status == PtrFrameLayout.PTR_STATUS_PREPARE) {
+                tvHeadTitle.setText("松开刷新");
+            }
+        }
+
+
     }
 }

@@ -12,7 +12,6 @@ import android.graphics.Paint;
 
 import android.graphics.drawable.Animatable;
 import android.graphics.drawable.Drawable;
-import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.LinearInterpolator;
@@ -22,7 +21,7 @@ import com.grumoon.androidultrapulltorefreshdemo.R;
 
 
 /**
- * Created by Administrator on 2015/1/20.
+ * Created by grumoon on 2015/1/20.
  */
 public class WindmillDrawable extends Drawable implements Animatable {
 
@@ -40,6 +39,8 @@ public class WindmillDrawable extends Drawable implements Animatable {
     private Animation animation;
 
     private boolean isFirstDraw = true;
+
+    private boolean isAnimating;
 
     public WindmillDrawable(Context context, View parent) {
         resources = context.getResources();
@@ -68,8 +69,6 @@ public class WindmillDrawable extends Drawable implements Animatable {
         }
 
         Paint p = new Paint();
-
-        Log.v(TAG, matrix.toString());
         canvas.drawBitmap(windmill, matrix, p);
     }
 
@@ -97,15 +96,17 @@ public class WindmillDrawable extends Drawable implements Animatable {
     @Override
     public void start() {
         parent.startAnimation(animation);
+        isAnimating = true;
     }
 
     @Override
     public void stop() {
         parent.clearAnimation();
+        isAnimating = false;
     }
 
     @Override
     public boolean isRunning() {
-        return false;
+        return isAnimating;
     }
 }
