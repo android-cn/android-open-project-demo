@@ -2,11 +2,14 @@ package com.grumoon.volleydemo.custom;
 
 import java.io.StringReader;
 import java.io.UnsupportedEncodingException;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
 
+import com.android.volley.AuthFailureError;
 import com.android.volley.NetworkResponse;
 import com.android.volley.ParseError;
 import com.android.volley.Request;
@@ -48,4 +51,11 @@ public class XmlRequest extends Request<XmlPullParser> {
 		mListener.onResponse(response);
 	}
 
+    @Override
+    public Map<String, String> getHeaders() throws AuthFailureError {
+        // self-defined user agent
+        Map<String, String> headerMap = new HashMap<String, String>();
+        headerMap.put("User-Agent", "android-open-project-analysis/1.0");
+        return headerMap;
+    }
 }
