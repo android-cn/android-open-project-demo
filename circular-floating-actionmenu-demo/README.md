@@ -1,4 +1,4 @@
-Volley Demo
+Circular Floating Action Menu Demo
 ================================
 一个与`Path`菜单类似的(非完整)圆形弹出菜单，可方便的定制菜单以及动画。  
 ###1. Demo Download
