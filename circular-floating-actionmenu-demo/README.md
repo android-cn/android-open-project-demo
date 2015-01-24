@@ -1,3 +1,8 @@
-“一个灵感来自Path路径的Android上可定制圆形浮动菜单动画”  
+Volley Demo
+================================
+一个与`Path`菜单类似的(非完整)圆形弹出菜单，可方便的定制菜单以及动画。  
+###1.Demo Download
+[本地下载](https://github.com/android-cn/android-open-project-demo/tree/master/circular-floating-actionmenu-demo/apk)
 
-![Alt text](https://github.com/android-cn/android-open-project-analysis/blob/master/circular-floating-action-menu/demo.gif "图片样例")
+###2.Screenshot
+![Screenshot](https://github.com/android-cn/android-open-project-analysis/blob/master/circular-floating-action-menu/demo.gif "图片样例")
