@@ -5,4 +5,4 @@ Circular Floating Action Menu Demo
 [本地下载](https://github.com/android-cn/android-open-project-demo/tree/master/circular-floating-actionmenu-demo/apk)
 
 ###2. Screenshot
-![Screenshot](https://github.com/android-cn/android-open-project-analysis/blob/master/circular-floating-action-menu/demo.gif "图片样例")
+![Screenshot](apk/demo.gif)
