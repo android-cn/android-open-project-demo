@@ -1,0 +1,13 @@
+<in.srain.cube.views.ptr.PtrClassicFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ptr_main"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+
+    <GridView
+        android:id="@+id/gv_main"
+        android:numColumns="3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="5dp"
+        android:background="#ffffff" />
+</in.srain.cube.views.ptr.PtrClassicFrameLayout>

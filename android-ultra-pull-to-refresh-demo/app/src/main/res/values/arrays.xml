@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer-array name="material_colors">
+        <item>@color/materialRed</item>
+        <item>@color/materialBlue</item>
+        <item>@color/materialYellow</item>
+        <item>@color/materialGreen</item>
+    </integer-array>
+</resources>
