@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Ultra-PTR-Demo</string>
+    <string name="app_about">
+<![CDATA[
+	<div>
+	<br/><a href="https://github.com/liaohuqiu/android-Ultra-Pull-To-Refresh">android-Ultra-Pull-To-Refresh</a><br />
+	<br/>项目作者：<a href="https://github.com/liaohuqiu">liaohuqiu</a><br />
+	<br/>这是现在已经停止维护的下拉刷新项目的替代方案。继承于ViewGroup可以包含任何View。功能比SwipeRefreshLayout强大。
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>Demo作者：<a href="https://github.com/grumoon">Grumoon</a><br />
+	<br/>更多内容请关注 <a href="https://github.com/android-cn/android-open-project-analysis">Android 开源项目实现原理解析</a><br />
+	</div>
+	]]>
+    </string>
+    <string name="component_title">App Components</string>
+    <string name="component_detail">App components are the essential building blocks of an Android app. Each component is a different point through which the system can enter your app. Not all components are actual entry points for the user and some depend on each other, but each one exists as its own entity and plays a specific role—each one is a unique building block that helps define your app\'s overall behavior.There are four different types of app components. Each type serves a distinct purpose and has a distinct lifecycle that defines how the component is created and destroyed.Here are the four types of app components:</string>
+
+    <string name="activity_title">Activities</string>
+    <string name="activity_detail">An activity represents a single screen with a user interface. For example, an email app might have one activity that shows a list of new emails, another activity to compose an email, and another activity for reading emails. Although the activities work together to form a cohesive user experience in the email app, each one is independent of the others. As such, a different app can start any one of these activities (if the email app allows it). For example, a camera app can start the activity in the email app that composes new mail, in order for the user to share a picture.An activity is implemented as a subclass of Activity and you can learn more about it in the Activities developer guide.</string>
+
+    <string name="service_title">Services</string>
+    <string name="service_detail">A service is a component that runs in the background to perform long-running operations or to perform work for remote processes. A service does not provide a user interface. For example, a service might play music in the background while the user is in a different app, or it might fetch data over the network without blocking user interaction with an activity. Another component, such as an activity, can start the service and let it run or bind to it in order to interact with it.A service is implemented as a subclass of Service and you can learn more about it in the Services developer guide.</string>
+
+    <string name="content_provider_title">Content providers</string>
+    <string name="content_provider_detail">A content provider manages a shared set of app data. You can store the data in the file system, an SQLite database, on the web, or any other persistent storage location your app can access. Through the content provider, other apps can query or even modify the data (if the content provider allows it). For example, the Android system provides a content provider that manages the user\'s contact information. As such, any app with the proper permissions can query part of the content provider (such as ContactsContract.Data) to read and write information about a particular person.Content providers are also useful for reading and writing data that is private to your app and not shared. For example, the Note Pad sample app uses a content provider to save notes.A content provider is implemented as a subclass of ContentProvider and must implement a standard set of APIs that enable other apps to perform transactions. For more information, see the Content Providers developer guide.</string>
+
+    <string name="broadcast_receiver_title">Broadcast receivers</string>
+    <string name="broadcast_receiver_detail">A broadcast receiver is a component that responds to system wide broadcast announcements. Many broadcasts originate from the system for example, a broadcast announcing that the screen has turned off, the battery is low, or a picture was captured. Apps can also initiate broadcasts for example, to let other apps know that some data has been downloaded to the device and is available for them to use. Although broadcast receivers don\'t display a user interface, they may create a status bar notification to alert the user when a broadcast event occurs. More commonly, though, a broadcast receiver is just a gateway to other components and is intended to do a very minimal amount of work. For instance, it might initiate a service to perform some work based on the event.A broadcast receiver is implemented as a subclass of BroadcastReceiver and each broadcast is delivered as an Intent object. For more information, see the BroadcastReceiver class.</string>
+
+
+</resources>

@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/../../appcompat_v7_2/appcompat_v7_2.iml" filepath="$PROJECT_DIR$/../../appcompat_v7_2/appcompat_v7_2.iml" />
-      <module fileurl="file://$PROJECT_DIR$/universal-image-loader/universal-image-loader.iml" filepath="$PROJECT_DIR$/universal-image-loader/universal-image-loader.iml" />
-      <module fileurl="file://$PROJECT_DIR$/universal-image-loader-demo/universal-image-loader-demo.iml" filepath="$PROJECT_DIR$/universal-image-loader-demo/universal-image-loader-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gradle/gradle.iml" filepath="$PROJECT_DIR$/gradle/gradle.iml" />
     </modules>
   </component>
 </project>

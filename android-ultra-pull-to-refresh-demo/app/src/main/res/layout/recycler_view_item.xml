@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <ImageView
+            android:id="@+id/iv_car"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#ffffff">
+
+            <ImageButton
+                android:id="@+id/btn_info"
+                android:layout_width="40dp"
+                android:layout_height="32dp"
+                android:layout_alignParentLeft="true"
+                android:background="@drawable/card_view_action_bg"
+                android:layout_margin="5dp"
+                android:src="@drawable/ic_info" />
+
+            <ImageButton
+                android:id="@+id/btn_fav"
+                android:layout_width="40dp"
+                android:layout_height="32dp"
+                android:layout_toRightOf="@id/btn_info"
+                android:background="@drawable/card_view_action_bg"
+                android:layout_margin="5dp"
+                android:src="@drawable/ic_favorite" />
+
+            <ImageButton
+                android:id="@+id/btn_grade"
+                android:layout_width="40dp"
+                android:layout_height="32dp"
+                android:layout_toRightOf="@id/btn_fav"
+                android:background="@drawable/card_view_action_bg"
+                android:layout_margin="5dp"
+                android:src="@drawable/ic_grade" />
+
+            <ImageButton
+                android:id="@+id/btn_delete"
+                android:layout_width="40dp"
+                android:layout_height="32dp"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/card_view_action_bg"
+                android:layout_margin="5dp"
+                android:src="@drawable/ic_delete" />
+
+
+        </RelativeLayout>
+    </LinearLayout>
+
+
+</android.support.v7.widget.CardView>
