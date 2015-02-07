@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <Button
+        android:id="@+id/menu"
+        style="@style/MenuStyle"
+        android:background="@drawable/menu" />
+
+    <Button
+        android:id="@+id/item1"
+        style="@style/MenuItemStyle"
+        android:background="@drawable/circle1"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/item2"
+        style="@style/MenuItemStyle"
+        android:background="@drawable/circle2"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/item3"
+        style="@style/MenuItemStyle"
+        android:background="@drawable/circle3"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/item4"
+        style="@style/MenuItemStyle"
+        android:background="@drawable/circle4"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/item5"
+        style="@style/MenuItemStyle"
+        android:background="@drawable/circle5"
+        android:visibility="gone" />
+
+</FrameLayout>
