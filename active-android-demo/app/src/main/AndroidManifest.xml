@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="ouyang.activeandroid">
+
+    <application
+        android:name="com.activeandroid.app.Application"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme">
+        <provider android:authorities="ouyang.activeandroid" android:exported="false" android:name="com.activeandroid.content.ContentProvider" />
+
+        <meta-data
+            android:name="AA_DB_NAME"
+            android:value="activedeme.db" />
+        <meta-data
+            android:name="AA_DB_VERSION"
+            android:value="5" />
+
+        <meta-data
+            android:name="AA_MODELS"
+            android:value="ouyang.model.Clazz, ouyang.model.Student" />
+
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".FoodCategoryActivity" android:label="套餐分类" />
+        <activity android:name=".FoodActivity" />
+        <activity android:name=".UpdateFoodActivity" />
+        <activity android:name=".FoodCategoryCpActivity" />
+        <activity android:name=".FoodCpActivity" />
+    </application>
+
+</manifest>
