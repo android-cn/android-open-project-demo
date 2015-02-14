@@ -1,0 +1,1 @@
+include ':app', ':dlapkplugina', ':dlapkplugininterface', ':dlapkpluginb', ':dlapkpluginc', ":lib"

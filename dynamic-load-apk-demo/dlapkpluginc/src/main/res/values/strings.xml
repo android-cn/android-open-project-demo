@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">dlapkpluginc</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="model3_tip">模式3：插件依赖宿主</string>
+    <string name="invode_method_in_host">点击向宿主发送方法调用请求</string>
+</resources>
