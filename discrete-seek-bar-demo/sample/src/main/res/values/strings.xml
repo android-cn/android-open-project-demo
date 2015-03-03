@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">DiscreteSeekBar Sample</string>
+    <string name="customize">Customize Discrete Seek Bar</string>
+    <string name="scrubber_color">progress color</string>
+    <string name="floater_color">floater color</string>
+    <string name="track_color">track color</string>
+    <string name="color_setting">Color Setting</string>
+    <string name="floater_color_pressed">floater color pressed</string>
+    <string name="floater_color_animate">floater color animate</string>
+    <string name="red">R:</string>
+    <string name="green">G:</string>
+    <string name="blue">B:</string>
+    <string name="set_color">SET COLOR</string>
+    <string name="value_setting">Value Setting</string>
+    <string name="min_value">Min Value</string>
+    <string name="max_value">Max Value</string>
+    <string name="set_value">SET VALUE</string>
+    <string name="regex">Numeric Transformer</string>
+</resources>
