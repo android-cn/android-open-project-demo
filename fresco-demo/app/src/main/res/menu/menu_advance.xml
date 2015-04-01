@@ -1,0 +1,13 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" tools:context="com.yql.fresco.AdvanceActivity">
+    <item android:id="@+id/action_progressive_jpeg" android:title="@string/action_progressive_jpeg"
+        android:orderInCategory="100" android:showAsAction="never" />
+    <item android:id="@+id/action_low_to_high" android:title="@string/action_low_to_high"
+        android:orderInCategory="100" android:showAsAction="never" />
+    <item android:id="@+id/action_thumb_preview" android:title="@string/action_thumb_preview"
+        android:orderInCategory="100" android:showAsAction="never" />
+    <item android:id="@+id/action_first_availabel" android:title="@string/action_first_availabel"
+        android:orderInCategory="100" android:showAsAction="never" />
+    <item android:id="@+id/action_modify_img" android:title="@string/action_modify_img"
+        android:orderInCategory="100" android:showAsAction="never" />
+</menu>

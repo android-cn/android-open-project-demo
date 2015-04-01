@@ -1,0 +1,51 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ViewStub
+        android:id="@+id/viewstub_in_xml_opt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout="@layout/opt_in_xml" />
+
+    <ViewStub
+        android:id="@+id/viewstub_in_code_opt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout="@layout/opt_in_code"/>
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/img"
+        android:layout_centerInParent="true"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_margin="10dp"
+        fresco:fadeDuration="1000"
+        fresco:actualImageScaleType="focusCrop"
+        fresco:placeholderImage="@color/placeholder"
+        fresco:placeholderImageScaleType="centerCrop"
+        fresco:failureImage="@color/error"
+        fresco:failureImageScaleType="center"
+        fresco:retryImage="@color/retrying"
+        fresco:retryImageScaleType="centerInside"
+        fresco:progressBarImage="@drawable/progress_bar"
+        fresco:progressBarImageScaleType="fitXY"
+        fresco:progressBarAutoRotateInterval="1000"
+        fresco:backgroundImage="@color/blue"
+        fresco:overlayImage="@color/transparent"
+        fresco:pressedStateOverlayImage="@color/transparent_50"
+        fresco:roundAsCircle="false"
+        fresco:roundedCornerRadius="10dp"
+        fresco:roundTopLeft="true"
+        fresco:roundTopRight="true"
+        fresco:roundBottomLeft="true"
+        fresco:roundBottomRight="true"
+        fresco:roundWithOverlayColor="@color/corner_color"
+        fresco:roundingBorderWidth="2dp"
+        fresco:roundingBorderColor="@color/border_color" />
+
+
+</RelativeLayout>

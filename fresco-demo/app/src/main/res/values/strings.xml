@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">fresco demo</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_simple">SimpleActivity</string>
+
+    <string name="str_in_xml">simple in xml</string>
+    <string name="str_in_code">simple in code</string>
+    <string name="str_advance">advance in code</string>
+    <string name="text_in_xml">just made in xml</string>
+    <string name="text_in_code">buid in the code</string>
+
+    <string name="action_http">HTTP_JPG</string>
+    <string name="action_gif">HTTP_GIF</string>
+    <string name="action_webp">RES_WEBP</string>
+
+    <string name="title_activity_advance">AdvanceActivity</string>
+    <string name="action_progressive_jpeg">progressiveJpeg</string>
+    <string name="action_low_to_high">low2high</string>
+    <string name="action_thumb_preview">thumbPreview</string>
+    <string name="action_first_availabel">firstAvailabel</string>
+    <string name="action_modify_img">modifyImg</string>
+</resources>

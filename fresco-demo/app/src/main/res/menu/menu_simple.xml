@@ -1,0 +1,9 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" tools:context="com.yql.fresco.SimpleActivity">
+    <item android:id="@+id/action_http" android:title="@string/action_http"
+        android:orderInCategory="100" android:showAsAction="never" />
+    <item android:id="@+id/action_gif" android:title="@string/action_gif"
+        android:orderInCategory="100" android:showAsAction="never" />
+    <item android:id="@+id/action_webp" android:title="@string/action_webp"
+        android:orderInCategory="100" android:showAsAction="never" />
+</menu>

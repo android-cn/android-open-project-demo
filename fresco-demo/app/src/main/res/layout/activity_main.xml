@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp">
+
+        <Button
+            android:id="@+id/btn_in_xml"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/str_in_xml" />
+
+        <Button
+            android:id="@+id/btn_in_code"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_in_xml"
+            android:text="@string/str_in_code" />
+        <Button
+            android:id="@+id/btn_advance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_in_code"
+            android:text="@string/str_advance" />
+    </RelativeLayout>
+
+</ScrollView>

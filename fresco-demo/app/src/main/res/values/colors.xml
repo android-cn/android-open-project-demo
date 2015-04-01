@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="placeholder">#e1e4eb</color>
+    <color name="error">#ff9999</color>
+    <color name="retrying">#008899</color>
+    <color name="blue">#0000ff</color>
+    <color name="red">#ff0000</color>
+    <color name="corner_color">#ff5050</color>
+    <color name="border_color">#505050</color>
+    <color name="transparent">#00000000</color>
+    <color name="transparent_50">#7f000000</color>
+</resources>
