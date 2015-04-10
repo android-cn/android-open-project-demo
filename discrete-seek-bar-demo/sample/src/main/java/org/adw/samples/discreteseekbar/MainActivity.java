@@ -152,7 +152,7 @@ public class MainActivity extends Activity implements View.OnClickListener{
                 break;
             case R.id.btn_set_regex:
                 /**
-                 * 这个接口只能显示数字，如果我想用seekbar显示时间就没有办法了。
+                 * 如果想显示字符需要实现另外两个方法
                  */
                 sbTarget.setNumericTransformer(new DiscreteSeekBar.NumericTransformer() {
                     @Override
@@ -163,6 +163,28 @@ public class MainActivity extends Activity implements View.OnClickListener{
                         }catch (Exception e) {
                             return value;
                         }
+                    }
+
+                    /**
+                     * Return the desired value to be shown to the user.
+                     * This value will be displayed 'as is' without further formatting.
+                     *
+                     * @param value The value to be transformed
+                     * @return A formatted string
+                     */
+                    @Override
+                    public String transformToString(int value) {
+                        return super.transformToString(value);
+                    }
+
+                    /**
+                     * Used to indicate which transform will be used. If this method returns true,
+                     * {@link #transformToString(int)} will be used, otherwise {@link #transform(int)}
+                     * will be used
+                     */
+                    @Override
+                    public boolean useStringTransform() {
+                        return super.useStringTransform();
                     }
                 });
         }
