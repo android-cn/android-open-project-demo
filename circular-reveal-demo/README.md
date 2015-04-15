@@ -3,11 +3,7 @@ CircularReveal
 
 Lollipop ViewAnimationUtils.createCircularReveal for everyone 2.3+
 
-<img src="http://7sbnrp.com1.z0.glb.clouddn.com/lollipop2-CircularReveal.gif" />
-
-<video id="video" controls="" preload="none" poster="https://github.com/aosp-exchange-group/android-open-project-demo/blob/master/circular-reveal-demo/source/Sample.jpg">
-      <source id="mp4" src="https://github.com/aosp-exchange-group/android-open-project-demo/blob/master/circular-reveal-demo/source/Sample.mp4" type="video/mp4">
-    </video>
+<img src="https://github.com/aosp-exchange-group/android-open-project-demo/blob/master/circular-reveal-demo/source/Sample.gif" />
 
 Sample
 ======
