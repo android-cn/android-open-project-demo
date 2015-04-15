@@ -5,9 +5,9 @@ Lollipop ViewAnimationUtils.createCircularReveal for everyone 2.3+
 
 <img src="http://7sbnrp.com1.z0.glb.clouddn.com/lollipop2-CircularReveal.gif" />
 
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=_vVpwzYb4Dg
-" target="_blank">Yotube Video <br /> <img src="http://img.youtube.com/vi/_vVpwzYb4Dg/0.jpg" 
-alt="Ripple DEMO" width="320" height="240" border="10" /></a>
+<video id="video" controls="" preload="none" poster="https://github.com/aosp-exchange-group/android-open-project-demo/blob/master/circular-reveal-demo/source/Sample.jpg">
+      <source id="mp4" src="https://github.com/aosp-exchange-group/android-open-project-demo/blob/master/circular-reveal-demo/source/Sample.mp4" type="video/mp4">
+    </video>
 
 Sample
 ======
