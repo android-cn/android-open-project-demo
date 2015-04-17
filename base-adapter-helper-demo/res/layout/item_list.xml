@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="10dp" >
+
+    <ImageView
+        android:id="@+id/id_icon"
+        android:layout_width="48dp"
+        android:layout_marginRight="5dp"
+        android:layout_height="48dp"
+        android:scaleType="centerCrop"
+        android:layout_centerVertical="true"
+        android:src="@drawable/ic_launcher" />
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:text="红色钱包"
+        android:layout_toRightOf="@id/id_icon"
+        android:textColor="#444444"
+        android:textSize="16sp" >
+    </TextView>
+
+    <TextView
+        android:id="@+id/tv_describe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_title"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@id/id_icon"
+        android:maxLines="2"
+        android:minLines="1"
+        android:text="周三早上丢失了红色钱包，在食堂二楼"
+        android:textColor="#898989"
+        android:textSize="16sp" >
+    </TextView>
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_describe"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@id/id_icon"
+        android:text="20130240122"
+        android:textColor="#898989"
+        android:textSize="12sp" >
+    </TextView>
+
+    <TextView
+        android:id="@+id/tv_phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/tv_describe"
+        android:layout_marginTop="10dp"
+        android:background="#5cbe6c"
+        android:drawableLeft="@drawable/icon_photo"
+        android:drawablePadding="5dp"
+        android:paddingBottom="3dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingTop="3dp"
+        android:text="138024249542"
+        android:textColor="#ffffff"
+        android:textSize="12sp" >
+    </TextView>
+
+</RelativeLayout>
