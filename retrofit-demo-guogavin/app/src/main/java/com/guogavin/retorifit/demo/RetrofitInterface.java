@@ -31,7 +31,7 @@ public interface RetrofitInterface {
     @GET("/index.php")
     String callIndexSynchronous();
 
-    //直接get访问一个地址
+    //直接get访问一个地址，直接返回Response
     @GET("/index.php")
     Response callIndexSynchronousResponse();
 
