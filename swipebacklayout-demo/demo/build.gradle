@@ -1,0 +1,48 @@
+apply plugin: 'com.android.application'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'com.android.support:support-v4:21.0.3'
+    compile project(':library')
+}
+
+android {
+    compileSdkVersion 21
+    buildToolsVersion "21.1.2"
+
+    defaultConfig {
+        minSdkVersion 7
+        targetSdkVersion 21
+    }
+
+    signingConfigs {
+        signing
+    }
+
+    buildTypes {
+        release {
+            if (project.hasProperty('storeFile')) {
+                signingConfig signingConfigs.signing
+            }
+        }
+    }
+}
+
+if (project.hasProperty('storeFile')) {
+    android.signingConfigs.signing.storeFile = file(storeFile)
+}
+
+if (project.hasProperty('storePassword')) {
+    android.signingConfigs.signing.storePassword = storePassword
+}
+
+if (project.hasProperty('keyAlias')) {
+    android.signingConfigs.signing.keyAlias = keyAlias
+}
+
+if (project.hasProperty('keyPassword')) {
+    android.signingConfigs.signing.keyPassword = keyPassword
+}
