@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">RetrofitDemo</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_item">ItemActivity</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="input_group_id">请输入github的groupId</string>
+    <string name="input_request_path">请输入请求路径(参数１)</string>
+    <string name="input_request_value">请输入请求参数(QueryMap)</string>
+    <string name="input_field_value">请输入请求参数(Field,FieldMap)</string>
+    <string name="input_string_body">请输入请求String Body(MarkDown格式)</string>
+    <string name="input_form_body">请输入请求参数(Form Body)</string>
+
+    <string name="sure">确认</string>
+    <string name="headers_single">在方法上添加单个Header来请求</string>
+    <string name="headers_map">在方法上添加多个Header（map）来请求</string>
+    <string name="headers_params">在方法参数上添加单个Header来请求</string>
+    <string name="manipulation_introduce">使用Path, Query, QueryMap范例</string>
+    <string name="field_introduce">使用Field,FieldMap,FormUrlEncoded范例</string>
+
+    <string name="header_introduce">使用Header请求，三种方式</string>
+
+    <string name="multipart_introduce">使用Part范例</string>
+    <string name="body_introduce">使用body 添加参数，把Args作为Body</string>
+    <string name="introduce">简介说明</string>
+    <string name="title_activity_introduce">IntroduceActivity</string>
+
+    <string name="app_introduce">这个Demo用Retrofit相关的API访问httpbin(http://httpbin.org)网站,并且利用GsonConverterFactory将返回值转换为对象，
+        用于展示Retrofit的相关功能。\n（默认情况下，是返回ResponseBody,见HttpbinService说明）</string>
+</resources>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/bt_introduce"
+            style="@style/Item"
+            android:text="@string/introduce" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="15dp" />
+
+        <Button
+            android:id="@+id/bt_request_method"
+            style="@style/Item"
+            android:text="REQUEST METHOD" />
+
+        <Button
+            android:id="@+id/bt_url_manipulation"
+            style="@style/Item"
+            android:text="URL MANIPULATION" />
+
+        <Button
+            android:id="@+id/bt_request_body"
+            style="@style/Item"
+            android:text="REQUEST BODY" />
+
+        <Button
+            android:id="@+id/bt_form_encode"
+            style="@style/Item"
+            android:text="FORM ENCODED" />
+
+        <Button
+            android:id="@+id/bt_multipart"
+            style="@style/Item"
+            android:text="FORM MULTIPART" />
+
+        <Button
+            android:id="@+id/bt_header_manipulation"
+            style="@style/Item"
+            android:text="HEADER MANIPULATION" />
+
+        <Button
+            android:id="@+id/bt_sync"
+            style="@style/Item"
+            android:text="SYNCHRONOUS VS. ASYNCHRONOUS"
+            android:visibility="visible" />
+    </LinearLayout>
+
+</ScrollView>

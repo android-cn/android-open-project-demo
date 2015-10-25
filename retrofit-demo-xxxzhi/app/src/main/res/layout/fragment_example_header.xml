@@ -1,0 +1,46 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".fragment.ExampleMethodFragment">
+
+    <TextView
+        style="@style/ExampleTitle"
+        android:text="@string/header_introduce" />
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <View style="@style/SplitLine" />
+
+
+    <Button
+        android:id="@+id/bt_headers_request"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/headers_single" />
+
+
+    <Button
+        android:id="@+id/bt_headers_map_request"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/headers_map" />
+
+
+    <EditText
+        android:id="@+id/et_agent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="User-Agent"
+        android:text="Retrofit-Sample-App" />
+
+    <Button
+        android:id="@+id/bt_header_params_request"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/headers_params" />
+
+    <include layout="@layout/layout_result" />
+
+</LinearLayout>

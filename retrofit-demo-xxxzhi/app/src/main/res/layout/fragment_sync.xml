@@ -1,0 +1,27 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".fragment.ExampleMethodFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/bt_sync"
+            android:text="Sync"
+            style="@style/LinearItem" />
+
+        <Button
+            android:id="@+id/bt_async"
+            style="@style/LinearItem"
+            android:text="Async" />
+    </LinearLayout>
+
+    <include layout="@layout/layout_result" />
+
+</LinearLayout>

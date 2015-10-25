@@ -1,0 +1,104 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".fragment.ExampleMethodFragment">
+
+    <TextView
+        style="@style/ExampleTitle"
+        android:text="@string/manipulation_introduce" />
+
+    <!-- TODO: Update blank fragment layout -->
+    <EditText
+        android:id="@+id/et_path"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:hint="@string/input_request_path"
+        android:text="get" />
+
+    <View style="@style/SplitLine" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/et_key1"
+            style="@style/LinearItem"
+            android:hint="arg1"
+            android:text="arg1" />
+
+        <EditText
+            android:id="@+id/et_value1"
+            style="@style/LinearItem"
+            android:hint="arg1  Test Query"
+            android:text="arg1  Test Query" />
+
+    </LinearLayout>
+
+    <View style="@style/SplitLine" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:gravity="center"
+        android:text="@string/input_request_value" />
+
+    <View style="@style/SplitLine" />
+
+
+    <View style="@style/SplitLine" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/et_key2"
+            style="@style/LinearItem"
+            android:hint="arg2"
+            android:text="arg2" />
+
+        <EditText
+            android:id="@+id/et_value2"
+            style="@style/LinearItem"
+            android:hint="arg2"
+            android:text="arg2 test" />
+
+    </LinearLayout>
+
+    <View style="@style/SplitLine" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/et_key3"
+            style="@style/LinearItem"
+            android:hint="Key"
+            android:text="arg3" />
+
+        <EditText
+            android:id="@+id/et_value3"
+            style="@style/LinearItem"
+            android:hint="arg3"
+            android:text="arg3" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/bt_request"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/sure" />
+
+    <include layout="@layout/layout_result" />
+
+</LinearLayout>

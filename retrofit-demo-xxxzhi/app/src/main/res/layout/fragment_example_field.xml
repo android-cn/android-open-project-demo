@@ -1,0 +1,92 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".fragment.ExampleMethodFragment">
+
+    <TextView
+        android:text="@string/field_introduce"
+        style="@style/ExampleTitle" />
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <View style="@style/SplitLine" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:gravity="center"
+        android:text="@string/input_field_value" />
+
+    <View style="@style/SplitLine" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/et_key1"
+            style="@style/LinearItem"
+            android:text="log"
+            android:hint="log" />
+
+        <EditText
+            android:id="@+id/et_value1"
+            style="@style/LinearItem"
+            android:text="1"
+            android:hint="Value1" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/et_key2"
+            style="@style/LinearItem"
+            android:text="pwd"
+            android:hint="pwd" />
+
+        <EditText
+            android:text="3"
+            android:id="@+id/et_value2"
+            style="@style/LinearItem"
+            android:hint="Value2" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/et_key3"
+            style="@style/LinearItem"
+            android:hint="type"
+            android:text="type" />
+
+        <EditText
+            android:id="@+id/et_value3"
+            style="@style/LinearItem"
+            android:text="desc"
+            android:hint="desc/asc" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/bt_request"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/sure" />
+
+    <include layout="@layout/layout_result" />
+
+</LinearLayout>

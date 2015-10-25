@@ -1,0 +1,77 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".fragment.ExampleMethodFragment">
+
+    <TextView
+        style="@style/ExampleTitle"
+        android:text="@string/multipart_introduce" />
+
+
+    <View style="@style/SplitLine" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:gravity="center"
+        android:text="@string/input_string_body" />
+
+    <View style="@style/SplitLine" />
+
+    <EditText
+        android:id="@+id/body"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="String body"
+        android:text="MultiPart
+--------
+
+ * _1.0_ May 6, 2015
+ * _1.1_ June 15, 2015
+ * _1.2_ August 11, 2015
+" />
+
+
+    <View style="@style/SplitLine" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:gravity="center"
+        android:text="@string/input_form_body" />
+
+    <View style="@style/SplitLine" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/et_key1"
+            style="@style/LinearItem"
+            android:hint="log"
+            android:text="log" />
+
+        <EditText
+            android:id="@+id/et_value1"
+            style="@style/LinearItem"
+            android:hint="Value1"
+            android:text="1" />
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/bt_request"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/sure" />
+
+    <include layout="@layout/layout_result" />
+
+</LinearLayout>
