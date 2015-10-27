@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Basic Use"/>
+
+            <Button
+                android:id="@+id/btn_main_single"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Single TouchImageView"
+                />
+
+            <Button
+                android:id="@+id/btn_main_viewpager"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ViewPager Example"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="UIL,Picasso,Glide Test"/>
+
+            <Button
+                android:id="@+id/btn_main_imageloader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="UIL ImageLoader Test"
+                />
+
+            <Button
+                android:id="@+id/btn_main_picasso"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Picasso Test"
+                />
+
+            <Button
+                android:id="@+id/btn_main_glide"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Glide Test"
+                />
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>
