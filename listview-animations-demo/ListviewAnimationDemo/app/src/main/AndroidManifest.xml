@@ -1,0 +1,48 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.listviewanimationdemo">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name="com.example.listviewanimationdemo.HomeActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.listviewanimationdemo.itemmanipulation.SwipeToDismissActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.example.listviewanimationdemo.itemmanipulation.DragAndDropActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.example.listviewanimationdemo.itemmanipulation.AnimateDismissActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.example.listviewanimationdemo.itemmanipulation.AnimateAdditionActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.example.listviewanimationdemo.itemmanipulation.ExpandableListItemActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.example.listviewanimationdemo.itemanimation.ItemAnimationActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.example.listviewanimationdemo.itemanimation.ItemAnimationMainActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.example.listviewanimationdemo.itemanimation.GoogleCardsActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.example.listviewanimationdemo.itemanimation.GridViewActivity"
+            android:screenOrientation="portrait"></activity>
+    </application>
+
+</manifest>
