@@ -19,7 +19,10 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,6 +33,8 @@ import com.example.listviewanimationdemo.base.BaseListActivity;
 import com.nhaarman.listviewanimations.ArrayAdapter;
 import com.nhaarman.listviewanimations.appearance.simple.AlphaInAnimationAdapter;
 import com.nhaarman.listviewanimations.itemmanipulation.DynamicListView;
+import com.nhaarman.listviewanimations.itemmanipulation.dragdrop.OnItemMovedListener;
+import com.nhaarman.listviewanimations.itemmanipulation.dragdrop.TouchViewDraggableManager;
 
 public class DragAndDropActivity extends BaseListActivity {
 
@@ -42,10 +47,9 @@ public class DragAndDropActivity extends BaseListActivity {
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTitle("item拖动");
-        setContentView(layout.activity_draganddrop);
+        setContentView(R.layout.activity_draganddrop);
 
         DynamicListView listView = (DynamicListView) findViewById(id.activity_draganddrop_listview);
-        listView.setDivider(null);
 
         TextView headerView = new TextView(this);
         headerView.setText("这是头部");
@@ -58,7 +62,35 @@ public class DragAndDropActivity extends BaseListActivity {
         animAdapter.setAbsListView(listView);
         listView.setAdapter(animAdapter);
 
+        listView.enableDragAndDrop();
+        listView.setDraggableManager(new TouchViewDraggableManager(R.id.id_grip_view));
+        listView.setOnItemMovedListener(new OnItemMovedListener() {
+            @Override
+            public void onItemMoved(int originalPosition, int newPosition) {
+                Toast.makeText(getBaseContext(), originalPosition + "行与" + newPosition
+                        + "行交换", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        listView.setOnItemLongClickListener(new MyOnItemLongClickListener(listView));
+
         Toast.makeText(this, "长按item开始拖拽", Toast.LENGTH_LONG).show();
-        
+
+    }
+
+    private class MyOnItemLongClickListener implements AdapterView.OnItemLongClickListener {
+        private DynamicListView listView;
+
+        public MyOnItemLongClickListener(DynamicListView listView) {
+            this.listView = listView;
+        }
+
+        @Override
+        public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+            if (listView != null) {
+                listView.startDragging(position - listView.getHeaderViewsCount());
+            }
+            return true;
+        }
     }
 }

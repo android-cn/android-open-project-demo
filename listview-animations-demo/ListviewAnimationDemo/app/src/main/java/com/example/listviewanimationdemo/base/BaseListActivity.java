@@ -12,6 +12,7 @@ import android.support.v4.app.FragmentActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -66,13 +67,15 @@ public class BaseListActivity extends FragmentActivity {
         @Override
         public View getView(final int position, final View convertView,
                             final ViewGroup parent) {
-            TextView tv = (TextView) convertView;
-            if (tv == null) {
-                tv = (TextView) LayoutInflater.from(mContext).inflate(
+            LinearLayout view = (LinearLayout) convertView;
+            if (view == null) {
+                view = (LinearLayout) LayoutInflater.from(mContext).inflate(
                         R.layout.item_list_row, parent, false);
             }
+            TextView tv = (TextView) view.findViewById(R.id.id_text_view);
+
             tv.setText("第 " + getItem(position) + "行");
-            return tv;
+            return view;
         }
     }
 
