@@ -13,18 +13,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.nhaarman.listviewanimations.itemmanipulation.swipedismiss;
+
+package com.nhaarman.listviewanimations.util;
+
+import android.support.annotation.NonNull;
 
 /**
- * An interface to specify whether certain items can or cannot be dismissed.
+ * An interface for inserting items at a certain index.
  */
-public interface DismissableManager {
+public interface Insertable<T> {
 
     /**
-     * Returns whether the item for given id and position can be dismissed.
-     * @param id the id of the item.
-     * @param position the position of the item.
-     * @return true if the item can be dismissed, false otherwise.
+     * Will be called to insert given {@code item} at given {@code index} in the list.
+     *
+     * @param index the index the new item should be inserted at
+     * @param item  the item to insert
      */
-    boolean isDismissable(long id, int position);
+    void add(int index, @NonNull T item);
 }

@@ -13,18 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.nhaarman.listviewanimations.itemmanipulation.swipedismiss;
+package com.nhaarman.listviewanimations.util;
 
-/**
- * An interface to specify whether certain items can or cannot be dismissed.
- */
-public interface DismissableManager {
+import android.support.annotation.NonNull;
 
-    /**
-     * Returns whether the item for given id and position can be dismissed.
-     * @param id the id of the item.
-     * @param position the position of the item.
-     * @return true if the item can be dismissed, false otherwise.
-     */
-    boolean isDismissable(long id, int position);
+public interface ListViewWrapperSetter {
+
+    void setListViewWrapper(@NonNull final ListViewWrapper listViewWrapper);
 }

@@ -13,18 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.nhaarman.listviewanimations.itemmanipulation.swipedismiss;
+
+package com.nhaarman.listviewanimations.itemmanipulation.dragdrop;
 
 /**
- * An interface to specify whether certain items can or cannot be dismissed.
+ * An interface which provides a callback that is called when an item has moved using the {@link com.nhaarman.listviewanimations.itemmanipulation.dragdrop.rewrite.DynamicListView}.
  */
-public interface DismissableManager {
+public interface OnItemMovedListener {
 
     /**
-     * Returns whether the item for given id and position can be dismissed.
-     * @param id the id of the item.
-     * @param position the position of the item.
-     * @return true if the item can be dismissed, false otherwise.
+     * Called when an item that was dragged has been dropped.
+     *
+     * @param originalPosition the original position of the item that was dragged.
+     * @param newPosition the new position of the item that was dragged.
      */
-    boolean isDismissable(long id, int position);
+    void onItemMoved(int originalPosition, int newPosition);
 }
