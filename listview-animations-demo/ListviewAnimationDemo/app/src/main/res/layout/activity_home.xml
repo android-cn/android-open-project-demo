@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#F0F0F0"
         android:orientation="vertical"
-        android:padding="5dp" >
+        android:padding="5dp">
 
         <TextView
             android:layout_width="fill_parent"
@@ -34,40 +34,35 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:gravity="left|center_vertical"
-            android:text="2.1滑动删除" >
-        </Button>
+            android:text="2.1滑动删除"></Button>
 
         <Button
             android:id="@+id/home_item_drag_btn"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:gravity="left|center_vertical"
-            android:text="2.2item拖动" >
-        </Button>
+            android:text="2.2item拖动"></Button>
 
         <Button
             android:id="@+id/home_multiple_item_dismiss_btn"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:gravity="left|center_vertical"
-            android:text="2.3多个item删除" >
-        </Button>
+            android:text="2.3多个item删除"></Button>
 
         <Button
             android:id="@+id/home_item_expend_btn"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:gravity="left|center_vertical"
-            android:text="2.4列表展开" >
-        </Button>
+            android:text="2.4列表展开"></Button>
 
         <Button
             android:id="@+id/home_item_add_btn"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:gravity="left|center_vertical"
-            android:text="2.5item增加" >
-        </Button>
+            android:text="2.5item增加"></Button>
 
         <TextView
             android:id="@+id/home_item_go_github"

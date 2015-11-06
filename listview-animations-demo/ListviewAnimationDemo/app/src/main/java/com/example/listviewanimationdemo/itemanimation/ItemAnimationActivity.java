@@ -146,15 +146,15 @@ public class ItemAnimationActivity extends BaseListActivity {
         }
 
         @Override
-        public View getView(final int position, final View convertView,
-                            final ViewGroup parent) {
-            TextView tv = (TextView) convertView;
-            if (tv == null) {
-                tv = (TextView) LayoutInflater.from(mContext).inflate(
+        public View getView(int position, View convertView, ViewGroup parent) {
+
+            if (convertView == null) {
+                convertView = LayoutInflater.from(mContext).inflate(
                         R.layout.item_list_row, parent, false);
             }
+            TextView tv = (TextView) convertView.findViewById(R.id.id_text_view);
             tv.setText("******第 " + getItem(position) + "行******");
-            return tv;
+            return convertView;
         }
     }
 }

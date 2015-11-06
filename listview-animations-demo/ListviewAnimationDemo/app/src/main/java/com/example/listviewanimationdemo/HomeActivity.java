@@ -80,9 +80,9 @@ public class HomeActivity extends FragmentActivity implements OnClickListener {
     }
 
     public void openBrower(String url) {
-        Uri uri = Uri.parse(url);
-        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-        intent.setPackage("com.android.browser");
-        startActivity(intent);
+//        Uri uri = Uri.parse(url);
+//        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+//        intent.setPackage("com.android.browser");
+//        startActivity(intent);
     }
 }

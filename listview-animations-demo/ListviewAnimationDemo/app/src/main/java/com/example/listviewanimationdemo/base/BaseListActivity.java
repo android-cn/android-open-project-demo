@@ -65,17 +65,15 @@ public class BaseListActivity extends FragmentActivity {
         }
 
         @Override
-        public View getView(final int position, final View convertView,
-                            final ViewGroup parent) {
-            LinearLayout view = (LinearLayout) convertView;
-            if (view == null) {
-                view = (LinearLayout) LayoutInflater.from(mContext).inflate(
+        public View getView(int position, View convertView, ViewGroup parent) {
+            if (convertView == null) {
+                convertView = LayoutInflater.from(mContext).inflate(
                         R.layout.item_list_row, parent, false);
             }
-            TextView tv = (TextView) view.findViewById(R.id.id_text_view);
+            TextView tv = (TextView) convertView.findViewById(R.id.id_text_view);
 
             tv.setText("第 " + getItem(position) + "行");
-            return view;
+            return convertView;
         }
     }
 

@@ -84,7 +84,8 @@ public class SwipeToDismissActivity extends BaseListActivity implements OnDismis
         public View getView(final int position, final View convertView, final ViewGroup parent) {
             TextView tv = (TextView) convertView;
             if (tv == null) {
-                tv = (TextView) LayoutInflater.from(SwipeToDismissActivity.this).inflate(android.R.layout.simple_list_item_1, parent, false);
+                tv = (TextView) LayoutInflater.from(SwipeToDismissActivity.this).
+                        inflate(android.R.layout.simple_list_item_1, parent, false);
             }
 
             tv.setText(getItem(position));

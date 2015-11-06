@@ -55,7 +55,5 @@ public class DragAndDropActivity extends BaseListActivity {
         listView.setAdapter(animAdapter);
 
         Toast.makeText(this, "长按item开始拖拽", Toast.LENGTH_LONG).show();
-
-
     }
 }

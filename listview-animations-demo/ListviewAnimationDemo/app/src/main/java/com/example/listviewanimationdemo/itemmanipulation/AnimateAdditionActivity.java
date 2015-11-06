@@ -34,71 +34,71 @@ import com.nhaarman.listviewanimations.itemmanipulation.animateaddition.AnimateA
 import java.util.ArrayList;
 
 public class AnimateAdditionActivity extends BaseListActivity implements
-		AdapterView.OnItemClickListener {
+        AdapterView.OnItemClickListener {
 
-	private int mAddedItemNumber;
-	private AnimateAdditionAdapter<String> mAnimateAdditionAdapter;
+    private int mAddedItemNumber;
+    private AnimateAdditionAdapter<String> mAnimateAdditionAdapter;
 
-	public static void actionToItemAddition(Context context) {
-		Intent intent = new Intent(context, AnimateAdditionActivity.class);
-		context.startActivity(intent);
-	}
+    public static void actionToItemAddition(Context context) {
+        Intent intent = new Intent(context, AnimateAdditionActivity.class);
+        context.startActivity(intent);
+    }
 
-	@Override
-	protected void onCreate(final Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setTitle("增加item");
-		MyAdapter myAdapter = new MyAdapter(this, getStringItems());
+    @Override
+    protected void onCreate(final Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setTitle("增加item");
+        MyAdapter myAdapter = new MyAdapter(this, getStringItems());
 
-		mAnimateAdditionAdapter = new AnimateAdditionAdapter<String>(myAdapter);
-		mAnimateAdditionAdapter.setListView(getListView());
+        mAnimateAdditionAdapter = new AnimateAdditionAdapter<String>(myAdapter);
+        mAnimateAdditionAdapter.setListView(getListView());
 
-		getListView().setAdapter(mAnimateAdditionAdapter);
-		getListView().setOnItemClickListener(this);
+        getListView().setAdapter(mAnimateAdditionAdapter);
+        getListView().setOnItemClickListener(this);
 
-		Toast.makeText(this, "点击某一项来增加一项", Toast.LENGTH_LONG).show();
-	}
+        Toast.makeText(this, "点击某一项来增加一项", Toast.LENGTH_LONG).show();
+    }
 
-	private static ArrayList<String> getStringItems() {
-		ArrayList<String> items = new ArrayList<String>();
-		for (int i = 0; i < 1000; i++) {
-			items.add(">>>第 " + i + "行===");
-		}
-		return items;
-	}
+    private static ArrayList<String> getStringItems() {
+        ArrayList<String> items = new ArrayList<String>();
+        for (int i = 0; i < 1000; i++) {
+            items.add(">>>第 " + i + "行===");
+        }
+        return items;
+    }
 
-	@Override
-	public void onItemClick(final AdapterView<?> parent, final View view,
-			final int position, final long id) {
-		mAnimateAdditionAdapter.insert(position, "***新增加的item: "
-				+ mAddedItemNumber);
-		mAddedItemNumber++;
-	}
+    @Override
+    public void onItemClick(final AdapterView<?> parent, final View view,
+                            final int position, final long id) {
+        mAnimateAdditionAdapter.insert(position, "***新增加的item: "
+                + mAddedItemNumber);
+        mAddedItemNumber++;
+    }
 
-	private static class MyAdapter extends ArrayAdapter<String> {
+    private static class MyAdapter extends ArrayAdapter<String> {
 
-		private final Context mContext;
+        private final Context mContext;
 
-		public MyAdapter(final Context context, final ArrayList<String> items) {
-			super(items);
-			mContext = context;
-		}
+        public MyAdapter(final Context context, final ArrayList<String> items) {
+            super(items);
+            mContext = context;
+        }
 
-		@Override
-		public long getItemId(final int position) {
-			return getItem(position).hashCode();
-		}
+        @Override
+        public long getItemId(final int position) {
+            return getItem(position).hashCode();
+        }
 
-		@Override
-		public View getView(final int position, final View convertView,
-				final ViewGroup parent) {
-			TextView tv = (TextView) convertView;
-			if (tv == null) {
-				tv = (TextView) LayoutInflater.from(mContext).inflate(
-						R.layout.item_list_row, parent, false);
-			}
-			tv.setText(getItem(position));
-			return tv;
-		}
-	}
+        @Override
+        public View getView(int position, View convertView,
+                            ViewGroup parent) {
+            if (convertView == null) {
+                convertView = LayoutInflater.from(mContext).inflate(
+                        R.layout.item_list_row, parent, false);
+            }
+            TextView tv = (TextView) convertView.findViewById(R.id.id_text_view);
+            tv.setText(getItem(position));
+            return convertView;
+        }
+    }
 }
