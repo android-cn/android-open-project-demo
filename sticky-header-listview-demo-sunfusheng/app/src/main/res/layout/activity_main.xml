@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.sunfusheng.StickyHeaderListView.view.SmoothListView.SmoothListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@null"
+        android:dividerHeight="0dp"
+        android:fadingEdge="none"
+        android:overScrollMode="never"
+        android:scrollbars="none"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/rl_bar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/transparent"
+            android:visibility="visible">
+
+            <FrameLayout
+                android:layout_width="190dp"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="15dp">
+
+                <View
+                    android:id="@+id/view_title_bg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/xml_oval_half_transparent_bg"/>
+
+                <TextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="StickyHeaderListView"
+                    android:textColor="@color/white"
+                    android:textSize="17sp"/>
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/fl_action_more"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="15dp">
+
+                <View
+                    android:id="@+id/view_action_more_bg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/xml_oval_half_transparent_bg"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:src="@mipmap/ic_action_more"/>
+            </FrameLayout>
+        </RelativeLayout>
+
+        <com.sunfusheng.StickyHeaderListView.view.FilterView
+            android:id="@+id/fv_top_filter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"/>
+    </LinearLayout>
+
+</FrameLayout>
