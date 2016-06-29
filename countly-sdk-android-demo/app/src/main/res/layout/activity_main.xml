@@ -1,0 +1,100 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/events"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="自定义事件" />
+    <Button
+        android:id="@+id/event_normal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true"
+        android:text="事件键和计数" />
+    <Button
+        android:id="@+id/event_sum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true"
+        android:text="事件键、计数和加和" />
+    <Button
+        android:id="@+id/event_segment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true"
+        android:text="事件键和计数以及细分" />
+    <Button
+        android:id="@+id/event_segment_sum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true"
+        android:text="事件键、计数和加和以及细分" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/events"
+        android:background="@android:color/darker_gray"
+        />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/events"
+        android:text="崩溃报告" />
+
+    <Button
+        android:id="@+id/runtime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true"
+        android:text="Runtime Exception" />
+
+    <Button
+        android:id="@+id/nullpointer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/runtime"
+        android:layout_centerHorizontal="true"
+        android:text="Nullpointer Exception" />
+
+    <Button
+        android:id="@+id/division0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/nullpointer"
+        android:layout_centerHorizontal="true"
+        android:text="Division by 0" />
+
+    <Button
+        android:id="@+id/handled"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/runtime"
+        android:layout_alignRight="@+id/runtime"
+        android:layout_below="@+id/stackoverflow"
+        android:text="Handled Exception" />
+
+    <Button
+        android:id="@+id/stackoverflow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/division0"
+        android:layout_centerHorizontal="true"
+        android:text="StackOverflow" />
+
+</LinearLayout>
