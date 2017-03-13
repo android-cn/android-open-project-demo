@@ -1,0 +1,32 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                xmlns:calendar="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:paddingTop="@dimen/activity_vertical_margin"
+                android:paddingBottom="@dimen/activity_vertical_margin"
+                tools:context=".CalandarDemoActivity">
+    <TextView
+        android:id="@+id/activity_selectd_text"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginLeft="8dp"
+        android:layout_alignParentBottom="true"></TextView>
+    <TextView
+        android:id="@+id/activity_text"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginLeft="8dp"
+        android:layout_above="@+id/activity_selectd_text"></TextView>
+
+<com.andexert.calendarlistview.library.DayPickerView
+    android:id="@+id/activity_daypicker"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    calendar:drawRoundRect="true"
+    android:layout_above="@+id/activity_text"/>
+
+
+</RelativeLayout>

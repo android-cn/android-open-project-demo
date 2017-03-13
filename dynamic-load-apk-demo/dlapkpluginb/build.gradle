@@ -1,0 +1,27 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 19
+    buildToolsVersion "21.1.2"
+
+    defaultConfig {
+        applicationId "com.ffish.dlapkpluginb"
+        minSdkVersion 8
+        targetSdkVersion 19
+        versionCode 1
+        versionName "1.0"
+    }
+
+}
+
+repositories {
+    flatDir {
+        dirs 'dl-lib'
+    }
+}
+
+dependencies {
+    provided fileTree(dir: 'dl-lib', include: ['*.jar'])
+    provided(name: 'dlapkplugininterface-debug', ext: 'aar')
+//    provided project(':dlapkplugininterface')
+}

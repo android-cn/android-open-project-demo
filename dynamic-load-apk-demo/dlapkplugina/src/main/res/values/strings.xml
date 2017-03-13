@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">DLApkPluginA</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="model1_tip">模式1：宿主和插件之间不通信</string>
+</resources>

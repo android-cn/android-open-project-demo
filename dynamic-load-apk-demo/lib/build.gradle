@@ -1,0 +1,10 @@
+apply plugin: 'com.android.library'
+
+dependencies {
+    compile 'com.android.support:appcompat-v7:19.0.1'
+}
+
+android {
+    compileSdkVersion 19
+    buildToolsVersion "21.1.2"
+}

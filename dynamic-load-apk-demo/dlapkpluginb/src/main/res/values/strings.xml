@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">DLApkPluginB</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="model2_tip">模式2：插件可以通过接口访问宿主的方法</string>
+    <string name="invoke_button_text">点击向宿主发送方法调用请求</string>
+</resources>
